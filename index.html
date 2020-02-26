@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>My Slide</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/black.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.type = 'text/css'
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? 'css/print/pdf.css'
+        : 'css/print/paper.css'
+      document.getElementsByTagName('head')[0].appendChild(link)
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <div><img style="border: 0px; background-color: transparent;" src="https://miro.medium.com/max/400/1*nP2C50GK4_-ly_R_mq3juQ.png"/></div>
+          <p><h3>GraphQL</h3></p>
+          <p class="">The Intro</p>
+        </section>
+
+
+        <section>
+          <ul >
+            <li> <div>What is GraphQL ?</div></li>
+            <li class="fragment  fade-up "><div>What does it solves ? </div></li>
+            <li class="fragment  fade-up "><div>How does it works ? </div></li>
+            <li class="fragment  fade-up "><div>What does it use ? </div></li>
+            <li class="fragment  fade-up "><div>Why do we need this ? </div></li>
+          </ul>
+        </section>
+
+        <section>
+            <h3 class="fragment fade-out">What is GraphQL ?</h3>
+            <div style="position: relative;  vertical-align: top;">
+              <p style="position: absolute; top:20px; " class="fragment fade-in-then-out">GraphQL is an open-source data query and manipulation language for APIs, and a runtime for fulfilling queries with existing data.</p>
+              <p style="position: absolute; top:20px; " class="fragment fade-in-then-out">GraphQL was developed internally by Facebook in 2012 before being publicly released in 2015.</p>
+              <p style="position: absolute; top:20px; " class="fragment fade-in-then-out">On 7 November 2018, the GraphQL project was moved from Facebook to the newly-established GraphQL Foundation, hosted by the non-profit Linux Foundation.</p>
+              <p style="position: absolute; top:20px; " class="fragment fade-in-then-out">Since 2012, GraphQL's rise has followed the adoption timeline as set out by Lee Byron, GraphQL's creator, with accuracy.</p>
+            </div>
+        </section>
+
+        <section data-background-iframe="https://graphql.org/" data-background-interactive data-transition="zoom">
+					<div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<h2>GraphQL Web Site</h2>
+						<p>Since reveal.js runs on the web, you can easily embed other web content. Try interacting with the page in the background.</p>
+					</div>
+        </section>
+        
+        <section>
+          <section>
+            <h3>What does it solves ?</h3>
+          </section>
+          
+          <section>
+            <p>GraphQL is a query language for your API, and a server-side runtime for executing queries by using a type system you define for your data.</p>
+          </section>
+
+          <section>
+            <p>GraphQL isn't tied to any specific database or storage engine and is instead backed by your existing code and data.</p>
+          </section>
+          <section>
+            <p>A GraphQL service is created by defining types and fields on those types, then providing functions for each field on each type. </p>
+          </section>
+          <section>
+            <p>GraphQL is a Data Layer </p>
+          </section>
+        </section>
+        
+        <section>
+          <div style="position: absolute; top:0px; right:0px; left:0px; bottom: 0px; border: 1px solid green; height: 500px">
+            <div class="fragment  fade-up"  style="border:1px solid red; position: absolute; left: 10%; top:30%">
+              client 
+            </div>
+
+            <div class="fragment  fade-up" style="border:1px solid red; position: absolute; left: 50%; top:30%">
+              API 
+            </div>
+
+            <div class="fragment  fade-up" style="border:1px solid red; position: absolute; left: 80%; top:30%">
+              DB 
+            </div>
+          
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        hash: true,
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/highlight/highlight.js' },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      })
+    </script>
+  </body>
+</html>
