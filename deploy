@@ -6,4 +6,5 @@ git checkout gh-pages
 git merge -X theirs $BRANCH
 git commit -am "version update $(date) from $BRANCH"
 git push 
+git checkout -
 echo "Done !!!"
