@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+BRANCH=${1:-master}
+echo "Wiil deploy $BRANCH to pages"
+git checkout gh-pages 
+git merge -X theirs $BRANCH
+git commit -am "version update $(date) from $BRANCH"
+git push 
+echo "Done !!!"
