@@ -27,6 +27,9 @@
       document.getElementsByTagName('head')[0].appendChild(link)
     </script>
     <style>
+      .tableSmall {
+        font-size: 22px;
+      }
       .red {
         color: #e74c3c;
       }
@@ -77,6 +80,36 @@
       }
       .br-red {
         border: 1px solid red;
+      }
+
+      .mongo {
+        width: 64px;
+        height: 64px;
+        background-repeat: no-repeat;
+        background-image: url('data:image/png;base64,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');
+      }
+
+      .mysql {
+        width: 64px;
+        height: 64px;
+        background-repeat: no-repeat;
+        background-image: url('data:image/png;base64,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');
+      }
+
+      .els {
+        width: 64px;
+        height: 64px;
+        background-repeat: no-repeat;
+        background-image: url('data:image/png;base64,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');
+      }
+
+      .line {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 20px;
+        border-top: 2px solid #ccc;
+        border-bottom: 2px solid #ccc;
       }
     </style>
   </head>
@@ -449,21 +482,497 @@
             style="position: absolute; top:0px; right:0px; left:0px; bottom: 0px; height: 500px"
           >
             <div
-              class="image api"
-              style=" position: absolute; left: 10%; top:30%"
-            ></div>
+              class="fragment fade-up"
+              style="position: absolute; width: 420px;"
+            >
+              <pre><code>
+HTTP GET /books/2
 
+</code></pre>
+              <pre><code>
+output:
+  {
+    "data": {
+      "book": {
+        "name": "Book2",
+        "genre": "Sci-Fi",
+        "authorId: "2",
+        "movieId": "33"
+      }
+    }
+  }
+</code></pre>
+            </div>
             <div
-              class=" image arrow"
-              style=" position: absolute; left: 40%; top:30%"
-            ></div>
+              class="fragment fade-up"
+              style=" position: absolute; right:0; width: 45%; top:10%; padding-right: 20px;"
+            >
+              <div
+                class=" image api"
+                style="display: inline-block; position: relative; "
+              ></div>
 
-            <div
-              class=" image db"
-              style=" position: absolute; left: 70%; top:30%"
-            ></div>
-            <div class="fragment fade-up">REST API</div>
+              <div
+                class=" image arrow"
+                style=" display: inline-block; position: relative; "
+              ></div>
+
+              <div
+                class="image db"
+                style=" display: inline-block;  position: relative; "
+              ></div>
+              <p>REST API</p>
+            </div>
           </div>
+        </section>
+
+        <section data-transition="zoom">
+          <section>
+            <div
+              style="position: absolute; top:0px; right:0px; left:0px; bottom: 0px; height: 500px"
+            >
+              <div style="position: absolute; width: 460px;">
+                <pre><code>
+HTTP GET /books/2
+
+</code></pre>
+                <pre><code class="hljs" data-line-numbers="8,9">
+output:
+  {
+    "data": {
+      "book": {
+        "name": "Book2",
+        "genre": "Sci-Fi",
+        "authorId: "2",
+        "movieId": "33"
+      }
+    }
+  }
+</code ></pre>
+              </div>
+              <div
+                style=" position: absolute; right:0; width: 45%; top:10%; padding-right: 20px;"
+              >
+                <div
+                  class=" image api"
+                  style="display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class=" image arrow"
+                  style=" display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class="image db"
+                  style=" display: inline-block;  position: relative; "
+                ></div>
+                <p>REST API</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div
+              style="position: absolute; top:0px; right:0px; left:0px; bottom: 0px; height: 500px"
+            >
+              <div style="position: absolute; width: 460px;">
+                <pre><code>
+HTTP GET /authors/:id
+
+</code></pre>
+                <pre><code class="hljs" >
+output:
+{
+  "author": {
+    "age": 44,
+    "name": "Mike",
+    "id": "5e5629fc4"
+  }
+}
+
+</code ></pre>
+              </div>
+              <div
+                style=" position: absolute; right:0; width: 45%; top:10%; padding-right: 20px;"
+              >
+                <div
+                  class=" image api"
+                  style="display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class=" image arrow"
+                  style=" display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class="image db"
+                  style=" display: inline-block;  position: relative; "
+                ></div>
+                <p>REST API</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div
+              style="position: absolute; top:0px; right:0px; left:0px; bottom: 0px; height: 500px"
+            >
+              <div style="position: absolute; width: 460px;">
+                <pre><code>
+HTTP GET /movies/:id
+
+</code></pre>
+                <pre><code >
+output:
+"movie": {
+  "title": "Episode I",
+  "year": "2008",
+  "id": "58559"
+}
+
+
+</code ></pre>
+              </div>
+              <div
+                style=" position: absolute; right:0; width: 45%; top:10%; padding-right: 20px;"
+              >
+                <div
+                  class=" image api"
+                  style="display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class=" image arrow"
+                  style=" display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class="image db"
+                  style=" display: inline-block;  position: relative; "
+                ></div>
+                <p>REST API</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div
+              style="position: absolute; top:0px; right:0px; left:0px; bottom: 0px; height: 500px"
+            >
+              <div style="position: absolute; width: 460px;">
+                <pre><code>
+HTTP GET /stars/:bookId
+
+</code></pre>
+                <pre><code >
+output:
+"stars": {
+  "stars": 5,
+  "id": "3",
+  "bookId": "5e562a384e98"
+},
+
+
+</code ></pre>
+              </div>
+              <div
+                style=" position: absolute; right:0; width: 45%; top:10%; padding-right: 20px;"
+              >
+                <div
+                  class=" image api"
+                  style="display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class=" image arrow"
+                  style=" display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class="image db"
+                  style=" display: inline-block;  position: relative; "
+                ></div>
+                <p>REST API</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h4>Rest API</h4>
+            <div style="display: inline-block; width:35%">
+              <pre><code>
+HTTP GET /books/:id
+HTTP GET /authors/:id
+HTTP GET /movies/:id
+HTTP GET /stars/:id
+
+    </code></pre>
+            </div>
+            <div
+              style=" display: inline-block; vertical-align: top; width: 50%; white-space: nowrap; font-size: 30px;"
+            >
+              <pre><code>
+{
+  "data": {
+    "book": {
+      "name": "Book2",
+      "genre": "222",
+      "author": {
+        "age": 44,
+        "name": "Mike",
+        "id": "5e5629fc4e98b96691966c76"
+      },
+      "stars": {
+        "stars": 5,
+        "id": "3",
+        "bookId": "5e562a384e98b96691966c77"
+      },
+      "movie": {
+        "title": "Episode I",
+        "year": 2008,
+        "id": "58559"
+      }
+    }
+  }
+}</code></pre>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section><h3>GraphQL</h3></section>
+          <section>
+            <h4>GraphQL</h4>
+            <div style="display: inline-block; width:35%; font-size:28px">
+              <pre><code class="hljs">
+  {
+    book(id: "2"){
+      name
+      genre
+      author{
+        age,
+        name
+        id
+      }
+      stars{
+        stars
+        id
+        bookId
+      }
+      movie{
+        title
+        year
+        id
+      }
+    }
+  }
+
+</code></pre>
+            </div>
+            <div
+              style=" display: inline-block; vertical-align: top; width: 50%; white-space: nowrap; font-size: 30px;"
+            >
+              <pre><code>
+{
+  "data": {
+    "book": {
+      "name": "Book2",
+      "genre": "222",
+      "author": {
+        "age": 44,
+        "name": "Mike",
+        "id": "5e5629fc4e98b96691966c76"
+      },
+      "stars": {
+        "stars": 5,
+        "id": "3",
+        "bookId": "5e562a384e98b96691966c77"
+      },
+      "movie": {
+        "title": "Episode I",
+        "year": 2008,
+        "id": "58559"
+      }
+    }
+  }
+}</code></pre>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            How about
+            <span class="fragment highlight-green">field</span> selection ?
+          </section>
+          <section>
+            <h5>GraphQL - Accessing the fields</h5>
+            <div style="display: inline-block; width:35%; font-size:28px">
+              <pre><code class="hljs" >
+  {
+    book(id: "2"){
+      name
+      author{
+      age 
+      }
+      stars{
+        stars
+      }
+      movie{
+        title
+      }
+    }
+  }
+
+</code></pre>
+            </div>
+            <div
+              style=" display: inline-block; vertical-align: top; width: 50%; white-space: nowrap; font-size: 30px;"
+            >
+              <pre><code>
+  {
+    "data": {
+      "book": {
+        "name": "Book2",
+        "author": {
+          "age": 44
+        },
+        "stars": {
+          "stars": 5
+        },
+        "movie": {
+          "title": "Episode I"
+        }
+      }
+    }
+  }</code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h5>GraphQL - Accessing the fields</h5>
+            <div style="display: inline-block; width:35%; font-size:28px">
+              <pre><code class="hljs" data-line-numbers="5,8,">
+  {
+    book(id: "2"){
+      name
+      genre
+      author{
+      age 
+      name
+      }
+      stars{
+        stars
+      }
+      movie{
+        title
+      }
+    }
+  }
+
+</code></pre>
+            </div>
+            <div
+              style=" display: inline-block; vertical-align: top; width: 50%; white-space: nowrap; font-size: 30px;"
+            >
+              <pre><code data-line-numbers="6,8">
+{
+"data": {
+  "book": {
+    "name": "Book2",
+    "genre": "222",
+    "author": {
+      "name": "Mike",
+      "age": 44,
+    },
+    "stars": {
+      "stars": 5,
+    },
+    "movie": {
+      "title": "Episode I",
+    }
+  }
+}
+}</code></pre>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section><h3>What if ?</h3></section>
+          <section>
+            <div class="line fragment fade-up" style=" ">
+              <div>
+                <p>📘 Books</p>
+                <p>👨🏻‍💻 Authors</p>
+              </div>
+              <div class="image db">
+                <div class="mongo"></div>
+              </div>
+            </div>
+
+            <div class=" line fragment fade-up">
+              <p>🎥 Movies</p>
+              <div class="image db">
+                <div class="els"></div>
+              </div>
+            </div>
+
+            <div class=" line fragment fade-up">
+              <p>⭐️ Stars &nbsp;</p>
+              <div class="image db">
+                <div class="mysql"></div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h4>
+              <span class="fragment highlight-current-green">Can</span>
+              <span class="fragment highlight-current-green">we</span>
+              <span class="fragment highlight-current-green">still</span>
+              <span class="fragment highlight-current-green">have</span>
+
+              <p class="fragment highlight-current-green grow">
+                the relations ?
+              </p>
+            </h4>
+          </section>
+          <section>
+            <h4>
+              <span class="fragment highlight-current-green">Can</span>
+              <span class="fragment highlight-current-green">we</span>
+              <span class="fragment highlight-current-green">still</span>
+              <span class="fragment highlight-current-green">retrieve</span>
+              <span class="fragment highlight-current-green">the</span>
+              <span class="fragment highlight-current-green">data</span>
+              <span class="fragment highlight-current-green">with</span>
+              <span class="fragment highlight-current-green">one</span>
+              <span class="fragment highlight-current-green">single</span>
+              <p class="fragment highlight-current-green grow">query ?</p>
+            </h4>
+          </section>
+          <section>
+            <span>
+              <h4 class="fragment highlight-green">
+                <p class="fragment grow">
+                  Yes, we can !
+                </p>
+              </h4>
+            </span>
+          </section>
+          <section
+            data-transition="zoom"
+            data-background-video="./assets/gql.mov"
+          >
+            <h4
+              class="fragment slide-up"
+              style="background-color: #009432; padding: 20px; color: #fff;"
+            >
+              Yes, we can !
+            </h4>
+          </section>
         </section>
       </div>
     </div>
