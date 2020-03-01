@@ -2,6 +2,8 @@
 
 BRANCH=${1:-master}
 echo "Wiil deploy $BRANCH to pages"
+git checkout $BRANCH
+git pull 
 git checkout gh-pages 
 git merge -X theirs $BRANCH
 git commit -am "version update $(date) from $BRANCH"
