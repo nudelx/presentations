@@ -449,21 +449,266 @@
             style="position: absolute; top:0px; right:0px; left:0px; bottom: 0px; height: 500px"
           >
             <div
-              class="image api"
-              style=" position: absolute; left: 10%; top:30%"
-            ></div>
+              class="fragment fade-up"
+              style="position: absolute; width: 420px;"
+            >
+              <pre><code>
+HTTP GET /books/2
 
+</code></pre>
+              <pre><code>
+output:
+  {
+    "data": {
+      "book": {
+        "name": "Book2",
+        "genre": "Sci-Fi",
+        "authorId: "2",
+        "movieId": "33"
+      }
+    }
+  }
+</code></pre>
+            </div>
             <div
-              class=" image arrow"
-              style=" position: absolute; left: 40%; top:30%"
-            ></div>
+              class="fragment fade-up"
+              style=" position: absolute; right:0; width: 45%; top:10%; padding-right: 20px;"
+            >
+              <div
+                class=" image api"
+                style="display: inline-block; position: relative; "
+              ></div>
 
-            <div
-              class=" image db"
-              style=" position: absolute; left: 70%; top:30%"
-            ></div>
-            <div class="fragment fade-up">REST API</div>
+              <div
+                class=" image arrow"
+                style=" display: inline-block; position: relative; "
+              ></div>
+
+              <div
+                class="image db"
+                style=" display: inline-block;  position: relative; "
+              ></div>
+              <p>REST API</p>
+            </div>
           </div>
+        </section>
+
+        <section data-transition="zoom">
+          <section>
+            <div
+              style="position: absolute; top:0px; right:0px; left:0px; bottom: 0px; height: 500px"
+            >
+              <div style="position: absolute; width: 460px;">
+                <pre><code>
+HTTP GET /books/2
+
+</code></pre>
+                <pre><code class="hljs" data-line-numbers="8,9">
+output:
+  {
+    "data": {
+      "book": {
+        "name": "Book2",
+        "genre": "Sci-Fi",
+        "authorId: "2",
+        "movieId": "33"
+      }
+    }
+  }
+</code ></pre>
+              </div>
+              <div
+                style=" position: absolute; right:0; width: 45%; top:10%; padding-right: 20px;"
+              >
+                <div
+                  class=" image api"
+                  style="display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class=" image arrow"
+                  style=" display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class="image db"
+                  style=" display: inline-block;  position: relative; "
+                ></div>
+                <p>REST API</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div
+              style="position: absolute; top:0px; right:0px; left:0px; bottom: 0px; height: 500px"
+            >
+              <div style="position: absolute; width: 460px;">
+                <pre><code>
+HTTP GET /authors/:id
+
+</code></pre>
+                <pre><code class="hljs" >
+output:
+{
+  "author": {
+    "age": 44,
+    "name": "Mike",
+    "id": "5e5629fc4"
+  }
+}
+
+</code ></pre>
+              </div>
+              <div
+                style=" position: absolute; right:0; width: 45%; top:10%; padding-right: 20px;"
+              >
+                <div
+                  class=" image api"
+                  style="display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class=" image arrow"
+                  style=" display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class="image db"
+                  style=" display: inline-block;  position: relative; "
+                ></div>
+                <p>REST API</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div
+              style="position: absolute; top:0px; right:0px; left:0px; bottom: 0px; height: 500px"
+            >
+              <div style="position: absolute; width: 460px;">
+                <pre><code>
+HTTP GET /movies/:id
+
+</code></pre>
+                <pre><code >
+output:
+"movie": {
+  "title": "Episode I",
+  "year": "2008",
+  "id": "58559"
+}
+
+
+</code ></pre>
+              </div>
+              <div
+                style=" position: absolute; right:0; width: 45%; top:10%; padding-right: 20px;"
+              >
+                <div
+                  class=" image api"
+                  style="display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class=" image arrow"
+                  style=" display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class="image db"
+                  style=" display: inline-block;  position: relative; "
+                ></div>
+                <p>REST API</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div
+              style="position: absolute; top:0px; right:0px; left:0px; bottom: 0px; height: 500px"
+            >
+              <div style="position: absolute; width: 460px;">
+                <pre><code>
+HTTP GET /stars/:bookId
+
+</code></pre>
+                <pre><code >
+output:
+"stars": {
+  "stars": 5,
+  "id": "3",
+  "bookId": "5e562a384e98"
+},
+
+
+</code ></pre>
+              </div>
+              <div
+                style=" position: absolute; right:0; width: 45%; top:10%; padding-right: 20px;"
+              >
+                <div
+                  class=" image api"
+                  style="display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class=" image arrow"
+                  style=" display: inline-block; position: relative; "
+                ></div>
+
+                <div
+                  class="image db"
+                  style=" display: inline-block;  position: relative; "
+                ></div>
+                <p>REST API</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h4>Rest API</h4>
+            <div style="display: inline-block; width:35%">
+              <pre><code>
+HTTP GET /books/:id
+HTTP GET /authors/:id
+HTTP GET /movies/:id
+HTTP GET /stars/:id
+
+    </code></pre>
+            </div>
+            <div
+              style=" display: inline-block; vertical-align: top; width: 50%; white-space: nowrap; font-size: 30px;"
+            >
+              <pre><code>
+{
+  "data": {
+    "book": {
+      "name": "Book2",
+      "genre": "222",
+      "author": {
+        "age": 44,
+        "name": "Mike",
+        "id": "5e5629fc4e98b96691966c76"
+      },
+      "stars": {
+        "stars": 5,
+        "id": "3",
+        "bookId": "5e562a384e98b96691966c77"
+      },
+      "movie": {
+        "title": "Episode I",
+        "year": 2008,
+        "id": "58559"
+      }
+    }
+  }
+}</code></pre>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section><h3>GraphQL</h3></section>
         </section>
       </div>
     </div>
