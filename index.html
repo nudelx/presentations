@@ -27,6 +27,15 @@
       document.getElementsByTagName('head')[0].appendChild(link)
     </script>
     <style>
+      .red {
+        color: #e74c3c;
+      }
+      .blue {
+        color: #3498db;
+      }
+      .green {
+        color: #2ecc71;
+      }
       .image {
         background-repeat: no-repeat;
         background-position: center, center;
@@ -55,6 +64,19 @@
         height: 420px;
         position: absolute;
         left: 35%;
+      }
+
+      .table {
+        border: 1px solid #ccc;
+        width: 350px;
+        display: inline-block;
+      }
+      .table > table {
+        font-size: 22px;
+        white-space: nowrap;
+      }
+      .br-red {
+        border: 1px solid red;
       }
     </style>
   </head>
@@ -85,6 +107,25 @@
         <section>
           <h3 class="fragment fade-out">What is GraphQL ?</h3>
           <div style="position: relative;  vertical-align: top;">
+            <p
+              style="position: absolute; top:20px; "
+              class="fragment fade-in-then-out"
+            >
+              GraphQL Is a new API standard that provides more
+              <span class="green">efficient</span> ,
+              <span class="blue">flexible</span>,
+              <span class="red">powerful</span>
+              alternativefor REST
+            </p>
+
+            <p
+              style="position: absolute; top:20px; "
+              class="fragment fade-in-then-out"
+            >
+              GraphQL <span class="green">isn't tied </span>to any specific
+              database or storage engine and is instead backed by your existing
+              code and data.
+            </p>
             <p
               style="position: absolute; top:20px; "
               class="fragment fade-in-then-out"
@@ -148,19 +189,225 @@
           </section>
 
           <section>
-            <p>
-              GraphQL isn't tied to any specific database or storage engine and
-              is instead backed by your existing code and data.
+            <p class="fragment shrink">
+              At its core, GraphQL enables declarative data fetching where a
+              client can specify exactly what data it needs from an API.
+            </p>
+            <p class="fragment fade-in-then-out">
+              Instead of <span class="red">multiple endpoints</span> that return
+              fixed data structures, a GraphQL server only exposes a
+              <span class="green grows">single endpoint</span> and responds with
+              precisely the data a client asked for.
             </p>
           </section>
+
           <section>
             <p>
               A GraphQL service is created by defining types and fields on those
               types, then providing functions for each field on each type.
             </p>
           </section>
+
           <section>
-            <p>GraphQL is a Data Layer</p>
+            <p class=" fragment  shrink ">
+              <span class=""> GraphQL - A Query Language for APIs</span>
+            </p>
+            <span class="fragment fade-in">
+              <p class="fragment highlight-red grow">Not Databases</p>
+            </span>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3>Example</h3>
+          </section>
+
+          <section>
+            <h4>Let's define simple related data structure</h4>
+          </section>
+
+          <section>
+            <div class="table fragment fade-up">
+              <p>📘 Books</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>authorId</th>
+                    <th>movieId</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Book 1</td>
+                    <td>11</td>
+                    <td>111</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Book 2</td>
+                    <td>22</td>
+                    <td>222</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Book 3</td>
+                    <td>33</td>
+                    <td>333</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table fragment fade-up">
+              <p>👨🏻‍💻 Authors</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>age</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>11</td>
+                    <td>Alex</td>
+                    <td>33</td>
+                  </tr>
+                  <tr>
+                    <td>22</td>
+                    <td>David</td>
+                    <td>44</td>
+                  </tr>
+                  <tr>
+                    <td>33</td>
+                    <td>Mike</td>
+                    <td>55</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table fragment fade-up">
+              <p>⭐️ Stars</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>id</th>
+                    <th>bookId</th>
+                    <th>stars</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>7</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table fragment fade-up">
+              <p>🎥 Movies</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>year</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>111</td>
+                    <td>Episode I</td>
+                    <td>1999</td>
+                  </tr>
+                  <tr>
+                    <td>222</td>
+                    <td>Episode II</td>
+                    <td>2002</td>
+                  </tr>
+                  <tr>
+                    <td>333</td>
+                    <td>Episode III</td>
+                    <td>2005</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section>
+            <div
+              class="fragment fade-up"
+              style=" position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+            >
+              <div
+                style=" width:300px;display: inline-block; left: 10px; position: absolute; top:10px"
+              >
+                <h3>Episode I</h3>
+              </div>
+              <div
+                style="font-size: 250px;  width:300px;display: inline-block; left: 10px; position: absolute; top:50px"
+              >
+                📘
+              </div>
+              <div
+                style="width: 200px; text-align: left; display: inline-block;position: absolute; left: 50px; top:300px"
+              >
+                <p class="fragment fade-up"><span>⭐️⭐️⭐️⭐️⭐️</span></p>
+              </div>
+
+              <div
+                style=" text-align: left; display: inline-block;position: absolute; width: 50%;right: 10px; top:10px"
+              >
+                <p class="fragment fade-up">
+                  <span style="font-size: 200px;">👨🏻‍💻</span>
+                  <span style="display: block; font-size: 26px;"
+                    >TERRY BROOKS
+                  </span>
+                  <span style="display: block; font-size: 20px;"
+                    >American writer
+                  </span>
+                  <span style="display: block; font-size: 20px;"
+                    >Terence Dean Brooks is an American writer of fantasy
+                    fiction. He writes mainly epic fantasy, and has also written
+                    two film novelizations. He has written 23 New York Times
+                    bestsellers during his writing career, and has sold over 21
+                    million copies of his books in print. Wikipedia Born:
+                    January 8, 1944 (age 76 years), Sterling, Illinois, United
+                    States Spouse: Judine Brooks Education: Washington and Lee
+                    University School of Law ... Nominations: Locus Award for
+                    Best Fantasy Novel...
+                  </span>
+                </p>
+              </div>
+
+              <div
+                style=" text-align: left; display: inline-block;position: absolute; width: 50%; left: 20px; bottom:5px"
+              >
+                <p class="fragment fade-up">
+                  <span style="font-size: 200px;">🎬 </span>
+                  <span style="font-size: 40px; ">Episode I </span>
+                </p>
+              </div>
+            </div>
           </section>
         </section>
 
