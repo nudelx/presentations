@@ -111,6 +111,10 @@
         border-top: 2px solid #ccc;
         border-bottom: 2px solid #ccc;
       }
+
+      .underline {
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
@@ -148,7 +152,7 @@
               <span class="green">efficient</span> ,
               <span class="blue">flexible</span>,
               <span class="red">powerful</span>
-              alternativefor REST
+              alternative for REST
             </p>
 
             <p
@@ -498,6 +502,9 @@ output:
         "genre": "Sci-Fi",
         "authorId: "2",
         "movieId": "33"
+        "id" :2,
+        "meta": "43434r",
+        "type": "fdfe"
       }
     }
   }
@@ -578,7 +585,7 @@ output:
             >
               <div style="position: absolute; width: 460px;">
                 <pre><code>
-HTTP GET /authors/:id
+HTTP GET /books/:id/authors/
 
 </code></pre>
                 <pre><code class="hljs" >
@@ -621,7 +628,7 @@ output:
             >
               <div style="position: absolute; width: 460px;">
                 <pre><code>
-HTTP GET /movies/:id
+HTTP GET /books/:id/movies/
 
 </code></pre>
                 <pre><code >
@@ -663,7 +670,7 @@ output:
             >
               <div style="position: absolute; width: 460px;">
                 <pre><code>
-HTTP GET /stars/:bookId
+HTTP GET /books/:id/stars/
 
 </code></pre>
                 <pre><code >
@@ -701,12 +708,15 @@ output:
 
           <section>
             <h4>Rest API</h4>
-            <div style="display: inline-block; width:35%">
+            <div style="display: inline-block; width:49%">
               <pre><code>
 HTTP GET /books/:id
-HTTP GET /authors/:id
-HTTP GET /movies/:id
-HTTP GET /stars/:id
+
+HTTP GET /books/:id/authors/
+
+HTTP GET /books/:id/movies/
+
+HTTP GET /books/:id/stars/
 
     </code></pre>
             </div>
@@ -719,30 +729,57 @@ HTTP GET /stars/:id
     "book": {
       "name": "Book2",
       "genre": "222",
+      "more": "not relevant fields"
       "author": {
         "age": 44,
         "name": "Mike",
-        "id": "5e5629fc4e98b96691966c76"
+        "id": "5e5629fc4e98b96691966c76",
+        "more": "not relevant fields"
       },
       "stars": {
         "stars": 5,
         "id": "3",
-        "bookId": "5e562a384e98b96691966c77"
+        "bookId": "5e562a384e98b96691966c77",
+        "more": "not relevant fields"
       },
       "movie": {
         "title": "Episode I",
         "year": 2008,
-        "id": "58559"
+        "id": "58559",
+        "more": "not relevant fields"
       }
     }
   }
 }</code></pre>
             </div>
           </section>
+          <section><h3>The problem</h3></section>
+          <section>
+            <ul>
+              <li class="fragment fade-in">
+                <span class="red">Overfetching</span> - Download unnecessary
+                data
+              </li>
+              &nbsp;
+              <li class="fragment fade-in">
+                <span class="red">Underfetching</span> - An endpoint doesn't
+                return enough of the right information, needs to send multiple
+                requests (n+1)
+              </li>
+            </ul>
+          </section>
         </section>
 
         <section>
           <section><h3>GraphQL</h3></section>
+          <section>
+            <p>
+              With GraphQL we can retrieve
+              <span class="red">all</span> related data with
+              <span class="red">one</span> single query using only one exposed
+              api
+            </p>
+          </section>
 
           <section>
             <h4>GraphQL</h4>
@@ -805,8 +842,11 @@ HTTP GET /stars/:id
 
         <section>
           <section>
-            How about
-            <span class="fragment highlight-green">field</span> selection ?
+            <p>
+              With <span class="green">dynamic fields selection</span>, we just
+              can solve the problem of <span class="red">over</span> and
+              <span class="red">under</span> fetching
+            </p>
           </section>
 
           <section>
@@ -900,6 +940,20 @@ HTTP GET /stars/:id
 }</code></pre>
             </div>
           </section>
+        </section>
+
+        <section>
+          <p>
+            Rapidly changing requirements on a client side don't go well with
+            the static REST
+          </p>
+        </section>
+
+        <section>
+          <p>
+            GraphQL was developed to cope with the needs for more flexibility
+            and efficiency in client-server communication
+          </p>
         </section>
 
         <section>
