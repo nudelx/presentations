@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/theme/black.css" />
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/zenburn.css" />
+    <link rel="stylesheet" href="lib/css/monokai.css" />
 
     <!-- Printing and PDF exports -->
     <script>
@@ -114,6 +114,18 @@
 
       .underline {
         text-decoration: underline;
+      }
+
+      .side-by-side {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .js-logo {
+        background-color: #eccc30;
+        color: #000;
+        font-weight: 700;
+        vertical-align: super;
       }
     </style>
   </head>
@@ -261,7 +273,8 @@
           </section>
 
           <section>
-            <h4>Let's define simple related data structure</h4>
+            <h4>Let's define simple, related data structure</h4>
+            <p>(NF3)</p>
           </section>
 
           <section>
@@ -449,6 +462,7 @@
         </section>
 
         <section>
+          <p class="fragment fade-out">REST</p>
           <div
             style="position: absolute; top:0px; right:0px; left:0px; bottom: 0px; height: 500px"
           >
@@ -500,7 +514,7 @@ output:
       "book": {
         "name": "Book2",
         "genre": "Sci-Fi",
-        "authorId: "2",
+        "authorId": "2",
         "movieId": "33"
         "id" :2,
         "meta": "43434r",
@@ -729,7 +743,7 @@ HTTP GET /books/:id/stars/
     "book": {
       "name": "Book2",
       "genre": "222",
-      "more": "not relevant fields"
+      "more": "not relevant fields",
       "author": {
         "age": 44,
         "name": "Mike",
@@ -941,7 +955,7 @@ HTTP GET /books/:id/stars/
             </div>
           </section>
         </section>
-
+        <section>GraphQL vs REST</section>
         <section>
           <p>
             Rapidly changing requirements on a client side don't go well with
@@ -957,10 +971,43 @@ HTTP GET /books/:id/stars/
         </section>
 
         <section>
+          <p>
+            With REST API we are dependent on UI and the Server structure.
+          </p>
+        </section>
+
+        <section>
+          <p>
+            Endpoints structured according to the client needs. So every change
+            has a huge influence on a core server, product and UI
+          </p>
+        </section>
+
+        <section>
+          <p>
+            With GraphQL this problem just doesn't exist anymore.
+          </p>
+        </section>
+
+        <section>
+          <p>
+            With GraphQL we can use low level performance tunning and fields
+            review regardless to the server
+          </p>
+        </section>
+
+        <section>
+          <p>
+            With GraphQL frontend and backend completely independent from each
+            other
+          </p>
+        </section>
+
+        <section>
           <section><h3>What if ?</h3></section>
 
           <section>
-            <div class="line fragment fade-up" style=" ">
+            <div class="line" style=" ">
               <div>
                 <p>📘 Books</p>
                 <p>👨🏻‍💻 Authors</p>
@@ -1191,20 +1238,334 @@ mutation {
         </section>
 
         <section>
-          <h3 class="highlight-green">
-            Freedom of choice
-          </h3>
-          <div class="flex">
-            <div class="image db">
-              <div class="els"></div>
-            </div>
-            <div class="image db">
-              <div class="mongo"></div>
-            </div>
-            <div class="image db">
-              <div class="mysql"></div>
+          <div>
+            <div>
+              <ul>
+                <li class="fragment fade-up">How to structure the Data</li>
+                <li class="fragment fade-up">Where to store the Data</li>
+                <li class="fragment fade-up">
+                  Combine different technologies by your needs
+                </li>
+                <li class="fragment fade-up">
+                  Expose one or multiple endpoint
+                </li>
+                <li class="fragment fade-up">
+                  Control who and how will access the data
+                </li>
+                <li class="fragment fade-up">
+                  Be ready for rapid grow and changes
+                </li>
+              </ul>
             </div>
           </div>
+        </section>
+
+        <section>
+          <h4>How does this magic works ?</h4>
+        </section>
+        <section>
+          <section>
+            <div class="side-by-side" style="text-align:left; ">
+              <div>
+                <pre><code class="hljs" >
+type Author {
+  name: String!
+  age: Int!
+}
+                            </code>
+                            </pre>
+              </div>
+
+              <p style="margin-left: 30px;">
+                GraphQL has its own type system that’s used to define the schema
+                of an API. The syntax for writing schemas is called Schema
+                Definition Language (SDL).
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <div class="side-by-side" style="text-align:left; ">
+              <div>
+                <pre><code class="hljs" >
+
+  type Author {
+    name: String!     
+    age: Int!
+  }
+
+</code></pre>
+              </div>
+              <div style=" margin-left: 30px;">
+                <p>
+                  This type has two fields, they’re called
+                  <span class="red">`name` </span> and
+                  <span class="red">`age`</span> and are respectively of type
+                  <span class="green">String</span> and
+                  <span class="green">Int</span>.
+                </p>
+
+                <p>
+                  The <span class="green">!</span> following the type means that
+                  this field is required.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="side-by-side" style="text-align:left; ">
+              <div>
+                <pre><code class="hljs" >
+
+  type Book {
+    name: String!     
+    authorId: Author!     
+  }
+
+</code></pre>
+              </div>
+              <div style=" margin-left: 30px;">
+                <p>
+                  It’s also possible to express relationships between types. In
+                  the example of a books application, a
+                  <span class="green"> Book</span> could be associated with the
+
+                  <span class="green"> Author</span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <p>Definding the type with <span class="js-logo">JS</span></p>
+            <div style="font-size:  32px;;">
+              <pre><code class="hljs">
+    const graphql = require('graphql')
+    const { GraphQLObjectType, GraphQLID, 
+            GraphQLList,GraphQLString,GraphQLInt } = graphql
+
+    const AuthorType = new GraphQLObjectType({
+      name: "Author",
+      fields: () => ({
+        id: { type: GraphQLID },
+        name: { type: GraphQLString },
+        age: { type: GraphQLInt },
+        books: {
+          type: new GraphQLList(BookType),
+          resolve: (parent, args) => {
+            return Book.find({ authorId: parent.id })
+          }
+        }
+      })
+    })
+
+</code></pre>
+            </div>
+          </section>
+
+          <section>
+            <p>Fetching Data with Queries</p>
+            <div class="side-by-side" style="align-items:center; ">
+              <div style="font-size:  32px;;">
+                <pre><code class="plaintext">
+  {
+    books {
+      name
+      genre
+      id
+      author{     
+        name
+        age
+        id
+      }
+    }
+  }
+  
+  </code></pre>
+              </div>
+              <div style="font-size:  26px;">
+                <pre><code class="hljs" >
+    {
+      "data": {
+        "books": [
+
+          {
+            "name": "Book1",
+            "genre": "1111",
+            "id": "5e56294a4e98b96691966c74",    
+            "author": {
+              "name": "Alex",
+              "age": 39,
+              "id": "5e56255c62c9836008df46d7"      
+            }
+          },
+          
+          ....
+        ]
+      }
+    }
+              </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <p>Queries with Arguments</p>
+            <div class="side-by-side" style="align-items:center; ">
+              <div style="font-size:  32px;;">
+                <pre><code data-trim data-noescape class="plaintext">
+  {
+    book(id: "5e562...") {   
+      name
+      genre
+      id
+      author{     
+        name
+        age
+        id
+      }
+    }
+  }
+  
+  </code></pre>
+              </div>
+              <div style="font-size:  26px;">
+                <pre><code class="hljs" >
+    {
+      "data": {
+            "name": "Book1",
+            "genre": "1111",
+            "id": "5e56294a4e98b96691966c74",    
+            "author": {
+              "name": "Alex",
+              "age": 39,
+              "id": "5e56255c62c9836008df46d7"      
+      }
+    }
+              </code></pre>
+              </div>
+            </div>
+          </section>
+          <section>
+            <p>
+              So we need some way of making changes to the data that’s currently
+              stored in the backend.
+            </p>
+          </section>
+
+          <section>
+            <p>
+              With GraphQL, these changes are made using mutations.
+            </p>
+          </section>
+          <section>
+            <p>
+              There generally are three kinds of mutations
+            </p>
+            <ul>
+              <li class="fragment fade-up">creating new data</li>
+              <li class="fragment fade-up">updating existing data</li>
+              <li class="fragment fade-up">deleting existing data</li>
+            </ul>
+          </section>
+
+          <section>
+            <p>Writing Data with Mutations</p>
+            <div class="side-by-side" style="align-items:center; ">
+              <div style="font-size:  32px;;">
+                <pre><code data-trim data-noescape class="plaintext">
+  mutation {
+
+  createBook(name: "Book 10", genre: "Sci-Fi") {    
+    name
+    id
+  }
+
+  updateBook(name: "Book 10", genre: "Sci-Fi") {    
+    name
+    id
+  }
+
+  deleteBook(id: ...) {    
+    name
+    id
+  }
+}
+  
+  </code></pre>
+              </div>
+              <div style="font-size:  26px;">
+                <pre><code class="hljs" data-trim data-noescape >
+    {
+      "data": {
+        "name": "Book 10",
+        "id": "5e56294a4e98b96691966c74"    
+    }
+              </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h4>Realtime Updates with Subscriptions</h4>
+          </section>
+
+          <section>
+            <p>
+              Another important requirement for many applications today is to
+              have a realtime connection to the server in order to get
+              immediately informed about important events. For this use case,
+              GraphQL offers the concept of subscriptions.
+            </p>
+          </section>
+          <section>
+            <p>
+              When a client subscribes to an event, it will initiate and hold a
+              steady connection to the server. Whenever that particular event
+              then actually happens, the server
+              <span class="green">pushes</span> 🤓 the corresponding data to the
+              client.
+            </p>
+          </section>
+
+          <section>
+            <p>
+              Unlike queries and mutations that follow a typical
+              “request-response-cycle”, subscriptions represent a stream of data
+              sent over to the client.
+            </p>
+            <p>😎</p>
+          </section>
+
+          <section>
+            <pre><code class="plaintext" >
+              subscription {
+                newBook {
+                  name
+                  genre
+                }
+              }
+            </code></pre>
+          </section>
+          <section>
+            <p>
+              After a client sent this subscription to a server, a connection is
+              opened between them. Then, whenever a new mutation is performed
+              that creates a new Book, the server sends the information about
+              this book over to the client
+            </p>
+          </section>
+          <section>
+            <pre><code class="hljs" >
+              {
+                "newBook": {
+                  "name": "Book 22",
+                  "genre": "Sci-Fi"
+                }
+              }
+            </code></pre>
+          </section>
         </section>
       </div>
     </div>
