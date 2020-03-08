@@ -174,10 +174,9 @@
         <section>
           <ul>
             <li><div>What is GraphQL ?</div></li>
-            <li class="fragment  fade-up "><div>What does it solves ?</div></li>
-            <li class="fragment  fade-up "><div>How does it works ?</div></li>
-            <li class="fragment  fade-up "><div>What does it use ?</div></li>
-            <li class="fragment  fade-up "><div>Why do we need this ?</div></li>
+            <li class="fragment  fade-up "><div>What does it solve ?</div></li>
+            <li class="fragment  fade-up "><div>How does it work ?</div></li>
+            <li class="fragment  fade-up "><div>Why do we need it ?</div></li>
           </ul>
         </section>
 
@@ -188,7 +187,7 @@
               style="position: absolute; top:20px; "
               class="fragment fade-in-then-out"
             >
-              GraphQL Is a new API standard that provides more
+              GraphQL is a new API standard that provides an
               <span class="green">efficient</span> ,
               <span class="blue">flexible</span>,
               <span class="red">powerful</span>
@@ -254,7 +253,7 @@
 
         <section>
           <section>
-            <h3>What does it solves ?</h3>
+            <h3>What does it solve ?</h3>
           </section>
 
           <section>
@@ -519,7 +518,9 @@
               style=" position: absolute; left: 80%; top:30%"
             ></div>
 
-            <div class="fragment fade-up border"></div>
+            <div class="fragment fade-up border">
+              server
+            </div>
           </div>
         </section>
 
@@ -1023,7 +1024,7 @@ HTTP GET /books/:id/stars/
 
         <section>
           <p>
-            With GraphQL we can use low level performance tunning and fields
+            With GraphQL we can use low level performance tuning and fields
             review regardless to the server
           </p>
         </section>
@@ -1066,11 +1067,7 @@ HTTP GET /books/:id/stars/
 
           <section>
             <h4>
-              <span class="fragment highlight-current-green">Can</span>
-              <span class="fragment highlight-current-green">we</span>
-              <span class="fragment highlight-current-green">still</span>
-              <span class="fragment highlight-current-green">have</span>
-
+              Can we still have
               <p class="fragment highlight-current-green grow">
                 the relations ?
               </p>
@@ -1079,15 +1076,7 @@ HTTP GET /books/:id/stars/
 
           <section>
             <h4>
-              <span class="fragment highlight-current-green">Can</span>
-              <span class="fragment highlight-current-green">we</span>
-              <span class="fragment highlight-current-green">still</span>
-              <span class="fragment highlight-current-green">retrieve</span>
-              <span class="fragment highlight-current-green">the</span>
-              <span class="fragment highlight-current-green">data</span>
-              <span class="fragment highlight-current-green">with</span>
-              <span class="fragment highlight-current-green">one</span>
-              <span class="fragment highlight-current-green">single</span>
+              Can we still retrieve the data with one single
               <p class="fragment highlight-current-green grow">query ?</p>
             </h4>
           </section>
@@ -1297,7 +1286,98 @@ mutation {
         </section>
 
         <section>
-          diagramm
+          <section>
+            <div
+              style="display: flex; justify-content: space-around; align-items: center;"
+            >
+              <div class=" image mobile"></div>
+
+              <div class="image arrow"></div>
+
+              <div
+                style="display: flex; justify-content: space-around; border: 2px solid #ccc; height: 400px;align-items: center; position: relative; "
+              >
+                <div style="position: absolute; top:0px;">server</div>
+                <div class=" image api"></div>
+
+                <div class=" image arrow"></div>
+
+                <div class=" image db"></div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div
+              style="display: flex; justify-content: space-around; align-items: center;"
+            >
+              <div class=" image mobile"></div>
+
+              <div class="image arrow"></div>
+
+              <div
+                class="fragment fade-in"
+                style="display: flex; justify-content: space-around;border: 2px solid #ccc; height: 400px;align-items: center; position: relative;"
+              >
+                <div style="position: absolute; top:0px;">server</div>
+                <div class="gql128"></div>
+              </div>
+              <div class="image arrow fragment fade-in"></div>
+              <div
+                style="display: flex; justify-content: space-around; border: 2px solid #ccc; height: 400px;align-items: center; position: relative; "
+              >
+                <div style="position: absolute; top:0px;">server</div>
+                <div class=" image api"></div>
+                <div class=" image arrow"></div>
+                <div class=" image db"></div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div
+              style="display: flex; justify-content: space-around; align-items: center;"
+            >
+              <div class=" image mobile"></div>
+
+              <div class="image arrow"></div>
+
+              <div
+                class=""
+                style="display: flex; justify-content: space-around; height: 400px;align-items: center; position: relative;"
+              >
+                <div class="gql128"></div>
+              </div>
+
+              <div>
+                <div
+                  class="image arrow "
+                  style="transform: rotate(-10deg);"
+                ></div>
+                <div
+                  class="image arrow "
+                  style="transform: rotate(10deg);"
+                ></div>
+              </div>
+              <div
+                style="display: flex; flex-direction: column; justify-content: space-around;    "
+              >
+                <div
+                  style="display: flex; justify-content: space-around; margin-bottom:100px; border: 2px solid #ccc; padding:10px"
+                >
+                  <div class=" image api"></div>
+                  <div class=" image arrow"></div>
+                  <div class=" image db"></div>
+                </div>
+                <div
+                  style="display: flex; justify-content: space-around; border: 2px solid #ccc; "
+                >
+                  <div class=" image db"><div class="mysql"></div></div>
+                  <div class=" image db"><div class="els"></div></div>
+                  <div class=" image db"><div class="mongo"></div></div>
+                </div>
+              </div>
+            </div>
+          </section>
         </section>
 
         <section>
