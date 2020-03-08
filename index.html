@@ -1456,6 +1456,27 @@ type Author {
           </section>
 
           <section>
+            <p>
+              GraphQL has a clear separation of structure and behavior. The
+              structure of a GraphQL server is — as we just discussed — its
+              schema, an abstract description of the server’s capabilities.
+            </p>
+          </section>
+
+          <section>
+            <p>
+              This structure comes to life with a concrete implementation that
+              determines the server’s behavior. Key components for the
+              implementation are so-called resolver functions.
+            </p>
+          </section>
+          <section>
+            <p>
+              Each field in a GraphQL schema is backed by a resolver.
+            </p>
+          </section>
+
+          <section>
             <p>Definding the type with <span class="js-logo">JS</span></p>
             <div style="font-size:  32px;;">
               <pre><code class="hljs">
@@ -1472,7 +1493,7 @@ type Author {
         books: {
           type: new GraphQLList(BookType),
           resolve: (parent, args) => {
-            return Book.find({ authorId: parent.id })
+            return Book.find({ authorId: parent.id }) // mongo db
           }
         }
       })
@@ -1701,8 +1722,9 @@ type Author {
           </div>
         </section>
 
+        <section><h5>REST API</h5></section>
+
         <section>
-          <p class="fragment fade-out">REST</p>
           <div
             style="position: absolute; top:0px; right:0px; left:0px; bottom: 0px; height: 500px"
           >
@@ -1735,9 +1757,9 @@ type Author {
           </div>
         </section>
 
-        <section>
-          <h5 class="fragment fade-out">DB interface</h5>
+        <section><h5>DB interface</h5></section>
 
+        <section>
           <div
             style=" marging-top:20px;display: flex; justify-content: space-around; align-items: center;"
           >
@@ -1763,8 +1785,9 @@ type Author {
           </div>
         </section>
 
+        <section><h5>Multiple DBs/Types</h5></section>
+
         <section>
-          <h4 class="fragment fade-out">Multiple DBs/Types</h4>
           <div
             style="display: flex; justify-content: space-around; align-items: center;"
           >
@@ -1805,10 +1828,12 @@ type Author {
             </div>
           </div>
         </section>
+
         <section>
           <h4>Hybrid</h4>
-          <h5>DBs and Legacy API/System</h5>
+          <h5>DB and Legacy API or Server</h5>
         </section>
+
         <section>
           <div
             style="display: flex; justify-content: space-around; align-items: center;"
@@ -1860,6 +1885,68 @@ type Author {
               <div class="image system"></div>
             </div>
           </div>
+        </section>
+
+        <section>
+          <section><h3>Use Cases</h3></section>
+
+          <section>GraphQL server with a connected database</section>
+          <section>
+            GraphQL server that is a thin layer in front of a number of third
+            party or legacy systems and integrates them through a single GraphQL
+            API
+          </section>
+          <section>
+            A hybrid approach of a connected database and third party or legacy
+            systems that can all be accessed through the same GraphQL API
+          </section>
+          <section>
+            <p>Any Type of Technology</p>
+            <p>Any Type of DB</p>
+            <p>Any Structure</p>
+            <p>Any Location</p>
+          </section>
+
+          <section>
+            The payload of a GraphQL query (or mutation) consists of a set of
+            fields. In the GraphQL server implementation, each of these fields
+            actually corresponds to exactly one function that’s called a
+            resolver.
+          </section>
+
+          <section>
+            The sole purpose of a resolver function is to fetch the data for its
+            field.
+          </section>
+
+          <section>
+            When the server receives a query, it will call all the functions for
+            the fields that are specified in the query’s payload.
+          </section>
+
+          <section>
+            It thus resolves the query and is able to retrieve the correct data
+            for each field.
+          </section>
+
+          <section>
+            Once all resolvers returned, the server will package data up in the
+            format that was described by the query and send it back to the
+            client.
+          </section>
+        </section>
+        <section><h4>How about the client side ?</h4></section>
+        <section>
+          <p class="fragment fade-up">
+            Construct and send HTTP request (e.g. with fetch in Javascript)
+          </p>
+          <p class="fragment fade-up">
+            Receive and parse server response store data locally (either simply
+            in memory or persistent)
+          </p>
+
+          <p class="fragment fade-up">Display data in the UI</p>
+          <div style="font-size: 124px; " class="fragment fade-up">🤷🏻‍♂️</div>
         </section>
       </div>
     </div>
