@@ -216,6 +216,15 @@
               GraphQL was developed internally by Facebook in 2012 before being
               publicly released in 2015.
             </p>
+
+            <p
+              style="position: absolute; top:20px; "
+              class="fragment fade-in-then-out"
+            >
+              Since 2012, GraphQL's rise has followed the adoption timeline as
+              set out by Lee Byron, GraphQL's creator, with accuracy.
+            </p>
+
             <p
               style="position: absolute; top:20px; "
               class="fragment fade-in-then-out"
@@ -223,13 +232,6 @@
               On 7 November 2018, the GraphQL project was moved from Facebook to
               the newly-established GraphQL Foundation, hosted by the non-profit
               Linux Foundation.
-            </p>
-            <p
-              style="position: absolute; top:20px; "
-              class="fragment fade-in-then-out"
-            >
-              Since 2012, GraphQL's rise has followed the adoption timeline as
-              set out by Lee Byron, GraphQL's creator, with accuracy.
             </p>
           </div>
         </section>
@@ -529,10 +531,7 @@
           <div
             style="position: absolute; top:0px; right:0px; left:0px; bottom: 0px; height: 500px"
           >
-            <div
-              class="fragment fade-up"
-              style="position: absolute; width: 420px;"
-            >
+            <div class="" style="position: absolute; width: 420px;">
               <pre><code>
 HTTP GET /books/2
 
@@ -555,9 +554,10 @@ output:
 </code></pre>
             </div>
             <div
-              class="fragment fade-up"
+              class=""
               style=" position: absolute; right:0; width: 45%; top:10%; padding-right: 20px;"
             >
+              <p>REST API</p>
               <div
                 class=" image api"
                 style="display: inline-block; position: relative; "
@@ -572,7 +572,8 @@ output:
                 class="image db"
                 style=" display: inline-block;  position: relative; "
               ></div>
-              <p>REST API</p>
+
+              <p style="padding-top:60px; font-size: 104px;">🧐</p>
             </div>
           </div>
         </section>
@@ -604,6 +605,7 @@ output:
               <div
                 style=" position: absolute; right:0; width: 45%; top:10%; padding-right: 20px;"
               >
+                <p>REST API</p>
                 <div
                   class=" image api"
                   style="display: inline-block; position: relative; "
@@ -618,7 +620,8 @@ output:
                   class="image db"
                   style=" display: inline-block;  position: relative; "
                 ></div>
-                <p>REST API</p>
+
+                <p style="padding-top:60px; font-size: 104px;">🤔</p>
               </div>
             </div>
           </section>
@@ -647,6 +650,7 @@ output:
               <div
                 style=" position: absolute; right:0; width: 45%; top:10%; padding-right: 20px;"
               >
+                <p>REST API</p>
                 <div
                   class=" image api"
                   style="display: inline-block; position: relative; "
@@ -661,7 +665,7 @@ output:
                   class="image db"
                   style=" display: inline-block;  position: relative; "
                 ></div>
-                <p>REST API</p>
+                <p style="padding-top:60px; font-size: 104px;">🤨</p>
               </div>
             </div>
           </section>
@@ -689,6 +693,7 @@ output:
               <div
                 style=" position: absolute; right:0; width: 45%; top:10%; padding-right: 20px;"
               >
+                <p>REST API</p>
                 <div
                   class=" image api"
                   style="display: inline-block; position: relative; "
@@ -703,7 +708,8 @@ output:
                   class="image db"
                   style=" display: inline-block;  position: relative; "
                 ></div>
-                <p>REST API</p>
+
+                <p style="padding-top:60px; font-size: 104px;">🤨</p>
               </div>
             </div>
           </section>
@@ -731,6 +737,8 @@ output:
               <div
                 style=" position: absolute; right:0; width: 45%; top:10%; padding-right: 20px;"
               >
+                <p>REST API</p>
+
                 <div
                   class=" image api"
                   style="display: inline-block; position: relative; "
@@ -745,7 +753,7 @@ output:
                   class="image db"
                   style=" display: inline-block;  position: relative; "
                 ></div>
-                <p>REST API</p>
+                <p style="padding-top:60px; font-size: 104px;">🤨</p>
               </div>
             </div>
           </section>
@@ -1722,39 +1730,30 @@ type Author {
             <h3>The Architecture</h3>
           </div>
         </section>
-
-        <section><h5>REST API</h5></section>
-
         <section>
           <div
-            style="position: absolute; top:0px; right:0px; left:0px; bottom: 0px; height: 500px"
+            style="display: flex; justify-content: space-around; align-items: center;"
           >
-            <div
-              class="fragment fade-up image mobile"
-              style="position: absolute; left: 0%; top:30%"
-            ></div>
+            <div class=" image mobile"></div>
+
+            <div class="image arrow"></div>
 
             <div
-              class="fragment fade-up image arrow"
-              style=" position: absolute; left: 20%; top:30%"
-            ></div>
-
+              class=""
+              style="display: flex; justify-content: space-around;border: 2px solid #ccc; height: 400px;align-items: center; position: relative;"
+            >
+              <div style="position: absolute; top:0px;">server</div>
+              <div class="gql128"></div>
+            </div>
+            <div class="image arrow "></div>
             <div
-              class="fragment fade-up image api"
-              style=" position: absolute; left: 40%; top:30%"
-            ></div>
-
-            <div
-              class="fragment fade-up image arrow"
-              style=" position: absolute; left: 60%; top:30%"
-            ></div>
-
-            <div
-              class="fragment fade-up image db"
-              style=" position: absolute; left: 80%; top:30%"
-            ></div>
-
-            <div class="fragment fade-up border"></div>
+              style="display: flex; justify-content: space-around; border: 2px solid #ccc; height: 400px;align-items: center; position: relative; "
+            >
+              <div style="position: absolute; top:0px;">server</div>
+              <div class=" image api"></div>
+              <div class=" image arrow"></div>
+              <div class=" image db"></div>
+            </div>
           </div>
         </section>
 
@@ -1793,37 +1792,46 @@ type Author {
             style="display: flex; justify-content: space-around; align-items: center;"
           >
             <div
-              class="mobile fragment fade-up "
+              class="mobile fragment "
+              data-fragment-index="1"
               style="background-repeat: no-repeat; width: 128px; height: 128px;"
             ></div>
             <div
-              class="arrow fragment fade-up "
+              class="arrow fragment  "
+              data-fragment-index="2"
               style="background-repeat: no-repeat; width: 128px; height: 100px; "
             ></div>
-            <div class="gql128  fragment fade-up" style=""></div>
-            <div class="fragment fade-up">
+            <div
+              class="gql128  fragment "
+              data-fragment-index="3"
+              style=""
+            ></div>
+            <div class="">
               <div
-                class="arrow"
+                class="arrow fragment"
+                data-fragment-index="4"
                 style="background-repeat: no-repeat; width: 128px; height: 100px;   transform: rotate(-20deg);"
               ></div>
               <div
-                class="arrow "
+                class="arrow fragment"
+                data-fragment-index="6"
                 style="background-repeat: no-repeat; width: 128px; height: 100px; "
               ></div>
               <div
-                class="arrow"
+                class="arrow fragment"
+                data-fragment-index="8"
                 style="background-repeat: no-repeat; width: 128px; height: 100px;  transform: rotate(20deg);"
               ></div>
             </div>
 
-            <div class="fragment fade-up fragment fade-up">
-              <div class="image db">
+            <div class="">
+              <div class="image db fragment" data-fragment-index="5">
                 <div class="mongo"></div>
               </div>
-              <div class="image db">
+              <div class="image db fragment" data-fragment-index="7">
                 <div class="els"></div>
               </div>
-              <div class="image db">
+              <div class="image db fragment" data-fragment-index="9">
                 <div class="mysql"></div>
               </div>
             </div>
@@ -1847,43 +1855,52 @@ type Author {
               class="arrow"
               style="background-repeat: no-repeat; width: 128px; height: 100px; "
             ></div>
-            <div class="gql128  fragment fade-up" style=""></div>
-            <div class="fragment fade-up">
+            <div
+              class="gql128  fragment "
+              data-fragment-index="1"
+              style=""
+            ></div>
+            <div>
               <div
-                class="arrow"
+                class="arrow fragment"
+                data-fragment-index="2"
                 style="background-repeat: no-repeat; width: 128px; height: 100px;   transform: rotate(-20deg);"
               ></div>
               <div
-                class="arrow "
+                class="arrow fragment "
+                data-fragment-index="4"
                 style="background-repeat: no-repeat; width: 128px; height: 100px; transform: rotate(-10deg);"
               ></div>
               <div
-                class="arrow"
+                class="arrow fragment"
+                data-fragment-index="6"
                 style="background-repeat: no-repeat; width: 128px; height: 100px;  transform: rotate(5deg);"
               ></div>
               <div
-                class="arrow"
+                class="arrow fragment"
+                data-fragment-index="8"
                 style="background-repeat: no-repeat; width: 128px; height: 100px;  transform: rotate(20deg);"
               ></div>
               <div
-                class="arrow"
+                class="arrow fragment"
+                data-fragment-index="10"
                 style="background-repeat: no-repeat; width: 128px; height: 100px;  transform: rotate(23deg);"
               ></div>
             </div>
 
-            <div class="fragment fade-up fragment fade-up">
-              <div class="image db">
+            <div>
+              <div class="image db fragment" data-fragment-index="3">
                 <div class="mongo"></div>
               </div>
-              <div class="image db">
+              <div class="image db fragment" data-fragment-index="5">
                 <div class="els"></div>
               </div>
-              <div class="image db">
+              <div class="image db fragment" data-fragment-index="6">
                 <div class="mysql"></div>
               </div>
 
-              <div class="image api"></div>
-              <div class="image system"></div>
+              <div class="image api fragment" data-fragment-index="9"></div>
+              <div class="image system fragment" data-fragment-index="11"></div>
             </div>
           </div>
         </section>
