@@ -26,11 +26,116 @@
         : 'css/print/paper.css'
       document.getElementsByTagName('head')[0].appendChild(link)
     </script>
-    <style></style>
+    <style>
+      h2.blue,
+      h1.blue,
+      h3.blue {
+        color: #0a9cec;
+      }
+
+      .history_logo {
+        width: 200px;
+        height: 200px;
+        background-image: url('https://png2.cleanpng.com/sh/3d1dc027fed380b67566da0a92736f51/L0KzQYm3VsI3N6V8R91yc4Pzfri0iPl0fJD3kZ99ZXzohrr6if9vNZRtedD3ZXywfLFuj710fJJ3kp9ubnPygra0VfI0O2E9fdc6Yki0SIO1WMQ4O2o9SKQ6NUOzQIi4Usc5OWI3T5D5bne=/kisspng-history-television-channel-logo-starz-encore-5b3308ee1b8182.8473980215300712781127.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .images {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .old_docker {
+        width: 200px;
+        height: 200px;
+        background-image: url('https://www.oreilly.com/library/view/using-docker/9781491915752/assets/usdk_0103.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .old_docker2 {
+        width: 200px;
+        height: 200px;
+        background-image: url('https://s3-eu-west-1.amazonaws.com/lowres-picturecabinet.com/29/main/9/339252.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      .old_docker3 {
+        width: 200px;
+        height: 200px;
+        background-image: url('https://1.bp.blogspot.com/-k9k7x8NuZAI/W5os5-T9JsI/AAAAAAAAj7k/YTtrnRa0nE4vhksLRGZ2Jto4XLPf_oqJACLcBGAs/s1600/fullsizeoutput_12a5.jpeg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .old_docker4 {
+        width: 200px;
+        height: 200px;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/11/Cerberus_%28AWM_300036%29.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    </style>
   </head>
   <body>
     <div class="reveal">
-      <div class="slides"></div>
+      <div class="slides">
+        <section>
+          <div style="padding-top:50px">
+            <img
+              style="border-radius: 50%;"
+              src="https://pbs.twimg.com/profile_images/1273307847103635465/lfVWBmiW_400x400.png"
+            />
+          </div>
+          <h2 style="color:#0a9cec;">The Beggining</h2>
+        </section>
+
+        <section>
+          <h2 class="blue">Why?</h2>
+        </section>
+
+        <section>
+          <p class="">Why do we need this?</p>
+          <p class="fragment fade-in">How it's different from VBox?</p>
+          <p class="fragment fade-in">What does it solve?</p>
+        </section>
+
+        <section>
+          <div
+            style="display: flex; align-items: center; justify-content:space-around; margin-right: 10px; border: 1px solid red;"
+          >
+            <div class="history_logo"></div>
+            <div><h5>The brief History of the docker</h5></div>
+          </div>
+          <div></div>
+        </section>
+
+        <section>
+          <div
+            style="display: flex; align-items: center; justify-content:space-around; margin-right: 10px;"
+          >
+            <div class="history_logo"></div>
+            <div>
+              Maritime or Ocean transport by sea has been widely used throughout
+              recorded history.
+            </div>
+          </div>
+          <div class="images">
+            <div class="old_docker"></div>
+            <div class="old_docker2"></div>
+            <div class="old_docker3"></div>
+            <div class="old_docker4"></div>
+            <div></div>
+          </div>
+        </section>
+      </div>
     </div>
 
     <script src="js/reveal.js"></script>
@@ -42,8 +147,8 @@
           { src: 'plugin/markdown/marked.js' },
           { src: 'plugin/markdown/markdown.js' },
           { src: 'plugin/highlight/highlight.js' },
-          { src: 'plugin/notes/notes.js', async: true }
-        ]
+          { src: 'plugin/notes/notes.js', async: true },
+        ],
       })
     </script>
   </body>
