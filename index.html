@@ -599,6 +599,53 @@
             </div>
           </div>
         </section>
+        <section>
+          <p>
+            <span style="color:#369cec; font-weight: 900; font-size: larger;"
+              >Containers</span
+            >
+            are an abstraction at the app layer that packages code and
+            dependencies together. Multiple containers can run on the same
+            machine and share the OS kernel with other containers, each running
+            as isolated processes in user space. Containers take up less space
+            than VMs (container images are typically tens of MBs in size), can
+            handle more applications and require fewer VMs and Operating
+            systems.
+          </p>
+        </section>
+
+        <section>
+          <section>
+            <p>
+              <span style="color:#369cec; font-weight: 900; font-size: larger;"
+                >Image</span
+              >
+              is a read-only template with instructions for creating a Docker
+              container. Often, an image is based on another image, with some
+              additional customization. For example, you may build an image
+              which is based on the ubuntu image, but installs the Apache web
+              server and your application, as well as the configuration details
+              needed to make your application run.
+            </p>
+          </section>
+          <section>
+            <p>
+              You might create your own images or you might only use those
+              created by others and published in a registry (Docker Hub). To
+              build your own image, you create a Dockerfile with a simple syntax
+              for defining the steps needed to create the image and run it.
+            </p>
+          </section>
+          <section>
+            <p>
+              Each instruction in a Dockerfile creates a layer in the image.
+              When you change the Dockerfile and rebuild the image, only those
+              layers which have changed are rebuilt. This is part of what makes
+              images so lightweight, small, and fast, when compared to other
+              virtualization technologies.
+            </p>
+          </section>
+        </section>
       </div>
     </div>
 
