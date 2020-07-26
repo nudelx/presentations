@@ -753,19 +753,266 @@
 
               </code></pre>
           </section>
+        </section>
+        <section>
+          <section>
+            <img
+              width=""
+              src="./assets//img/sv.png"
+              style="border: 0px; background-color: transparent; border-radius: 10%;"
+            />
+            <h3>Let's Build</h3>
+          </section>
 
           <section>
-            <h5>dockerfile</h5>
-            <pre><code data-trim data-noescape data-line-numbers="2">
-  FROM node:latest
-  RUN mkdir -p /usr/src/app 
-  WORKDIR /usr/src/app
+            <p>run.js</p>
+            <pre><code data-trim data-noescape data-line-numbers>
+            #!/usr/bin/env node
 
-  COPY . /usr/src/app 
-  CMD ["node", "run.js"]
+            const msg = `Be like the Mandalorian,
+                         never take off your mask in public.
+                         This is the way !\n`
 
-              </code></pre>
+            console.log(msg)
+            
+          
+                        </code></pre>
           </section>
+
+          <section>
+            <p>dockerfile</p>
+            <pre><code data-trim data-noescape data-line-numbers>
+FROM node:latest
+RUN mkdir -p /usr/src/app 
+WORKDIR /usr/src/app
+
+COPY . /usr/src/app 
+CMD ["node", "run.js"]
+
+            
+          
+                        </code></pre>
+          </section>
+          <section>
+            <p>the structure</p>
+            <img
+              width=""
+              src="./assets//img/sh.png"
+              style="border: 0px; background-color: transparent; "
+            />
+          </section>
+
+          <section>
+            <img
+              width=""
+              src="./assets//img/db.png"
+              style="border: 0px; background-color: transparent; "
+            />
+          </section>
+
+          <section>
+            <img
+              width=""
+              src="./assets//img/di.png"
+              style="border: 0px; background-color: transparent; "
+            />
+          </section>
+
+          <section>
+            <img
+              width=""
+              src="./assets//img/dr.png"
+              style="border: 0px; background-color: transparent; "
+            />
+          </section>
+
+          <section>
+            <img
+              width=""
+              src="./assets//img/ps.png"
+              style="border: 0px; background-color: transparent; "
+            />
+          </section>
+
+          <section>
+            <img
+              width=""
+              src="./assets//img/psa.png"
+              style="border: 0px; background-color: transparent; "
+            />
+          </section>
+        </section>
+
+        <section>
+          <img
+            width=""
+            src="./assets//img/alent_and_sweat.jpg"
+            style="border: 0px; background-color: transparent; "
+          />
+        </section>
+
+        <section>
+          <h5>Next Level</h5>
+          <img
+            width=""
+            src="./assets//img/ZIpRcLy.gif"
+            style="border: 0px; background-color: transparent; "
+          />
+        </section>
+
+        <section>
+          <section>
+            <p>run.js</p>
+            <pre><code data-trim data-noescape data-line-numbers>
+const express = require('express')
+const app = express()
+
+const m = `...the mask ...`
+const msg = `Be like the Mandalorian,
+              never take off your mask in public.
+              This is the way !\n`
+
+const resp = `${m}${txt}`
+
+app.get('/', (req, res) => {
+  res.send(resp)
+})
+app.listen(8080)
+            
+          
+                        </code></pre>
+          </section>
+
+          <section>
+            <p>package.json</p>
+            <pre><code data-trim data-noescape data-line-numbers>
+              {
+                "name": "demo",
+                "version": "1.0.0",
+                "main": "index.js",
+                "license": "MIT",
+                "dependencies": {
+                  "express": "^4.17.1"
+                }
+              }
+              
+            
+          
+                        </code></pre>
+          </section>
+
+          <section>
+            <p>dockerfile</p>
+            <pre><code data-trim data-noescape data-line-numbers>
+FROM node:latest
+RUN mkdir -p /usr/src/app 
+WORKDIR /usr/src/app
+
+COPY . /usr/src/app 
+CMD ["yarn"]
+CMD ["node", "run.js"]
+
+                        </code></pre>
+          </section>
+
+          <section>
+            <img src="./assets/img/dbs.png" />
+          </section>
+
+          <section>
+            <img src="./assets/img/build_done.png" />
+          </section>
+          <section>
+            <div
+              class="fragment fragment-fadein"
+              style="display: flex; margin-right: 30px; align-items: center; justify-content: space-around;"
+            >
+              <div>
+                <img
+                  width="420px"
+                  src="/assets/img/container.png"
+                  alt=""
+                  style="border: 0px; background-color: transparent;"
+                />
+              </div>
+              <div style="font-size: 200px;  width: 430px; height:235px">
+                🖥
+              </div>
+              <div style="font-size: 200px;  width: 430px; height:235px">
+                👨🏻
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div
+              style="display: flex; margin-right: 30px; align-items: center; justify-content: space-around;"
+            >
+              <div
+                style="position:relative; display:flex; align-items: center; justify-content: center; "
+              >
+                <div style="display: flex; align-items: center; justify-content: center;">
+                  <img
+                    src="/assets/img/container.png"
+                    alt=""
+                    style="border: 0px; background-color: transparent;"
+                  />
+                  <div
+                    style="width:50px; height: 50px; background-color: #333;
+              position: absolute; border-radius: 50%; top:150px; left: 430px;"
+                  ></div>
+                </div>
+
+                <div>
+                  <img
+                    src="./assets/img/worm.png"
+                    alt=""
+                    style="border: 0px; background-color: transparent; width:200px"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <img
+              src="./assets/img/rundetouch.png"
+              alt=""
+              style="border: 0px; background-color: transparent; "
+            />
+          </section>
+
+          <section>
+            <img
+              src="./assets/img/dps.png"
+              alt=""
+              style="border: 0px; background-color: transparent; "
+            />
+          </section>
+
+          <section>
+            <img
+              src="./assets/img/video.gif"
+              alt=""
+              style="border: 0px; background-color: transparent; "
+            />
+          </section>
+        </section>
+
+        <section>
+          <img
+            src="./assets/img/zoom.png"
+            alt=""
+            style="border: 0px; background-color: transparent; "
+          />
+          <h3>QA?</h3>
+        </section>
+        <section>
+          <img
+            width="40%"
+            src="./assets//img/docker.png"
+            style="border: 0px; background-color: transparent; border-radius: 50%;"
+          />
+          <h2 class="color-blue">The be continued</h2>
         </section>
       </div>
     </div>
