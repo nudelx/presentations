@@ -907,7 +907,7 @@ app.listen(8080)
 FROM node:latest
 RUN mkdir -p /usr/src/app 
 WORKDIR /usr/src/app
-EXPOSE 8080
+EXPOSE 8080   // 
 
 COPY . /usr/src/app 
 CMD ["yarn"]
