@@ -643,7 +643,7 @@
 
         <section>
           <p>
-            Image can be created by every one on top of any OS, and or can be downloaded from the
+            Image can be created by everyone on top of any OS, and or can be downloaded from the
             <span style="color:#369cec; font-weight: 900; font-size: larger;">DockerHub</span>
           </p>
         </section>
@@ -844,14 +844,6 @@ CMD ["node", "run.js"]
         </section>
 
         <section>
-          <img
-            width=""
-            src="./assets//img/alent_and_sweat.jpg"
-            style="border: 0px; background-color: transparent; "
-          />
-        </section>
-
-        <section>
           <h5>Next Level</h5>
           <img
             width=""
@@ -997,6 +989,71 @@ CMD ["node", "run.js"]
               style="border: 0px; background-color: transparent; "
             />
           </section>
+
+          <section>
+            <img
+              width=""
+              src="./assets//img/alent_and_sweat.jpg"
+              style="border: 0px; background-color: transparent; "
+            />
+          </section>
+        </section>
+
+        <section>
+          <p>Let's peek inside the container</p>
+          <img src="./assets/img/eye.jpg" alt="" style=" " />
+        </section>
+
+        <section>
+          <pre>
+          <code style="font-size: calc(2px + 1vmin);" data-noescape >
+➞ docker ps
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS
+<span class="color-blue;">80d45ee14267</span>        node_express_demo   "docker-entrypoint.s…"   5 seconds ago       Up 4 seconds       0.0.0.0:8080->8080/tcp         
+</code>
+</pre>
+        </section>
+
+        <section>
+          <pre>
+          <code>
+  docker exec -it node_express_demo bash
+
+  -t : Allocate a pseudo-tty
+  -i : Keep STDIN open even if not attached
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <pre>
+          <code>
+  root@80d45ee14267:/usr/src/app# ps -ef
+  UID        PID  PPID  C STIME TTY          TIME CMD
+  root         1     0  0 07:24 ?        00:00:00 node run.js
+  root        13     0  1 07:26 pts/0    00:00:00 bash
+  root        19    13  0 07:26 pts/0    00:00:00 ps -ef
+  root@80d45ee14267:/usr/src/app#
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <pre>
+            <code>
+  root@80d45ee14267:/usr/src/app# ls -ltra /usr/src/app/
+  
+  total 40
+  -rw-r--r--  1 root root 14600 Jul 26 13:50 yarn.lock
+  drwxr-xr-x 52 root root  4096 Jul 26 13:50 node_modules
+  -rw-r--r--  1 root root   135 Jul 26 13:50 package.json
+  -rw-r--r--  1 root root   123 Jul 26 13:53 Dockerfile
+  -rw-r--r--  1 root root  1045 Jul 26 14:20 run.js
+  drwxr-xr-x  1 root root  4096 Jul 26 14:22 ..
+  drwxr-xr-x  1 root root  4096 Jul 26 14:22 .
+            </code>
+          </pre>
         </section>
 
         <section>
@@ -1007,6 +1064,7 @@ CMD ["node", "run.js"]
           />
           <h3>QA?</h3>
         </section>
+
         <section>
           <img
             width="40%"
