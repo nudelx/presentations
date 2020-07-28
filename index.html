@@ -254,6 +254,11 @@
       .color-blue {
         color: #369cec !important;
       }
+
+      .bash-txt {
+        background-color: #272822;
+        width: 100% !important;
+      }
     </style>
   </head>
   <body>
@@ -364,7 +369,7 @@
         </section>
 
         <section>
-          <div class="" style="width: 100%; height: 60vh;">
+          <div class="" style="width: 100%; height: 60vh; position: relative;">
             <div class="icon" style="position: absolute; top:20px;left: 10px; ">
               <div class="iconJS fragment fragment-fadein" data-fragment-index="2"></div>
             </div>
@@ -386,7 +391,7 @@
             <div class="icon" style="position: absolute; top:40%; left:45%;">
               <p class="fragment fragment-fadein" data-fragment-index="1">👨🏻‍💻</p>
             </div>
-            <div class="icon " style="position: absolute; bottom: 0px; ;; width:100%;">
+            <div class="icon " style="position: absolute;  bottom: 20%;; width:100%;">
               <div style="display: flex; justify-content: center;">
                 <div class=" iconMac fragment fragment-fadein" data-fragment-index="7"></div>
                 <div class="iconLinux fragment fragment-fadein" data-fragment-index="8"></div>
@@ -474,6 +479,33 @@
                 alt=""
                 style="border: 0px; background-color: transparent;"
               />
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div
+            style="display: flex; margin-right: 30px; align-items: center; justify-content: space-around;"
+          >
+            <div style="text-align: center;">
+              <ul style="margin:0px; padding:0px; list-style: none;">
+                <li data-fragment-index="2" class="fragment fragment-fadein">
+                  <span>✅</span> Build
+                </li>
+                <li data-fragment-index="3" class="fragment fragment-fadein">
+                  <span>✅</span> Run
+                </li>
+                <li data-fragment-index="4" class="fragment fragme</-fadein">
+                  <span>✅</span> Stop
+                </li>
+              </ul>
+            </div>
+            <div
+              data-fragment-index="1"
+              style="font-size: 200px;  width: 430px; height:235px"
+              class="fragment fragment-fadein"
+            >
+              👩🏻‍💻
             </div>
           </div>
         </section>
@@ -661,16 +693,6 @@
             <div>
               <img
                 width="40%"
-                src="./assets//img/docker.png"
-                style="border: 0px; background-color: transparent; border-radius: 50%;"
-              />
-            </div>
-            <h2 class="color-blue">The Dockerfile</h2>
-          </section>
-          <section>
-            <div>
-              <img
-                width="40%"
                 src="./assets//img/lego.jpg"
                 style="border: 0px; background-color: transparent; border-radius: 20%;"
               />
@@ -700,6 +722,9 @@
   CMD ["node", "run.js"]
 
               </code></pre>
+          </section>
+          <section>
+            <img src="./assets/img/dockerhub.png" style="width:70%" />
           </section>
 
           <section>
@@ -752,6 +777,18 @@
   CMD ["node", "run.js"]
 
               </code></pre>
+          </section>
+          <section>
+            <code>
+              <pre>
+➞ docker images
+
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+node_created_by_me  latest              5be82b526c4d        10 seconds ago      945MB
+node                latest              7f312bedcea0        1 day ago          944MB
+            </pre
+              >
+            </code>
           </section>
         </section>
         <section>
@@ -844,7 +881,6 @@ CMD ["node", "run.js"]
         </section>
 
         <section>
-          <h5>Next Level</h5>
           <img
             width=""
             src="./assets//img/ZIpRcLy.gif"
@@ -899,7 +935,7 @@ app.listen(8080)
 FROM node:latest
 RUN mkdir -p /usr/src/app 
 WORKDIR /usr/src/app
-EXPOSE 8080   // 
+EXPOSE 8080  
 
 COPY . /usr/src/app 
 CMD ["yarn"]
@@ -914,6 +950,11 @@ CMD ["node", "run.js"]
 
           <section>
             <img src="./assets/img/build_done.png" />
+          </section>
+          <section>
+            <h1>
+              ⚠️
+            </h1>
           </section>
           <section>
             <div
@@ -1006,11 +1047,11 @@ CMD ["node", "run.js"]
 
         <section>
           <pre>
-          <code style="font-size: calc(2px + 1vmin);" data-noescape >
+          <code style="font-size: calc(6px + 1vmin);" data-noescape >
 ➞ docker ps
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS
-<span class="color-blue;">80d45ee14267</span>        node_express_demo   "docker-entrypoint.s…"   5 seconds ago       Up 4 seconds       0.0.0.0:8080->8080/tcp         
+CONTAINER ID        IMAGE                        STATUS             PORTS
+<span class="color-blue;">80d45ee14267</span>        node_express_demo            Up 4 seconds       0.0.0.0:8080->8080/tcp         
 </code>
 </pre>
         </section>
@@ -1028,13 +1069,93 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
         <section>
           <pre>
-          <code>
+          <code >
   root@80d45ee14267:/usr/src/app# ps -ef
+
   UID        PID  PPID  C STIME TTY          TIME CMD
   root         1     0  0 07:24 ?        00:00:00 node run.js
   root        13     0  1 07:26 pts/0    00:00:00 bash
   root        19    13  0 07:26 pts/0    00:00:00 ps -ef
-  root@80d45ee14267:/usr/src/app#
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <pre>
+          <code data-line-numbers="5">
+root@80d45ee14267:/usr/src/app# ps -ef
+
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 07:24 ?        00:00:00 node run.js
+root        13     0  1 07:26 pts/0    00:00:00 bash
+root        19    13  0 07:26 pts/0    00:00:00 ps -ef
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <p>dockerfile</p>
+          <pre><code data-trim data-noescape data-line-numbers="6">
+FROM node:latest
+RUN mkdir -p /usr/src/app 
+WORKDIR /usr/src/app
+
+COPY . /usr/src/app 
+CMD ["node", "run.js"]
+
+          
+        
+                      </code></pre>
+        </section>
+
+        <section>
+          <pre>
+          <code data-line-numbers="6">
+root@80d45ee14267:/usr/src/app# ps -ef
+
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 07:24 ?        00:00:00 node run.js
+root        13     0  1 07:26 pts/0    00:00:00 bash
+root        19    13  0 07:26 pts/0    00:00:00 ps -ef
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <pre>
+          <code>
+  docker exec -it node_express_demo bash
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <pre>
+          <code data-line-numbers="2,7">
+root@80d45ee14267:/usr/src/app# ps -ef
+
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 07:24 ?        00:00:00 node run.js
+root        13     0  1 07:26 pts/0    00:00:00 bash
+root        19    13  0 07:26 pts/0    00:00:00 ps -ef
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <p>top</p>
+          <pre>
+            <code data-trim data-noescape style="font-size: calc(6px + 1vmin);">
+top - 08:52:24 up 2 days, 16:13,  0 users,  load average: 0.00, 0.00, 0.00
+Tasks:   3 total,   1 running,   2 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.1 us,  0.2 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem :  2038544 total,   153248 free,   355696 used,  1529600 buff/cache
+KiB Swap:  1048572 total,  1047792 free,      780 used.  1524392 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM  TIME+     COMMAND
+  1 root       20   0  596380  36680  28788 S   0.0  1.8   0:00.43   node
+  28 root      20   0   18188   3288   2744 S   0.0  0.2   0:00.02   bash
+  34 root      20   0   41040   3136   2672 R   0.0  0.2   0:00.00   top
             </code>
           </pre>
         </section>
@@ -1057,6 +1178,51 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
         </section>
 
         <section>
+          <p>
+            <img
+              width="30%"
+              src="./assets/img/docker.png"
+              style="background-color: transparent; border: 0px; border-radius: 50%;"
+            />
+          </p>
+          <div style=" text-align: center;">
+            <ul style="margin:0px; padding:0px; list-style: none;">
+              <li
+                class=" fragment fragment-fadein "
+                style="width:100%; text-align: left;"
+                data-fragment-index="1"
+              >
+                🟢 Reproducibility
+              </li>
+              <li
+                class=" fragment fragment-fadein "
+                style="width:100%; text-align: left;"
+                data-fragment-index="2"
+              >
+                🟢 Isolation
+              </li>
+              <li
+                class=" fragment fragment-fadein "
+                style="width:100%; text-align: left;"
+                data-fragment-index="3"
+              >
+                🟢 Security
+              </li>
+              <li
+                class=" fragment fragment-fadein "
+                style="width:100%; text-align: left;"
+                data-fragment-index="4"
+              >
+                🟢 Environment Management
+              </li>
+              <li class=" fragment fragment-fadein " data-fragment-index="5">
+                🟢 Continuous Integration
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
           <img
             src="./assets/img/zoom.png"
             alt=""
@@ -1071,7 +1237,22 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
             src="./assets//img/docker.png"
             style="border: 0px; background-color: transparent; border-radius: 50%;"
           />
-          <h2 class="color-blue">The be continued</h2>
+          <h2 class="color-blue">EPISODE II</h2>
+        </section>
+
+        <section><h3 class="color-blue">The re·cap</h3></section>
+        <section>
+          <p>Short Commands Summary</p>
+
+          <pre class="bash-txt">
+              
+  ps     => list currnet active containers [-a list all]
+  images => list all images
+  build  => build custom image 
+  run    => run image 
+  stop   => stop image
+  system prune -a =>  remove all images and clean all containers
+          </pre>
         </section>
       </div>
     </div>
