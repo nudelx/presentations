@@ -1249,10 +1249,225 @@ KiB Swap:  1048572 total,  1047792 free,      780 used.  1524392 avail Mem
   ps     => list currnet active containers [-a list all]
   images => list all images
   build  => build custom image 
-  run    => run image 
-  stop   => stop image
+  run    => create and run container 
+  stop   => stop container
   system prune -a =>  remove all images and clean all containers
           </pre>
+        </section>
+        <section>
+          <h4 class="color-blue">Single docker task</h4>
+          <div
+            style="display: flex; flex-direction: row; justify-content: space-around; align-items: center; "
+          >
+            <div
+              style="font-size: 200px;
+            "
+              class="fragment fragment-fadein"
+              data-fragment-index="1"
+            >
+              💿
+            </div>
+            <div class="fragment fragment-fadein" data-fragment-index="2">
+              <img
+                width="300px"
+                src="./assets/img/container.png"
+                style="border:0px; background-color: transparent;"
+              />
+            </div>
+
+            <div style="font-size: 200px;" class="fragment fragment-fadein" data-fragment-index="3">
+              ⚙️
+            </div>
+            <div
+              style="font-size: 200px;
+              "
+              class="fragment fragment-fadein"
+              data-fragment-index="4"
+            >
+              🙌
+            </div>
+          </div>
+        </section>
+        <section>
+          <div>
+            <div style="font-size: 150px;" class="fragment fragment-fadein" data-fragment-index="1">
+              ⚙️
+            </div>
+            <div
+              style="display: flex; flex-direction: row; justify-content: space-around; align-items: center; position: relative;"
+            >
+              <div
+                class="fragment fragment-fadein"
+                data-fragment-index="6"
+                style="border: 3px dotted #369cec; position: absolute; width: 80%; height: 80%; bottom: -50px; z-index: -1;"
+              ></div>
+              <div class="fragment fragment-fadein" data-fragment-index="2">
+                <img
+                  width="150px"
+                  src="./assets/img/container.png"
+                  style="border:0px; background-color: transparent;"
+                />
+              </div>
+              <div class="fragment fragment-fadein" data-fragment-index="3">
+                <img
+                  width="150px"
+                  src="./assets/img/container.png"
+                  style="border:0px; background-color: transparent;"
+                />
+              </div>
+              <div class="fragment fragment-fadein" data-fragment-index="4">
+                <img
+                  width="150px"
+                  src="./assets/img/container.png"
+                  style="border:0px; background-color: transparent;"
+                />
+              </div>
+            </div>
+            <div
+              class="fragment fragment-fadein"
+              data-fragment-index="5"
+              style="width:100%; background-color: teal; padding:15px 0px; margin:20px 0px;border-radius: 20px;"
+            >
+              Stoage
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3 class="color-blue">Shared File System</h3>
+          <div style="font-size: 200px;">🗄</div>
+          <ul>
+            <li class="fragment highlight-green">Mount local folder</li>
+            <li class="fragment highlight-green">Create docker volume</li>
+            <li class="fragment highlight-green">Storage Container</li>
+          </ul>
+        </section>
+
+        <section>
+          <h5 class="color-blue">Mount local folder</h5>
+        </section>
+
+        <section>
+          <p>Project Structure</p>
+          <pre class="bash-txt" style="font-size: 20px; width:100%">
+  ➞ tree .
+  .
+  ├── Dockerfile
+  ├── data
+  │   └── message.json
+  ├── package.json
+  ├── run.js
+  └── yarn.lock
+
+  1 directory, 5 files
+          </pre>
+        </section>
+
+        <section>
+          <p>JSON file</p>
+          <pre><code>
+{
+  "title": "Mandalorian",
+  "text": " lorem "
+}
+            
+          </code>
+          </pre>
+        </section>
+
+        <section>
+          run.js
+          <pre>
+            <code data-line-numbers="5-9">
+  const express = require('express')
+  const app = express()
+  app.get('/', (req, res) => {
+
+    const msg = require('./data/message.json')
+
+    const resp = `${m}<p>${txt}</p>
+    <p>${msg.title}</p><p>${msg.text}</p>`
+
+    res.send(resp)
+  })
+  app.listen(8080)
+            
+            
+          </code>
+        </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt">
+
+  docker build -t json .
+  
+  Sending build context to Docker daemon  1.999MB
+  Step 1/7 : FROM node:latest
+  latest: Pulling from library/node
+  7e6d8ed60355: Extracting  10.09MB/45.37MB
+  43421f771d04: Download complete
+  c36327c39ae4: Download complete
+  22b0be3e8a61: Downloading  12.24MB/50.08MB
+  6b168feb1bb0: Downloading  2.681MB/214.9MB
+  0a127f2eabe9: Waiting
+  b281b64ed9a3: Waiting
+  9b067b2c30c9: Waiting
+  04b5a2eea4aa: Waiting
+          </pre>
+        </section>
+        <section>
+          <pre class="bash-txt" style="font-size: 20px; width:100%">
+  ➞ docker images          
+
+  REPOSITORY       TAG           IMAGE ID            CREATED              SIZE
+  json             latest        c520037e68c1        About a minute ago   945MB
+  node             latest        9b21eddf6af2        15 hours ago         943MB
+        </pre
+          >
+        </section>
+        <section>
+          <p>Project Structure</p>
+          <pre class="bash-txt" style="font-size: 20px; width:100%">
+  ➞ tree .
+  .
+  ├── Dockerfile
+  ├── data
+  │   └── message.json
+  ├── package.json
+  ├── run.js
+  └── yarn.lock
+
+  1 directory, 5 files
+          </pre>
+        </section>
+        <section>
+          <p>Run container with fs mapping</p>
+          <pre class="bash-txt" style="font-size: 20px; width:100%">
+
+doc run  \
+  -p 8080:8080  \
+  -v /Users/nudelx/dev/presentaion/gql/demo/demo1/data:/usr/src/app/data/  json
+        </pre
+          >
+        </section>
+
+        <section>
+          <pre>
+          <code data-line-numbers="6">
+  FROM node:latest
+  RUN mkdir -p /usr/src/app 
+  WORKDIR /usr/src/app
+  EXPOSE 8080
+  COPY . /usr/src/app 
+  CMD ["yarn"]
+  CMD ["node", "run.js"]
+            
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <img height="700px" src="./assets/img/output.gif" />
         </section>
       </div>
     </div>
