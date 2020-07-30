@@ -228,25 +228,84 @@
               <div
                 class="fragment fragment-fadein"
                 data-fragment-index="6"
+                style="border: 3px dotted #369cec; position: absolute; width: 80%;  bottom: 150px; z-index: -1;"
+              ></div>
+              <div
+                style="display: flex;flex-direction: column; justify-content: center; align-items: center;"
+                class="fragment fragment-fadein"
+                data-fragment-index="2"
+              >
+                <img
+                  width="200px"
+                  src="./assets/img/container.png"
+                  style="border:0px; background-color: transparent;"
+                />
+                <div>service</div>
+              </div>
+              <div
+                style="display: flex;flex-direction: column; justify-content: center; align-items: center;"
+                class="fragment fragment-fadein"
+                data-fragment-index="3"
+              >
+                <img
+                  width="200px"
+                  src="./assets/img/container.png"
+                  style="border:0px; background-color: transparent;"
+                />
+                <div>proc</div>
+              </div>
+              <div
+                style="display: flex;flex-direction: column; justify-content: center; align-items: center;"
+                class="fragment fragment-fadein"
+                data-fragment-index="4"
+              >
+                <img
+                  width="200px"
+                  src="./assets/img/container.png"
+                  style="border:0px; background-color: transparent;"
+                />
+                <div>DB</div>
+              </div>
+            </div>
+            <div
+              class="fragment fragment-fadein"
+              style="background-color: darkslategrey; position: absolute; top:40%; width: 100%;text-align: center;"
+              data-fragment-index="7"
+            >
+              <span>⚠️</span> Data loss
+            </div>
+          </div>
+        </section>
+        <section>
+          <div>
+            <div style="font-size: 150px;" class="fragment fragment-fadein" data-fragment-index="1">
+              ⚙️
+            </div>
+            <div
+              style="display: flex; flex-direction: row; justify-content: space-around; align-items: center; position: relative;"
+            >
+              <div
+                class="fragment fragment-fadein"
+                data-fragment-index="6"
                 style="border: 3px dotted #369cec; position: absolute; width: 80%; height: 80%; bottom: -50px; z-index: -1;"
               ></div>
               <div class="fragment fragment-fadein" data-fragment-index="2">
                 <img
-                  width="150px"
+                  width="200px"
                   src="./assets/img/container.png"
                   style="border:0px; background-color: transparent;"
                 />
               </div>
               <div class="fragment fragment-fadein" data-fragment-index="3">
                 <img
-                  width="150px"
+                  width="200px"
                   src="./assets/img/container.png"
                   style="border:0px; background-color: transparent;"
                 />
               </div>
               <div class="fragment fragment-fadein" data-fragment-index="4">
                 <img
-                  width="150px"
+                  width="200px"
                   src="./assets/img/container.png"
                   style="border:0px; background-color: transparent;"
                 />
@@ -257,7 +316,7 @@
               data-fragment-index="5"
               style="width:100%; background-color: teal; padding:15px 0px; margin:20px 0px;border-radius: 20px;"
             >
-              Stoage
+              <span>🗄 </span> External Storage
             </div>
           </div>
         </section>
@@ -439,7 +498,7 @@ doc run  \
           <pre>
             <code>
             
-➞ d volume inspect myVolume
+➞ docker volume inspect myVolume
 [
     {
       "CreatedAt": "2020-07-30T11:48:59Z",
