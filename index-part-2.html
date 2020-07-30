@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Nudelx Presentation</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/black.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.type = 'text/css'
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? 'css/print/pdf.css'
+        : 'css/print/paper.css'
+      document.getElementsByTagName('head')[0].appendChild(link)
+    </script>
+    <style>
+      h2.blue,
+      h1.blue,
+      h3.blue {
+        color: #0a9cec;
+      }
+
+      .history_logo {
+        width: 200px;
+        height: 200px;
+        background-image: url('assets/img/571px-History_Logo.svg.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .images {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .old_docker {
+        width: 200px;
+        height: 200px;
+        background-image: url('https://www.oreilly.com/library/view/using-docker/9781491915752/assets/usdk_0103.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .old_docker2 {
+        width: 200px;
+        height: 200px;
+        background-image: url('https://s3-eu-west-1.amazonaws.com/lowres-picturecabinet.com/29/main/9/339252.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      .old_docker3 {
+        width: 200px;
+        height: 200px;
+        background-image: url('https://1.bp.blogspot.com/-k9k7x8NuZAI/W5os5-T9JsI/AAAAAAAAj7k/YTtrnRa0nE4vhksLRGZ2Jto4XLPf_oqJACLcBGAs/s1600/fullsizeoutput_12a5.jpeg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .old_docker4 {
+        width: 200px;
+        height: 200px;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/11/Cerberus_%28AWM_300036%29.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .problem1 {
+        width: 300px;
+        height: 300px;
+        background-image: url('https://c4.wallpaperflare.com/wallpaper/92/1010/571/sea-old-ship-wallpaper-preview.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .problem2 {
+        width: 300px;
+        height: 300px;
+        background-image: url('https://cdn.images.express.co.uk/img/dynamic/36/590x/pirates-of-the-caribbean-johnny-depp-1065707.jpg?r=1546429346942');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .problem3 {
+        width: 300px;
+        height: 300px;
+        background-image: url('https://img2.goodfon.ru/wallpaper/nbig/3/fa/little-mermaid-disney-ariel.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .docker_problem1 {
+        width: 300px;
+        height: 300px;
+        background-image: url('https://www.ikea.com/gb/en/images/products/ingo-table-pine__0737092_PE740877_S5.JPG?f=xl');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .docker_problem2 {
+        width: 300px;
+        height: 300px;
+        background-image: url('https://www.prowildlife.de/wp-content/uploads/2019/02/elefant-pixabay-768x576.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      .docker_problem3 {
+        width: 300px;
+        height: 300px;
+        background-image: url('https://www.flashgadgets.com.my/image/cache/catalog/Products/Nintendo/Switch/7-500x500.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .backWall {
+        font-size: 300px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #222;
+        opacity: 0.6;
+      }
+
+      .color-blue {
+        color: #369cec !important;
+      }
+
+      .bash-txt {
+        background-color: #272822;
+        width: 100% !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <img
+            width="40%"
+            src="./assets//img/docker.png"
+            style="border: 0px; background-color: transparent; border-radius: 50%;"
+          />
+          <h2 class="color-blue">EPISODE II</h2>
+        </section>
+
+        <section><h3 class="color-blue">The re·cap</h3></section>
+        <section>
+          <p>Short Commands Summary</p>
+
+          <pre class="bash-txt">
+              
+  ps     => list currnet active containers [-a list all]
+  images => list all images
+  build  => build custom image 
+  run    => create and run container 
+  stop   => stop container
+  system prune -a =>  remove all images and clean all containers
+          </pre>
+        </section>
+        <section>
+          <h4 class="color-blue">Single docker task</h4>
+          <div
+            style="display: flex; flex-direction: row; justify-content: space-around; align-items: center; "
+          >
+            <div
+              style="font-size: 200px;
+            "
+              class="fragment fragment-fadein"
+              data-fragment-index="1"
+            >
+              💿
+            </div>
+            <div class="fragment fragment-fadein" data-fragment-index="2">
+              <img
+                width="300px"
+                src="./assets/img/container.png"
+                style="border:0px; background-color: transparent;"
+              />
+            </div>
+
+            <div style="font-size: 200px;" class="fragment fragment-fadein" data-fragment-index="3">
+              ⚙️
+            </div>
+            <div
+              style="font-size: 200px;
+              "
+              class="fragment fragment-fadein"
+              data-fragment-index="4"
+            >
+              🙌
+            </div>
+          </div>
+        </section>
+        <section>
+          <div>
+            <div style="font-size: 150px;" class="fragment fragment-fadein" data-fragment-index="1">
+              ⚙️
+            </div>
+            <div
+              style="display: flex; flex-direction: row; justify-content: space-around; align-items: center; position: relative;"
+            >
+              <div
+                class="fragment fragment-fadein"
+                data-fragment-index="6"
+                style="border: 3px dotted #369cec; position: absolute; width: 80%; height: 80%; bottom: -50px; z-index: -1;"
+              ></div>
+              <div class="fragment fragment-fadein" data-fragment-index="2">
+                <img
+                  width="150px"
+                  src="./assets/img/container.png"
+                  style="border:0px; background-color: transparent;"
+                />
+              </div>
+              <div class="fragment fragment-fadein" data-fragment-index="3">
+                <img
+                  width="150px"
+                  src="./assets/img/container.png"
+                  style="border:0px; background-color: transparent;"
+                />
+              </div>
+              <div class="fragment fragment-fadein" data-fragment-index="4">
+                <img
+                  width="150px"
+                  src="./assets/img/container.png"
+                  style="border:0px; background-color: transparent;"
+                />
+              </div>
+            </div>
+            <div
+              class="fragment fragment-fadein"
+              data-fragment-index="5"
+              style="width:100%; background-color: teal; padding:15px 0px; margin:20px 0px;border-radius: 20px;"
+            >
+              Stoage
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3 class="color-blue">Shared File System</h3>
+          <div style="font-size: 200px;">🗄</div>
+          <ul>
+            <li class="fragment highlight-green">Mount local folder</li>
+            <li class="fragment highlight-green">Create docker volume</li>
+            <li class="fragment highlight-green">Storage Container</li>
+          </ul>
+        </section>
+
+        <section>
+          <h5 class="color-blue">Mount local folder</h5>
+        </section>
+
+        <section>
+          <p>Project Structure</p>
+          <pre class="bash-txt" style="font-size: 20px; width:100%">
+  ➞ tree .
+  .
+  ├── Dockerfile
+  ├── data
+  │   └── message.json
+  ├── package.json
+  ├── run.js
+  └── yarn.lock
+
+  1 directory, 5 files
+          </pre>
+        </section>
+
+        <section>
+          <p>JSON file</p>
+          <pre><code>
+{
+  "title": "Mandalorian",
+  "text": " lorem "
+}
+            
+          </code>
+          </pre>
+        </section>
+
+        <section>
+          run.js
+          <pre>
+            <code data-line-numbers="5-9">
+  const express = require('express')
+  const app = express()
+  app.get('/', (req, res) => {
+
+    const msg = require('./data/message.json')
+
+    const resp = `${m}<p>${txt}</p>
+    <p>${msg.title}</p><p>${msg.text}</p>`
+
+    res.send(resp)
+  })
+  app.listen(8080)
+            
+            
+          </code>
+        </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt">
+
+  docker build -t json .
+  
+  Sending build context to Docker daemon  1.999MB
+  Step 1/7 : FROM node:latest
+  latest: Pulling from library/node
+  7e6d8ed60355: Extracting  10.09MB/45.37MB
+  43421f771d04: Download complete
+  c36327c39ae4: Download complete
+  22b0be3e8a61: Downloading  12.24MB/50.08MB
+  6b168feb1bb0: Downloading  2.681MB/214.9MB
+  0a127f2eabe9: Waiting
+  b281b64ed9a3: Waiting
+  9b067b2c30c9: Waiting
+  04b5a2eea4aa: Waiting
+          </pre>
+        </section>
+        <section>
+          <pre class="bash-txt" style="font-size: 20px; width:100%">
+  ➞ docker images          
+
+  REPOSITORY       TAG           IMAGE ID            CREATED              SIZE
+  json             latest        c520037e68c1        About a minute ago   945MB
+  node             latest        9b21eddf6af2        15 hours ago         943MB
+        </pre
+          >
+        </section>
+        <section>
+          <p>Project Structure</p>
+          <pre class="bash-txt" style="font-size: 20px; width:100%">
+  ➞ tree .
+  .
+  ├── Dockerfile
+  ├── data
+  │   └── message.json
+  ├── package.json
+  ├── run.js
+  └── yarn.lock
+
+  1 directory, 5 files
+          </pre>
+        </section>
+        <section>
+          <p>Run container with fs mapping</p>
+          <pre class="bash-txt" style="font-size: 20px; width:100%">
+
+doc run  \
+  -p 8080:8080  \
+  -v /Users/nudelx/dev/presentaion/gql/demo/demo1/data:/usr/src/app/data/  json
+        </pre
+          >
+        </section>
+
+        <section>
+          <pre>
+          <code data-line-numbers="6">
+  FROM node:latest
+  RUN mkdir -p /usr/src/app 
+  WORKDIR /usr/src/app
+  EXPOSE 8080
+  COPY . /usr/src/app 
+  CMD ["yarn"]
+  CMD ["node", "run.js"]
+            
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <img height="700px" src="./assets/img/output.gif" />
+        </section>
+
+        <section>
+          <h4 class="color-blue">Docker Volume</h4>
+        </section>
+      </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      Reveal.initialize({
+        hash: true,
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/highlight/highlight.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+        ],
+      })
+    </script>
+  </body>
+</html>
