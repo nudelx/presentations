@@ -402,6 +402,58 @@ doc run  \
         <section>
           <h4 class="color-blue">Docker Volume</h4>
         </section>
+
+        <section>
+          <pre class="bash-txt">
+
+  Usage:	docker volume COMMAND
+
+  Manage volumes
+
+  Commands:
+    create      Create a volume
+    inspect     Display detailed information on one or more volumes
+    ls          List volumes
+    prune       Remove all unused local volumes
+    rm          Remove one or more volumes
+
+          </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt">
+
+   ➞ docker volume create myVolume
+  myVolume
+          </pre>
+          <pre class="bash-txt">
+
+  ➞ docker volume ls
+  DRIVER              VOLUME NAME
+  local               myVolume
+    
+          </pre>
+        </section>
+
+        <section>
+          <pre>
+            <code>
+            
+➞ d volume inspect myVolume
+[
+    {
+      "CreatedAt": "2020-07-30T11:48:59Z",
+      "Driver": "local",
+      "Labels": {},
+      "Mountpoint": "/var/lib/docker/volumes/myVolume/_data",
+      "Name": "myVolume",
+      "Options": {},
+      "Scope": "local"
+    }
+]
+  </code>
+          </pre>
+        </section>
       </div>
     </div>
 
