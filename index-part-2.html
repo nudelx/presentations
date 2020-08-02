@@ -155,6 +155,20 @@
         background-color: #272822;
         width: 100% !important;
       }
+
+      .clean-img {
+        border: 0px !important;
+        background-color: transparent !important;
+      }
+      .blink_me {
+        animation: blinker 1s linear infinite;
+      }
+
+      @keyframes blinker {
+        50% {
+          opacity: 0;
+        }
+      }
     </style>
   </head>
   <body>
@@ -184,7 +198,7 @@
           </pre>
         </section>
         <section>
-          <section>LAyers</section>
+          <section><p>Layers</p></section>
           <section>
             <p>Dockerfile</p>
             <pre><code data-trim data-noescape data-line-numbers>
@@ -197,6 +211,72 @@ CMD ["node", "run.js"]
            
                         </code></pre>
           </section>
+          <section>
+            <pre><code> ➞ docker build -t test .</code></pre>
+            <pre style="font-size: 14px;">
+
+  Step 1/7 : FROM node:latest
+  latest: Pulling from library/node
+  7e6d8ed60355: Pull complete
+  Digest: sha256:a33ccec42e036118e7c797a7251387f8c4fb3486905d587b0453725a84e4d3e3
+  Status: Downloaded newer image for node:latest
+    ---> 9b21eddf6af2
+  Step 2/7 : RUN mkdir -p /usr/src/app
+    ---> Running in 90d7a6612824
+  Removing intermediate container 90d7a6612824
+    ---> c3bdb217147a
+  Step 3/7 : WORKDIR /usr/src/app
+    ---> Running in 4265de010f69
+  Removing intermediate container 4265de010f69
+    ---> 47dd558d0bc8
+    ---> Running in be24db014d79
+  Removing intermediate container be24db014d79
+    ---> 6bbc5123ab8f
+  Step 5/7 : COPY . /usr/src/app
+    ---> 8cc59af19168
+  Step 6/7 : RUN yarn
+    ---> Running in f192a9c425b3
+  yarn install v1.22.4
+  Step 7/7 : CMD ["node", "run.js"]
+    ---> Running in 98e80fe5f4e5
+            </pre>
+          </section>
+          <section>
+            <table>
+              <tr>
+                <td>FROM node:latest</td>
+                <td>Layer 1</td>
+                <td>be24wd014ss</td>
+              </tr>
+              <tr>
+                <td>RUN mkdir -p /usr/src/app</td>
+                <td>Layer 2</td>
+                <td>be24db01e4e</td>
+              </tr>
+              <tr>
+                <td>WORKDIR /usr/src/app</td>
+                <td>Layer 3</td>
+                <td>be24dfe9d2e</td>
+              </tr>
+              <tr>
+                <td>COPY . /usr/src/app</td>
+                <td>Layer 4</td>
+                <td>be24dbdfd73</td>
+              </tr>
+
+              <tr>
+                <td>RUN yarn</td>
+                <td>Layer 5</td>
+                <td>be24db0ssfe</td>
+              </tr>
+              <tr>
+                <td>CMD ["node", "run.js"]</td>
+                <td>Layer 6</td>
+                <td>rde4edgref79</td>
+              </tr>
+            </table>
+          </section>
+
           <section>
             <pre><code> ➞ docker build -t test .</code></pre>
             <pre style="font-size: 14px;">
@@ -248,41 +328,7 @@ Step 7/7 : CMD ["node", "run.js"]
 Successfully built d5176ee4cc57
             </pre>
           </section>
-          <section>
-            <table>
-              <tr>
-                <td>FROM node:latest</td>
-                <td>Layer 1</td>
-                <td>be24wd014ss</td>
-              </tr>
-              <tr>
-                <td>RUN mkdir -p /usr/src/app</td>
-                <td>Layer 2</td>
-                <td>be24db01e4e</td>
-              </tr>
-              <tr>
-                <td>WORKDIR /usr/src/app</td>
-                <td>Layer 3</td>
-                <td>be24dfe9d2e</td>
-              </tr>
-              <tr>
-                <td>COPY . /usr/src/app</td>
-                <td>Layer 4</td>
-                <td>be24dbdfd73</td>
-              </tr>
 
-              <tr>
-                <td>RUN yarn</td>
-                <td>Layer 5</td>
-                <td>be24db0ssfe</td>
-              </tr>
-              <tr>
-                <td>CMD ["node", "run.js"]</td>
-                <td>Layer 6</td>
-                <td>rde4edgref79</td>
-              </tr>
-            </table>
-          </section>
           <section>
             <pre><code   data-line-numbers="9">
               const express = require('express')
@@ -304,7 +350,7 @@ app.listen(8080)
           <section>
             <pre><code> ➞ docker build -t test .</code></pre>
             <pre style="font-size: 14px;">
-              <code data-line-numbers="9,6,14,12">
+              <code data-line-numbers="5-6,8-9,7-6,14,11-12">
       Sending build context to Docker daemon  22.02kB
       Step 1/6 : FROM node:latest
         ---> 9b21eddf6af2
@@ -363,11 +409,29 @@ CMD ["node", "run.js"]
                               </code></pre>
           </section>
           <section>
+            <pre><code   data-line-numbers="9">
+              const express = require('express')
+const app = express()
+const m = `....mask...`
+const txt = `      Be like the Mandalorian,
+never take off your mask in public.
+This is the way !\n`
+
+const tmp = 'test 33'
+const createResp = () => `${m}<p>${txt}</p> `
+
+app.get('/', (req, res) => {
+  res.send(createResp())
+})
+app.listen(8080)
+            </code></pre>
+          </section>
+          <section>
             <pre><code>
  ➞ docker build -t test .
                 
                 </code></pre>
-            <pre style="font-size: 14px;"><code data-line-numbers="6,9,12,15">
+            <pre style="font-size: 14px;"><code data-line-numbers="5-6,8-9,11-12,14-15,17-18">
   Sending build context to Docker daemon  22.02kB
   Step 1/7 : FROM node:latest
     ---> 9b21eddf6af2
@@ -428,6 +492,13 @@ CMD ["node", "run.js"]
           </div>
         </section>
         <section>
+          <div
+            class="fragment fragment-fadein "
+            data-fragment-index="7"
+            style=" position: absolute; right: -100px; top:-100px"
+          >
+            <img src="./assets/img/switch.png" class="clean-img" />
+          </div>
           <div>
             <div style="font-size: 150px;" class="fragment fragment-fadein" data-fragment-index="1">
               ⚙️
@@ -478,11 +549,11 @@ CMD ["node", "run.js"]
               </div>
             </div>
             <div
-              class="fragment fragment-fadein"
-              style="background-color: darkslategrey; position: absolute; top:40%; width: 100%;text-align: center;"
-              data-fragment-index="7"
+              class="fragment fragment-fadein "
+              style="background-color: darkslategrey; position: absolute; top:40%; width: 100%;text-align: center; padding: 20px 0; text-decoration: ;"
+              data-fragment-index="8"
             >
-              <span>⚠️</span> Data loss
+              <span class="blink_me">⚠️</span> Data loss <span class="blink_me">⚠️</span>
             </div>
           </div>
         </section>
@@ -857,9 +928,81 @@ doc run  \
             </div>
           </div>
         </section>
-
-        <section>Scan App</section>
-        <section>LAyers</section>
+        <section>
+          <h1><span> 🕵🏻‍♂️ </span></h1>
+          <h2>Scan App</h2>
+        </section>
+        <section>
+          <h3 class="color-blue">The requirements</h3>
+          <ul style="list-style: none; padding:40px 0px;">
+            <li class="fragment fragment-fadein" data-fragment-index="1" style="padding:20px 0px;">
+              <span> 🔎 </span> Scan the local network
+            </li>
+            <li class="fragment fragment-fadein" data-fragment-index="2" style="padding:20px 0px;">
+              <span> 🧙🏼‍♂️ </span> Parse the results
+            </li>
+            <li class="fragment fragment-fadein" data-fragment-index="3" style="padding:20px 0px;">
+              <span> 💾 </span> Store the parsed results in DB
+            </li>
+          </ul>
+        </section>
+        <section>
+          <div>
+            <h3 class="color-blue">The Project architecture</h3>
+            <div
+              style="display: flex; flex-direction: row; justify-content: space-around; align-items: center; position: relative;"
+            >
+              <div
+                class="fragment fragment-fadein"
+                data-fragment-index="6"
+                style="border: 3px dotted #369cec; position: absolute; width: 80%; height: 80%; bottom: -50px; z-index: -1;"
+              ></div>
+              <div
+                class="fragment fragment-fadein"
+                data-fragment-index="2"
+                style="position: relative; display: flex; flex-direction: column; align-items: center;"
+              >
+                <img
+                  width="200px"
+                  src="./assets/img/container.png"
+                  style="border:0px; background-color: transparent;"
+                />
+                <span>scanner</span>
+              </div>
+              <div
+                class="fragment fragment-fadein"
+                data-fragment-index="3"
+                style="position: relative; display: flex; flex-direction: column; align-items: center;"
+              >
+                <img
+                  width="200px"
+                  src="./assets/img/container.png"
+                  style="border:0px; background-color: transparent;"
+                />
+                <span>parser</span>
+              </div>
+              <div
+                class="fragment fragment-fadein"
+                data-fragment-index="4"
+                style="position: relative; display: flex; flex-direction: column; align-items: center;"
+              >
+                <img
+                  width="200px"
+                  src="./assets/img/container.png"
+                  style="border:0px; background-color: transparent;"
+                />
+                <span>db</span>
+              </div>
+            </div>
+            <div
+              class="fragment fragment-fadein"
+              data-fragment-index="5"
+              style="width:100%; background-color: teal; padding:15px 0px; margin:20px 0px;border-radius: 20px;"
+            >
+              <span>🗄 </span> External Storage
+            </div>
+          </div>
+        </section>
       </div>
     </div>
 
