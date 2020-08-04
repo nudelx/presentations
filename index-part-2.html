@@ -1731,7 +1731,27 @@ CommandResult {
           >
         </section>
         <section>
+          <pre style="font-size: 14px;;">
+➞ d ps
+CONTAINER ID    IMAGE     COMMAND                   STATUS              PORTS                      NAMES
+1e3e242b479b    nmap      "/bin/sh run.sh"          Up 2  seconds                                   nmap
+652850814c5d    parser    "docker-entrypoint.s…"    Up 4  seconds                                   parser
+ec66cd0d3eab    mongo     "docker-entrypoint.s…"    Up 10 seconds        0.0.0.0:27017->27017/tcp   mongo
+          </pre>
+        </section>
+
+        <section>
+          <pre style="font-size: 14px;;">
+➞ d stats
+CONTAINER ID    NAME      CPU %     MEM USAGE / LIMIT     MEM %    NET I/O           BLOCK I/O   PIDS
+ec66cd0d3eab    mongo     0.93%      60.92MiB / 1.944GiB  3.06%    1.5MB / 2.86MB    0B / 0B     36
+652850814c5d    parser    1.93%      11.32MiB / 1.944GiB  1.06%    1.5MB / 2.86MB    0B / 0B     53
+1e3e242b479b    nmap      0.20%      5.92MiB / 1.944GiB   0.06%    1.5MB / 2.86MB    0B / 0B     4
+          </pre>
+        </section>
+        <section>
           <h1>🙌</h1>
+          <h4 class="color-blue">to be continued</h4>
         </section>
       </div>
     </div>
