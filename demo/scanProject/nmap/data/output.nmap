@@ -1,0 +1,19 @@
+# Nmap 7.80 scan initiated Tue Aug  4 14:46:47 2020 as: nmap -iL list.txt -oA ./data/output
+Nmap scan report for ksp.co.il (212.199.38.38)
+Host is up (0.0037s latency).
+rDNS record for 212.199.38.38: 212.199.38.38.hosting.spd.co.il
+Not shown: 998 filtered ports
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap scan report for ivory.co.il (212.199.184.138)
+Host is up (0.0041s latency).
+Other addresses for ivory.co.il (not scanned): 80.178.161.201
+rDNS record for 212.199.184.138: 212.199.184.138.static.hosting.spd.co.il
+Not shown: 998 filtered ports
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+# Nmap done at Tue Aug  4 14:47:01 2020 -- 2 IP addresses (2 hosts up) scanned in 13.95 seconds

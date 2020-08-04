@@ -1,0 +1,1 @@
+d run -v sharedFolder:/usr/src/app/data scanner
