@@ -943,7 +943,7 @@ doc run  \
               <span> 🧙🏼‍♂️ </span> Parse the results
             </li>
             <li class="fragment fragment-fadein" data-fragment-index="3" style="padding:20px 0px;">
-              <span> 💾 </span> Store the parsed results in DB
+              <span> 💾 </span> Store the results in DB
             </li>
           </ul>
         </section>
@@ -1387,7 +1387,7 @@ docker run --name mongo -p 27017:27017 -v mongoVolume:/data/db -d mongo
         </section>
         <section>
           <pre>
-nudelx@ANUDELMAN-MB (docker)* [~/dev/presentaion/gql/demo/scanProject]$
+nudelx@ANUDELMAN-MB [~/dev/presentaion/gql/demo/scanProject]$
 
 ➞ docker run --name mongo -p 27017:27017 -v mongoVolume:/data/db -d mongo
 
@@ -1411,7 +1411,7 @@ b967fd908de0: Download complete
 
         <section>
           <pre style="font-size: 14px;">
-  nudelx@ANUDELMAN-MB (docker)* [~/dev/presentaion/gql/demo/scanProject]$
+  nudelx@ANUDELMAN-MB [~/dev/presentaion/gql/demo/scanProject]$
   ➞ d ps
   CONTAINER ID        IMAGE   COMMAND                  CREATED             STATUS              PORTS                      NAMES
   ec66cd0d3eab        mongo   "docker-entrypoint.s…"   8 seconds ago       Up 7 seconds        0.0.0.0:27017->27017/tcp   mongo
@@ -1584,11 +1584,13 @@ ERROR  MongoNetworkError: failed to connect to server [localhost:27017] on first
             <div class="fragment fragment-fadein" data-fragment-index="2">
               <h6><span> 🖥 </span>localhost</h6>
             </div>
-            <pre>virtual network - sub 10.0.1.0/24</pre>
+            <pre class="fragment fragment-fadein" data-fragment-index="6">
+virtual network - sub 10.0.1.0/24</pre
+            >
             <div
               style="display: flex; border:5px dotted yellow; flex-direction: column;"
               class="fragment fragment-fadein"
-              data-fragment-index="1"
+              data-fragment-index="3"
             >
               <div
                 style="display: flex; flex-direction: row; justify-content: space-evenly;margin:20px;"
@@ -1603,7 +1605,7 @@ ERROR  MongoNetworkError: failed to connect to server [localhost:27017] on first
                 <div
                   style="width:300px; height: 200px; border:5px dotted #2929f3; "
                   class="fragment fragment-fadein"
-                  data-fragment-index="4"
+                  data-fragment-index="3"
                 >
                   <span>📦</span> D2
                 </div>
@@ -1633,32 +1635,32 @@ Run 'docker network COMMAND --help' for more information on a command.
         </section>
         <section>
           <p class="fragment fade-in-then-out">
-            <font color="#369cec">Bridge</font> - The default network driver. If you don’t specify a
+            <h5><font color="#369cec">Bridge</font></h5> The default network driver. If you don’t specify a
             driver, this is the type of network you are creating
           </p>
         </section>
         <section>
           <p class="fragment fade-in-then-out">
-            <font color="#369cec">Host</font> - For standalone containers, remove network isolation
+            <h5><font color="#369cec">Host</font></h5> For standalone containers, remove network isolation
             between the container and the Docker host, and use the host’s networking directly.
           </p>
         </section>
         <section>
           <p class="fragment fade-in-then-out">
-            <font color="#369cec">Overlay</font> - networks connect multiple Docker daemons together
+            <h5><font color="#369cec">Overlay</font></h5> Networks connect multiple Docker daemons together
             and enable swarm services to communicate with each other.
           </p>
         </section>
 
         <section>
           <p class="fragment fade-in-then-out">
-            <font color="#369cec">Macvlan</font> - networks allow you to assign a MAC address to a
+            <h5><font color="#369cec">Macvlan</font></h5> Networks allow you to assign a MAC address to a
             container, making it appear as a physical device on your network.
           </p>
         </section>
         <section>
           <p class="fragment fade-in-then-out">
-            <font color="#369cec">None</font>: For this container, disable all networking. Usually
+            <h5><font color="#369cec">None</font></h5> For this container, disable all networking. Usually
             used in conjunction with a custom network driver. none is not available for swarm
             services. See disable container networking.
           </p>
