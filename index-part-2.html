@@ -1613,6 +1613,7 @@ virtual network - sub 10.0.1.0/24</pre
             </div>
           </div>
         </section>
+
         <section>
           <pre>
 ➞ d network
@@ -1798,6 +1799,188 @@ ec66cd0d3eab    mongo     0.93%      60.92MiB / 1.944GiB  3.06%    1.5MB / 2.86M
               Run <em>docker-compose up</em> and compose starts and runs your entire app.
             </p>
           </section>
+        </section>
+        <section>
+          <p>Project Structure</p>
+          <pre class="bash-txt" style="font-size: 20px; width:100%">
+  ➞ tree .
+  .
+  ├── mongo
+  ├── parser
+  ├── nmap
+  └── docker-compose.yml
+
+  3 directory, 1 file
+          </pre>
+        </section>
+
+        <section>
+          <p>docker-compose.yml</p>
+          <pre style="font-size: 12px;"> 
+  <code data-trim data-noescape data-line-numbers >
+version: '3'
+
+volumes:
+  mongoVolume:
+  sharedFolder:
+
+services:
+  mongo-server:
+    image: 'mongo'
+    restart: always
+    volumes:
+      - mongoVolume:/data/db
+    ports:
+      - 27017:27017
+  nmap:
+    build: nmap/.
+    restart: always
+    volumes:
+      - sharedFolder:/usr/src/app/data
+  parser:
+    build: parser/.
+    restart: always
+    volumes:
+      - sharedFolder:/usr/src/app/data
+    environment:
+      - MONGO_HOST=mongo-server
+
+  </code>
+          </pre>
+        </section>
+
+        <section>
+          <h5>parser.js</h5>
+          <pre
+            class="bash-txt"
+            style="font-size: 12px;"
+          ><code data-trim data-noescape data-line-numbers="5">
+            #!/usr/bin/env node
+            
+            const dataPath = process.env.DATA_PATH || './data'
+            const mongoPort = process.env.MONGO_PORT || '27017'
+            const mongoHost = process.env.MONGO_HOST || 'localhost'
+            const timer = process.env.TIMER || 5000
+            const FOLDER = path.resolve(__dirname, dataPath)
+            const url = `mongodb://${mongoHost}:${mongoPort}/`
+            const regex = /\.xml$/
+            
+            console.log('ENV', process.env)
+            const mongoConnect = (url) => {...}
+            
+            const mongoSet = async (data) => {
+              try {
+                const db = await mongoConnect(url)
+                const dbo = db.db('mydb')
+                dbo.collection('scans').insertOne(data, function(err, res) {
+                  if (err) throw err
+                  console.log('scan stored ', res)
+                  db.close()
+                })
+              } catch (err) {
+                console.log('ERROR mongo SET', err)
+              }
+            }
+            
+            const run = () => {...}
+            run()
+            setInterval(() => run(), timer)
+
+            
+          </code></pre>
+        </section>
+        <section>
+          <p>docker-compose.yml</p>
+          <pre style="font-size: 12px;"> 
+  <code data-trim data-noescape data-line-numbers="25-26,8" >
+version: '3'
+
+volumes:
+  mongoVolume:
+  sharedFolder:
+
+services:
+  mongo-server:
+    image: 'mongo'
+    restart: always
+    volumes:
+      - mongoVolume:/data/db
+    ports:
+      - 27017:27017
+  nmap:
+    build: nmap/.
+    restart: always
+    volumes:
+      - sharedFolder:/usr/src/app/data
+  parser:
+    build: parser/.
+    restart: always
+    volumes:
+      - sharedFolder:/usr/src/app/data
+    environment:
+      - MONGO_HOST=mongo-server
+
+  </code>
+          </pre>
+        </section>
+        <section>
+          <pre class="bash-txt" style="font-size: 14px;">
+  ➞ docker-compose up
+
+  Creating network "scanproject_default" with the default driver
+  Creating volumes "scanproject_mongoVolume", "scanproject_sharedFolder"
+
+  Building nmap
+  Step 1/8 : FROM ubuntu:latest
+
+  Pulling mongo-server (mongo:)...
+
+  Building parser
+  Step 1/7 : FROM node:latest
+  latest: Pulling from library/node
+
+  Creating scanproject_parser_1       ... done
+  Creating scanproject_nmap_1         ... done
+  Creating scanproject_mongo-server_1 ... done
+          </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: 14px;">
+  ➞ d volume ls
+
+  DRIVER              VOLUME NAME
+
+  local               scanproject_mongoVolume
+  local               scanproject_sharedFolder
+          </pre>
+        </section>
+        <section>
+          <pre class="bash-txt" style="font-size: 14px;">
+  ➞ d network ls
+
+  NETWORK ID          NAME                  DRIVER              SCOPE
+  
+  2d319f1e2006        bridge                bridge              local
+  01df48d85fe6        host                  host                local
+  5e9925eb35d4        none                  null                local
+  85b86a42fa9a        scanproject_default   bridge              local
+
+          </pre>
+        </section>
+        <section>
+          <pre><code> ➞ docker-compose up --build </code></pre>
+          <pre class="bash-txt" style="font-size: 14px;">
+  ...         
+  TL;DR
+  nmap_1          | nmap scann started
+  nmap_1          | nmap scann done 2 hosts up
+  parser_1        | Xml converted
+  parser_1        | File output.xml converted
+  parser_1        | File output.xml removed
+  mongo-server_1  | {"t":{"$date":"2020-08-05T09:12:49.712+00:00"},SAVED:OK"}
+
+          </pre>
         </section>
         <section>
           <h1>🙌</h1>

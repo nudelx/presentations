@@ -43,12 +43,14 @@ const run = () => {
         if (err) {
           return console.log(err)
         }
-        const res = convert.xml2json(xml, { compact: true, spaces: 4 })
-        console.log('Xml converted')
-        console.log(`File ${file} converted`)
-        console.log(`File ${file} removed`)
-        mongoSet(JSON.parse(res))
-        // fs.unlinkSync(`${FOLDER}/${file}`)
+        try {
+          const res = convert.xml2json(xml, { compact: true, spaces: 4 })
+          console.log('Xml converted')
+          console.log(`File ${file} converted`)
+          console.log(`File ${file} removed`)
+          mongoSet(JSON.parse(res))
+          // fs.unlinkSync(`${FOLDER}/${file}`)
+        } catch (e) {}
       })
     }
   })

@@ -1,3 +1,3 @@
 #!/bin/sh
 
-nmap -iL list.txt -oX ./data/output.xml
+sleep 10 && nmap -iL list.txt -oX ./data/output.xml

@@ -1,1 +1,4 @@
 d run -v sharedFolder:/usr/src/app/data scanner
+
+
+d run -it -v scanproject_sharedFolder:/mnt ubuntu
