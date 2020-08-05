@@ -1634,35 +1634,40 @@ Run 'docker network COMMAND --help' for more information on a command.
           </pre>
         </section>
         <section>
+          <h5 class="color-blue">Bridge</h5>
           <p class="fragment fade-in-then-out">
-            <h5><font color="#369cec">Bridge</font></h5> The default network driver. If you don’t specify a
-            driver, this is the type of network you are creating
+            The default network driver. If you don’t specify a driver, this is the type of network
+            you are creating
           </p>
         </section>
         <section>
+          <h5 class="color-blue">Host</h5>
           <p class="fragment fade-in-then-out">
-            <h5><font color="#369cec">Host</font></h5> For standalone containers, remove network isolation
-            between the container and the Docker host, and use the host’s networking directly.
+            For standalone containers, remove network isolation between the container and the Docker
+            host, and use the host’s networking directly.
           </p>
         </section>
         <section>
+          <h5 class="color-blue">Overlay</h5>
           <p class="fragment fade-in-then-out">
-            <h5><font color="#369cec">Overlay</font></h5> Networks connect multiple Docker daemons together
-            and enable swarm services to communicate with each other.
+            Networks connect multiple Docker daemons together and enable swarm services to
+            communicate with each other.
           </p>
         </section>
 
         <section>
+          <h5 class="color-blue">Macvlan</h5>
           <p class="fragment fade-in-then-out">
-            <h5><font color="#369cec">Macvlan</font></h5> Networks allow you to assign a MAC address to a
-            container, making it appear as a physical device on your network.
+            Networks allow you to assign a MAC address to a container, making it appear as a
+            physical device on your network.
           </p>
         </section>
         <section>
+          <h5 class="color-blue">None</h5>
           <p class="fragment fade-in-then-out">
-            <h5><font color="#369cec">None</font></h5> For this container, disable all networking. Usually
-            used in conjunction with a custom network driver. none is not available for swarm
-            services. See disable container networking.
+            For this container, disable all networking. Usually used in conjunction with a custom
+            network driver. none is not available for swarm services. See disable container
+            networking.
           </p>
         </section>
 
@@ -1671,10 +1676,11 @@ Run 'docker network COMMAND --help' for more information on a command.
           <h4 class="color-blue">Link</h4>
         </section>
         <section>
+          <h5 class="color-blue">Link</h5>
           <p class="fragment fade-in-then-out">
-            <font color="#369cec">Link</font> [--link] - Connects a container to a network. You can
-            connect a container by name or by ID. Once connected, the container can communicate with
-            other containers in the same network.
+            [--link] - Connects a container to a network. You can connect a container by name or by
+            ID. Once connected, the container can communicate with other containers in the same
+            network.
           </p>
         </section>
 
@@ -1735,6 +1741,7 @@ CommandResult {
         <section>
           <pre style="font-size: 14px;;">
 ➞ d ps
+
 CONTAINER ID    IMAGE     COMMAND                   STATUS              PORTS                      NAMES
 1e3e242b479b    nmap      "/bin/sh run.sh"          Up 2  seconds                                   nmap
 652850814c5d    parser    "docker-entrypoint.s…"    Up 4  seconds                                   parser
@@ -1745,11 +1752,52 @@ ec66cd0d3eab    mongo     "docker-entrypoint.s…"    Up 10 seconds        0.0.0
         <section>
           <pre style="font-size: 14px;;">
 ➞ d stats
+
 CONTAINER ID    NAME      CPU %     MEM USAGE / LIMIT     MEM %    NET I/O           BLOCK I/O   PIDS
 ec66cd0d3eab    mongo     0.93%      60.92MiB / 1.944GiB  3.06%    1.5MB / 2.86MB    0B / 0B     36
 652850814c5d    parser    1.93%      11.32MiB / 1.944GiB  1.06%    1.5MB / 2.86MB    0B / 0B     53
 1e3e242b479b    nmap      0.20%      5.92MiB / 1.944GiB   0.06%    1.5MB / 2.86MB    0B / 0B     4
           </pre>
+        </section>
+        <section>
+          <h1>🙌</h1>
+        </section>
+
+        <section>
+          <h1>🤯</h1>
+          <p>How to manage multiple containers in the project ?</p>
+        </section>
+        <section>
+          <section>
+            <h1>🙆🏻‍♂️</h1>
+            <h4 class="color-blue">Docker Compose</h4>
+          </section>
+          <section>
+            <p>Compose is a tool for defining and running multi-container Docker applications</p>
+          </section>
+          <section>
+            <p>With Compose, you use a YAML file to configure your application’s services.</p>
+          </section>
+          <section>
+            <p>
+              Then, with a single command, you create and start all the services from your
+              configuration.
+            </p>
+          </section>
+
+          <section>
+            <h3 class="color-blue">Using Compose is a three-step process</h3>
+
+            <p class="fragment fragment-fade-in">
+              Define your app’s environment with a Dockerfile
+            </p>
+            <p class="fragment fragment-fade-in">
+              Define the services that make up your app in docker-compose.yml
+            </p>
+            <p class="fragment fragment-fade-in">
+              Run <em>docker-compose up</em> and compose starts and runs your entire app.
+            </p>
+          </section>
         </section>
         <section>
           <h1>🙌</h1>
