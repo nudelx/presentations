@@ -49,7 +49,7 @@ const run = () => {
           console.log(`File ${file} converted`)
           console.log(`File ${file} removed`)
           mongoSet(JSON.parse(res))
-          // fs.unlinkSync(`${FOLDER}/${file}`)
+          //fs.unlinkSync(`${FOLDER}/${file}`)
         } catch (e) {}
       })
     }
