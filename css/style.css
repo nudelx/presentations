@@ -1,0 +1,143 @@
+h2.blue,
+h1.blue,
+h3.blue {
+  color: #0a9cec;
+}
+
+.history_logo {
+  width: 200px;
+  height: 200px;
+  background-image: url('assets/img/571px-History_Logo.svg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.images {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.old_docker {
+  width: 200px;
+  height: 200px;
+  background-image: url('https://www.oreilly.com/library/view/using-docker/9781491915752/assets/usdk_0103.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.old_docker2 {
+  width: 200px;
+  height: 200px;
+  background-image: url('https://s3-eu-west-1.amazonaws.com/lowres-picturecabinet.com/29/main/9/339252.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.old_docker3 {
+  width: 200px;
+  height: 200px;
+  background-image: url('https://1.bp.blogspot.com/-k9k7x8NuZAI/W5os5-T9JsI/AAAAAAAAj7k/YTtrnRa0nE4vhksLRGZ2Jto4XLPf_oqJACLcBGAs/s1600/fullsizeoutput_12a5.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.old_docker4 {
+  width: 200px;
+  height: 200px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/11/Cerberus_%28AWM_300036%29.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.problem1 {
+  width: 300px;
+  height: 300px;
+  background-image: url('https://c4.wallpaperflare.com/wallpaper/92/1010/571/sea-old-ship-wallpaper-preview.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.problem2 {
+  width: 300px;
+  height: 300px;
+  background-image: url('https://cdn.images.express.co.uk/img/dynamic/36/590x/pirates-of-the-caribbean-johnny-depp-1065707.jpg?r=1546429346942');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.problem3 {
+  width: 300px;
+  height: 300px;
+  background-image: url('https://img2.goodfon.ru/wallpaper/nbig/3/fa/little-mermaid-disney-ariel.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.docker_problem1 {
+  width: 300px;
+  height: 300px;
+  background-image: url('https://www.ikea.com/gb/en/images/products/ingo-table-pine__0737092_PE740877_S5.JPG?f=xl');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.docker_problem2 {
+  width: 300px;
+  height: 300px;
+  background-image: url('https://www.prowildlife.de/wp-content/uploads/2019/02/elefant-pixabay-768x576.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.docker_problem3 {
+  width: 300px;
+  height: 300px;
+  background-image: url('https://www.flashgadgets.com.my/image/cache/catalog/Products/Nintendo/Switch/7-500x500.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.backWall {
+  font-size: 300px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #222;
+  opacity: 0.6;
+}
+
+.color-blue {
+  color: #369cec !important;
+}
+
+.bash-txt {
+  background-color: #272822;
+  width: 100% !important;
+  color: #e4e4e4;
+}
+
+.clean-img {
+  border: 0px !important;
+  background-color: transparent !important;
+}
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
