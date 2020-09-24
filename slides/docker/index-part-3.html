@@ -19,7 +19,217 @@
   </head>
   <body>
     <div class="reveal">
-      <div class="slides"></div>
+      <div class="slides">
+        <section data-auto-animate>
+          <img src="https://img.icons8.com/office/180/000000/pull-request.png" />
+          <h5 class="color-blue">Docker for Development</h5>
+        </section>
+        <section data-auto-animate>
+          <div style="position: absolute; top:0px;right:0px; bottom:0px; left:0px;  height: 70vh;">
+            <img
+              style="position: absolute; top:0px; right:0px"
+              width="60px"
+              src="https://img.icons8.com/office/180/000000/pull-request.png"
+            />
+            <h5 class="color-blue" style="opacity: 0;">Docker for Development</h5>
+            <div style="padding-top:150px;">
+              <p class="color-blue fragment fragment-fade-in">Setup the dev env</p>
+              <p class="color-blue fragment fragment-fade-in">Setup the tests env</p>
+              <p class="color-blue fragment fragment-fade-in">Setup the prod env</p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h1><span> 🕵🏻‍♂️ </span></h1>
+          <h3 class="color-blue">The scan project</h3>
+        </section>
+        <section data-auto-animate>
+          <div>
+            <h3 class="color-blue">The Project architecture</h3>
+
+            <div
+              style="display: flex; flex-direction: row; border: 0px solid red; justify-content: space-around;"
+            >
+              <div
+                style="border: 0px solid white;display: flex; flex-direction: column; justify-content: flex-end;"
+              >
+                <div style="display:flex; flex-direction: row;">
+                  <div
+                    class="fragment fragment-fadein"
+                    data-fragment-index="1"
+                    style="position: relative; display: flex; flex-direction: column; align-items: center; border: 0px solid blue; margin: 10px 20px;"
+                  >
+                    <img
+                      width="150px"
+                      src="./assets/img/container.png"
+                      style="border:0px; background-color: transparent;"
+                    />
+                    <span>nmap ynet.co.il</span>
+
+                    <div
+                      data-fragment-index="2"
+                      class="arrow fragment fragment-fadein"
+                      style="position: relative; border:0px solid yellow; height: 100px; width:100px; display: flex; justify-content: center; align-items: center;"
+                    >
+                      <div
+                        style="width: 40px; height: 2px; border: 3px dotted rgb(64, 236, 64); position: relative; transform: rotate(90deg)"
+                      >
+                        <div
+                          style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(50deg); position: absolute; right: -30px; top:-10px"
+                        ></div>
+                        <div
+                          style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(-50deg); position: absolute; right: -30px; bottom:-10px"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    data-fragment-index="4"
+                    class="fragment fragment-fadein"
+                    style="position: relative; display: flex; flex-direction: column; align-items: center; border: 0px solid blue;margin: 10px 20px;"
+                  >
+                    <img
+                      width="150px"
+                      src="./assets/img/container.png"
+                      style="border:0px; background-color: transparent;"
+                    />
+                    <span>parse.js</span>
+
+                    <div
+                      data-fragment-index="5"
+                      class="arrow fragment fragment-fadein"
+                      style="position: relative; border:0px solid yellow; height: 100px; width:100px; display: flex; justify-content: center; align-items: center;"
+                    >
+                      <div
+                        style="width: 40px; height: 2px; border: 3px dotted rgb(64, 236, 64); position: relative; transform: rotate(270deg)"
+                      >
+                        <div
+                          style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(50deg); position: absolute; right: -30px; top:-10px"
+                        ></div>
+                        <div
+                          style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(-50deg); position: absolute; right: -30px; bottom:-10px"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="border: 0px solid green; width:100%; display: flex;"
+                    class="arrow fragment fragment-fadein"
+                    data-fragment-index="3"
+                  >
+                    <div style="width: 100%;  background-color: teal; border-radius: 10px;">
+                      Volume 1
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="border: 0px solid white;display: flex; flex-direction: column;justify-content: center;  "
+              >
+                <div
+                  class="arrow fragment fragment-fadein"
+                  style="position: relative; border:0px solid yellow; height: 100px; width:100px; display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start;"
+                >
+                  <div
+                    style="width: 40px; height: 2px; border: 3px dotted rgb(64, 236, 64); position: relative; transform: rotate(-0deg)"
+                  >
+                    <div
+                      style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(50deg); position: absolute; right: -30px; top:-10px"
+                    ></div>
+                    <div
+                      style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(-50deg); position: absolute; right: -30px; bottom:-10px"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="border: 0px solid white;display: flex; flex-direction: column; justify-content: space-between;"
+              >
+                <div style="display:flex; flex-direction: row; border: 0px solid red;">
+                  <div
+                    class="fragment fragment-fadein"
+                    style="position: relative; display: flex; flex-direction: column; align-items: center; border: 0px solid blue; margin: 10px 20px;"
+                  >
+                    <img
+                      width="150px"
+                      src="./assets/img/container.png"
+                      style="border:0px; background-color: transparent;"
+                    />
+                    <span>mongo</span>
+
+                    <div
+                      class="arrow fragment fragment-fadein"
+                      style="position: relative; border:0px solid yellow; height: 100px; width:100px; display: flex; justify-content: center; align-items: center;"
+                    >
+                      <div
+                        style="width: 40px; height: 2px; border: 3px dotted rgb(64, 236, 64); position: relative; transform: rotate(90deg)"
+                      >
+                        <div
+                          style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(50deg); position: absolute; right: -30px; top:-10px"
+                        ></div>
+                        <div
+                          style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(-50deg); position: absolute; right: -30px; bottom:-10px"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="border: 0px solid green; width:100%; display: flex;"
+                    class="arrow fragment fragment-fadein"
+                  >
+                    <div style="width: 100%;  background-color: teal; border-radius: 10px;">
+                      Volume 2
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="border: 0px solid yellow;">
+                <div
+                  class="fragment fragment-fadein"
+                  style="display: flex; ; align-items: center; justify-content: space-around;"
+                >
+                  <div>
+                    <img
+                      width="150px"
+                      src="./assets/img/container.png"
+                      style="border:0px; background-color: transparent;"
+                    />
+                    <span>web</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div
+            style="display: flex; margin-right: 30px; align-items: center; justify-content: space-around;"
+          >
+            <div>
+              <img
+                width="420px"
+                src="./assets/img/container.png"
+                alt=""
+                style="border: 0px; background-color: transparent;"
+              />
+            </div>
+            <div style="font-size: 200px;  width: 430px; height:235px">
+              🖥
+            </div>
+            <div style="font-size: 200px;  width: 430px; height:235px">
+              👨🏻
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
 
     <script src="../../dist/reveal.js"></script>
