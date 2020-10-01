@@ -122,6 +122,10 @@ h3.blue {
   color: #369cec !important;
 }
 
+.color-orange {
+  color: #ff793f;
+}
+
 .bash-txt {
   background-color: #272822;
   width: 100% !important;

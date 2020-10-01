@@ -1,0 +1,25 @@
+version: '3'
+volumes:
+  mongoVolume:
+  sharedFolder:
+
+services:
+  mongo-server:
+    image: 'mongo'
+    restart: always
+    volumes:
+      - mongoVolume:/data/db
+    ports:
+      - 27017:27017
+  nmap:
+    build: nmap/.
+    restart: always
+    volumes:
+      - sharedFolder:/usr/src/app/data
+  parser:
+    build: parser/.
+    restart: always
+    volumes:
+      - sharedFolder:/usr/src/app/data
+    environment:
+      - MONGO_HOST=mongo-server
