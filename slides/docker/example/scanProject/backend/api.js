@@ -1,14 +1,14 @@
 const MongoClient = require('mongodb').MongoClient
 const express = require('express')
+const cors = require('cors')
 const app = express()
+app.use(cors())
 
 const mongoPort = process.env.MONGO_PORT || '27017'
 const mongoHost = process.env.MONGO_HOST || 'localhost'
 const url = `mongodb://${mongoHost}:${mongoPort}/`
 const port = 8080
-
 const mongo = {}
-
 const mongoConnect = (url) => {
   return new Promise((y, n) => {
     MongoClient.connect(url, function (err, db) {
@@ -42,8 +42,6 @@ try {
 } catch (a) {
   console.log(e)
 }
-
-
 
 app.get('/', function (req, res) {
   res.send('Working !!!')

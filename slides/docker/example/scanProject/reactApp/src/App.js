@@ -1,17 +1,21 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import List from '../src/list'
+console.log(process.env)
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          this is a test bla 
-        </p>
-        
+      <h1 className="ttt">
+        <img src={logo}  width="80px" height="80px" className="App-logo"/>
+        React APP
+          </h1>
+      <header className="page">
+      <div className="desc">
+        <List />
+      </div>
       </header>
+      
     </div>
   );
 }

@@ -3,7 +3,6 @@ volumes:
   mongoVolume:
   sharedFolder:
 
-
 services:
   mongo-server:
     image: 'mongo'
@@ -33,6 +32,11 @@ services:
       - ./reactApp:/usr/src/app
       - /usr/src/app/node_modules
     ports:
-            - 3000:3000
+      - 3000:3000
+  backend:
+    build: backend/.
+    restart: always
+    ports:
+      - 8080:8080
     environment:
-      - PORT=3000
+      - MONGO_HOST=mongo-server
