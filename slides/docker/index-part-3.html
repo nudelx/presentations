@@ -24,210 +24,350 @@
           <img src="https://img.icons8.com/office/180/000000/pull-request.png" />
           <h5 class="color-blue">Docker for Development</h5>
         </section>
+
         <section data-auto-animate>
-          <div style="position: absolute; top:0px;right:0px; bottom:0px; left:0px;  height: 70vh;">
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; height: 70vh"
+          >
             <img
-              style="position: absolute; top:0px; right:0px"
+              style="position: absolute; top: 0px; right: 0px"
               width="60px"
               src="https://img.icons8.com/office/180/000000/pull-request.png"
             />
-            <h5 class="color-blue" style="opacity: 0;">Docker for Development</h5>
-            <div style="padding-top:150px;">
-              <p class="color-blue fragment fragment-fade-in">Setup the dev env</p>
-              <p class="color-blue fragment fragment-fade-in">Setup the tests env</p>
-              <p class="color-blue fragment fragment-fade-in">Setup the prod env</p>
+            <h5 class="color-blue" style="opacity: 0">Docker for Development</h5>
+            <div style="padding-top: 150px">
+              <ul style="list-style: none">
+                <li><p class="color-blue fragment fragment-fade-in">✅ Setup the Dev env</p></li>
+                <li><p class="color-blue fragment fragment-fade-in">✅ Setup the Tests env</p></li>
+                <li><p class="color-blue fragment fragment-fade-in">✅ Setup the Prod env</p></li>
+              </ul>
             </div>
           </div>
         </section>
-        <section>
-          <h1><span> 🕵🏻‍♂️ </span></h1>
-          <h3 class="color-blue">The scan project</h3>
-        </section>
+
         <section data-auto-animate>
-          <div>
-            <h3 class="color-blue">The Project architecture</h3>
+          <h1 class="blue"><span> 👨🏻‍💻 </span></h1>
+          <h1 class="blue">the Dev env</h1>
+        </section>
 
-            <div
-              style="display: flex; flex-direction: row; border: 0px solid red; justify-content: space-around;"
-            >
+        <section>
+          <div style="display: flex; flex-direction: column; justify-content: space-around">
+            <div class="block dark-gray" style="margin-bottom: 60px">GITHUB</div>
+            <div data-fragment-index="2" style="display: flex; justify-content: space-around">
               <div
-                style="border: 0px solid white;display: flex; flex-direction: column; justify-content: flex-end;"
+                data-fragment-index="3"
+                class="fragment fragment-fadein block green"
+                style="width: 300px"
               >
-                <div style="display:flex; flex-direction: row;">
-                  <div
-                    class="fragment fragment-fadein"
-                    data-fragment-index="1"
-                    style="position: relative; display: flex; flex-direction: column; align-items: center; border: 0px solid blue; margin: 10px 20px;"
-                  >
-                    <img
-                      width="150px"
-                      src="./assets/img/container.png"
-                      style="border:0px; background-color: transparent;"
-                    />
-                    <span>nmap ynet.co.il</span>
-
-                    <div
-                      data-fragment-index="2"
-                      class="arrow fragment fragment-fadein"
-                      style="position: relative; border:0px solid yellow; height: 100px; width:100px; display: flex; justify-content: center; align-items: center;"
-                    >
-                      <div
-                        style="width: 40px; height: 2px; border: 3px dotted rgb(64, 236, 64); position: relative; transform: rotate(90deg)"
-                      >
-                        <div
-                          style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(50deg); position: absolute; right: -30px; top:-10px"
-                        ></div>
-                        <div
-                          style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(-50deg); position: absolute; right: -30px; bottom:-10px"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    data-fragment-index="4"
-                    class="fragment fragment-fadein"
-                    style="position: relative; display: flex; flex-direction: column; align-items: center; border: 0px solid blue;margin: 10px 20px;"
-                  >
-                    <img
-                      width="150px"
-                      src="./assets/img/container.png"
-                      style="border:0px; background-color: transparent;"
-                    />
-                    <span>parse.js</span>
-
-                    <div
-                      data-fragment-index="5"
-                      class="arrow fragment fragment-fadein"
-                      style="position: relative; border:0px solid yellow; height: 100px; width:100px; display: flex; justify-content: center; align-items: center;"
-                    >
-                      <div
-                        style="width: 40px; height: 2px; border: 3px dotted rgb(64, 236, 64); position: relative; transform: rotate(270deg)"
-                      >
-                        <div
-                          style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(50deg); position: absolute; right: -30px; top:-10px"
-                        ></div>
-                        <div
-                          style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(-50deg); position: absolute; right: -30px; bottom:-10px"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    style="border: 0px solid green; width:100%; display: flex;"
-                    class="arrow fragment fragment-fadein"
-                    data-fragment-index="3"
-                  >
-                    <div style="width: 100%;  background-color: teal; border-radius: 10px;">
-                      Volume 1
-                    </div>
-                  </div>
-                </div>
+                Branch
               </div>
-
               <div
-                style="border: 0px solid white;display: flex; flex-direction: column;justify-content: center;  "
+                data-fragment-index="4"
+                class="fragment fragment-fadein block green"
+                style="width: 300px"
+              >
+                Master
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-around">
+              <div
+                data-fragment-index="5"
+                class="arrow fragment fragment-fadein"
+                style="
+                  position: relative;
+                  border: 0px solid yellow;
+                  height: 100px;
+                  width: 100px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  transform: rotate(-45deg);
+                "
               >
                 <div
-                  class="arrow fragment fragment-fadein"
-                  style="position: relative; border:0px solid yellow; height: 100px; width:100px; display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start;"
+                  style="
+                    width: 40px;
+                    height: 2px;
+                    border: 3px dotted rgb(64, 236, 64);
+                    position: relative;
+                    transform: rotate(90deg);
+                  "
                 >
                   <div
-                    style="width: 40px; height: 2px; border: 3px dotted rgb(64, 236, 64); position: relative; transform: rotate(-0deg)"
-                  >
-                    <div
-                      style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(50deg); position: absolute; right: -30px; top:-10px"
-                    ></div>
-                    <div
-                      style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(-50deg); position: absolute; right: -30px; bottom:-10px"
-                    ></div>
-                  </div>
+                    style="
+                      width: 20px;
+                      height: 2px;
+                      border: 3px dotted rgb(64, 236, 64);
+                      transform: rotate(50deg);
+                      position: absolute;
+                      right: -30px;
+                      top: -10px;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      width: 20px;
+                      height: 2px;
+                      border: 3px dotted rgb(64, 236, 64);
+                      transform: rotate(-50deg);
+                      position: absolute;
+                      right: -30px;
+                      bottom: -10px;
+                    "
+                  ></div>
                 </div>
               </div>
 
               <div
-                style="border: 0px solid white;display: flex; flex-direction: column; justify-content: space-between;"
+                data-fragment-index="6"
+                class="arrow fragment fragment-fadein"
+                style="
+                  position: relative;
+                  border: 0px solid yellow;
+                  height: 100px;
+                  width: 100px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  transform: rotate(230deg);
+                "
               >
-                <div style="display:flex; flex-direction: row; border: 0px solid red;">
-                  <div
-                    class="fragment fragment-fadein"
-                    style="position: relative; display: flex; flex-direction: column; align-items: center; border: 0px solid blue; margin: 10px 20px;"
-                  >
-                    <img
-                      width="150px"
-                      src="./assets/img/container.png"
-                      style="border:0px; background-color: transparent;"
-                    />
-                    <span>mongo</span>
-
-                    <div
-                      class="arrow fragment fragment-fadein"
-                      style="position: relative; border:0px solid yellow; height: 100px; width:100px; display: flex; justify-content: center; align-items: center;"
-                    >
-                      <div
-                        style="width: 40px; height: 2px; border: 3px dotted rgb(64, 236, 64); position: relative; transform: rotate(90deg)"
-                      >
-                        <div
-                          style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(50deg); position: absolute; right: -30px; top:-10px"
-                        ></div>
-                        <div
-                          style="width: 20px; height: 2px; border: 3px dotted rgb(64, 236, 64); transform: rotate(-50deg); position: absolute; right: -30px; bottom:-10px"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    style="border: 0px solid green; width:100%; display: flex;"
-                    class="arrow fragment fragment-fadein"
-                  >
-                    <div style="width: 100%;  background-color: teal; border-radius: 10px;">
-                      Volume 2
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div style="border: 0px solid yellow;">
                 <div
-                  class="fragment fragment-fadein"
-                  style="display: flex; ; align-items: center; justify-content: space-around;"
+                  style="
+                    width: 40px;
+                    height: 2px;
+                    border: 3px dotted rgb(64, 236, 64);
+                    position: relative;
+                    transform: rotate(90deg);
+                  "
                 >
-                  <div>
-                    <img
-                      width="150px"
-                      src="./assets/img/container.png"
-                      style="border:0px; background-color: transparent;"
-                    />
-                    <span>web</span>
-                  </div>
+                  <div
+                    style="
+                      width: 20px;
+                      height: 2px;
+                      border: 3px dotted rgb(64, 236, 64);
+                      transform: rotate(50deg);
+                      position: absolute;
+                      right: -30px;
+                      top: -10px;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      width: 20px;
+                      height: 2px;
+                      border: 3px dotted rgb(64, 236, 64);
+                      transform: rotate(-50deg);
+                      position: absolute;
+                      right: -30px;
+                      bottom: -10px;
+                    "
+                  ></div>
                 </div>
               </div>
+            </div>
+            <div style="display: flex; justify-content: space-around">
+              <h1 class="blue"><span> 👨🏻‍💻 </span></h1>
             </div>
           </div>
         </section>
 
         <section>
-          <div
-            style="display: flex; margin-right: 30px; align-items: center; justify-content: space-around;"
+          <h3 class="blue">Example</h3>
+          <h4 class="blue">Let's create simple ⚛️ React App</h4>
+        </section>
+
+        <section>
+          <pre class="bash-txt">
+           <code> 
+demo@demo:$ npx create-react-app react_demo && yarn start
+           </code>
+            Compiled successfully!
+  You can now view react_demo in the browser.
+
+    Local:            http://localhost:3000
+    On Your Network:  http://192.168.0.88:3000
+
+  Note that the development build is not optimized.
+  To create a production build, use yarn build.
+          </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: 18px">
+           <code> 
+demo@demo:$ cd react_demo && tree
+           </code>
+           ➞ tree
+           .
+           ├── README.md
+           ├── package.json
+           ├── public
+           │   ├── favicon.ico
+           │   ├── index.html
+           │   ├── logo192.png
+           │   ├── logo512.png
+           │   ├── manifest.json
+           │   └── robots.txt
+           ├── src
+           │   ├── App.css
+           │   ├── App.js
+           │   ├── App.test.js
+           │   ├── index.css
+           │   ├── index.js
+           │   ├── logo.svg
+           │   ├── serviceWorker.js
+           │   └── setupTests.js
+           └── yarn.lock
+           
+           2 directories, 17 files
+          </pre>
+        </section>
+        <section>
+          <img src="assets/img/react_app.png" />
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: 16px">
+            <code data-trim data-noescape data-line-numbers="5"> 
+            ➞ tree
+            .
+            ├── README.md
+            ├── package.json
+            ├── Dockerfile.dev
+            ├── public
+            │   ├── favicon.ico
+            │   ├── index.html
+            │   ├── logo192.png
+            │   ├── logo512.png
+            │   ├── manifest.json
+            │   └── robots.txt
+            ├── src
+            │   ├── App.css
+            │   ├── App.js
+            │   ├── App.test.js
+            │   ├── index.css
+            │   ├── index.js
+            │   ├── logo.svg
+            │   ├── serviceWorker.js
+            │   └── setupTests.js
+            └── yarn.lock
+            
+            2 directories, 17 files
+            </code>
+           </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt">
+            <code data-noescape data-line-numbers> 
+                FROM node:latest
+                RUN mkdir -p /usr/src/app
+                WORKDIR /usr/src/app
+                COPY package.json .
+                RUN yarn install
+                COPY . .
+                CMD ["yarn" ,"start" ]
+            </code>
+           </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: calc(2+1vw)">
+            <code data-noescape>
+ d build -t react_app -f dockerfile.dev . && d run -it  -p 3000:3000 react_app
+            </code>
+           </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: calc(2+1vw)">
+
+      Compiled successfully!
+
+      You can now view react_demo in the browser.
+      
+        Local:            http://localhost:3000
+        On Your Network:  http://172.17.0.2:3000
+      
+      Note that the development build is not optimized.
+      To create a production build, use yarn build.
+
+           </pre
           >
-            <div>
-              <img
-                width="420px"
-                src="./assets/img/container.png"
-                alt=""
-                style="border: 0px; background-color: transparent;"
-              />
-            </div>
-            <div style="font-size: 200px;  width: 430px; height:235px">
-              🖥
-            </div>
-            <div style="font-size: 200px;  width: 430px; height:235px">
-              👨🏻
-            </div>
-          </div>
+        </section>
+
+        <section>
+          <img src="./assets/img/react_app.gif" width="80%" height="650px" />
+        </section>
+
+        <section>
+          <img src="./assets/img/react_app2.gif" height="400px" width="900px" />
+        </section>
+
+        <section>
+          <pre class="bash-txt">
+            <code data-noescape data-line-numbers="7"> 
+      FROM node:latest
+      RUN mkdir -p /usr/src/app
+      WORKDIR /usr/src/app
+      COPY package.json .
+      RUN yarn install
+      COPY . .
+      CMD ["yarn" ,"start" ]
+            </code>
+           </pre>
+        </section>
+
+        <section>
+          <p class="fragment fragment-fade-in" data-fragment-index="1"><span class="fragment fragment-fade-in" data-fragment-index="2">❌</span> rebuild</p>
+          <p class="fragment fragment-fade-in" data-fragment-index="3"><span class="fragment fragment-fade-in" data-fragment-index="4">❌</span> volumes</p>
+          <p class="fragment fragment-fade-in" data-fragment-index="5"><span class="fragment fragment-fade-in" data-fragment-index="6">✅</span> fs mapping</p>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: calc(2+1vw)">
+            <code data-noescape>
+ d run -it  -p 3000:3000 -v $(pwd):/usr/src/app react_app
+            </code>
+           </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: calc(2+1vw)">
+            
+        ➞ d run -it  -p 3000:3000 -v $(pwd):/usr/src/app react_app
+        yarn run v1.22.5
+        $ react-scripts start
+        /bin/sh: 1: react-scripts: not found
+        error Command failed with exit code 127.
+        
+           </pre>
+        </section>
+
+
+        <section>
+          <pre class="bash-txt" style="font-size: 16px">
+
+  ➞ d run -it  -p 3000:3000 -v $(pwd):/usr/src/app -v /usr/src/app/node_modules react_app
+          </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: calc(2px+0.5vw)">
+            
+            Compiled successfully!
+
+            You can now view react_demo in the browser.
+            
+              Local:            http://localhost:3000
+              On Your Network:  http://172.17.0.2:3000
+            
+            Note that the development build is not optimized.
+            To create a production build, use yarn build.
+        
+           </pre>
         </section>
       </div>
     </div>

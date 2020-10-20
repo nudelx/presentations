@@ -1,6 +1,7 @@
 h2.blue,
 h1.blue,
-h3.blue {
+h3.blue,
+h4.blue {
   color: #0a9cec;
 }
 
@@ -144,4 +145,20 @@ h3.blue {
   50% {
     opacity: 0;
   }
+}
+
+.block {
+  width: 100%;
+  background-color: #0a9cec;
+  padding: 20px 0;
+  margin: 2px;
+}
+
+.dark-gray {
+  background-color:#576574;
+  
+}
+
+.green {
+  background-color: #10ac84;
 }

@@ -3,6 +3,7 @@ volumes:
   mongoVolume:
   sharedFolder:
 
+
 services:
   mongo-server:
     image: 'mongo'
@@ -23,3 +24,15 @@ services:
       - sharedFolder:/usr/src/app/data
     environment:
       - MONGO_HOST=mongo-server
+  client:
+    stdin_open: true
+    build:
+      context: reactApp
+      dockerfile: dockerfile.dev
+    volumes:
+      - ./reactApp:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+            - 3000:3000
+    environment:
+      - PORT=3000
