@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="ttt">
-        <img src={logo}  width="80px" height="80px" className="App-logo"/>
+        <img src={logo} alt="react" width="80px" height="80px" className="App-logo"/>
         React APP
           </h1>
       <header className="page">

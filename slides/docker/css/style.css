@@ -162,3 +162,39 @@ h4.blue {
 .green {
   background-color: #10ac84;
 }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #40739e;
+  font-size: 20px;
+  color: #f5f6fa;
+  line-height: 100px;
+}
+
+.con {
+  background-position: center;
+    background-image: url(../assets/img/container.png);
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 20px;
+}
+
+
+.docker-box {
+  padding: 20px;
+  background-color: #353b48;
+}
+
+
+.finger {
+}

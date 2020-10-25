@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../src/card'
-console.log('process', process.env)
 export default () => {
   const [cards, setCards] = useState([])
   useEffect(() => {

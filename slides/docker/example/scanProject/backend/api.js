@@ -33,21 +33,21 @@ const mongoGet = async () => {
   })
 }
 
-try {
-  (async function () {
-    console.log(url)
-    mongo.db = await mongoConnect(url)
-    mongo.dbo = mongo.db.db('mydb')
-  })()
-} catch (a) {
-  console.log(e)
+const makeConnection = async function () {
+  console.log(url)
+  mongo.db = await mongoConnect(url)
+  mongo.dbo = mongo.db.db('mydb')
 }
+
+
+setTimeout(makeConnection, 2000)
 
 app.get('/', function (req, res) {
   res.send('Working !!!')
 })
 
 app.get('/api/get', async function (req, res) {
+  if(!mongo.dbo)  return
   const data = await mongoGet()
   res.json(data)
 })
