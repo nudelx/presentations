@@ -397,7 +397,6 @@ demo@demo:$ cd react_demo && tree
         </section>
 
         <section data-auto-animate>
-          <h2 class="blue">Full Stack</h2>
           <div data-auto-animate class="row fragment fragment-fade-in" data-fragment-index="1">
             <div class="box">CLIENT</div>
             <div class="box">BACKEND</div>
@@ -573,6 +572,7 @@ demo@demo:$ cd react_demo && tree
   </code>
             </pre>
         </section>
+
         <section>
           <h4 class="blue">⚛️ React App</h4>
         </section>
@@ -651,6 +651,7 @@ demo@demo:$ cd react_demo && tree
     </code>
           </pre>
         </section>
+
         <section>
           <img src="./assets/img/react-run.gif" />
         </section>
@@ -708,6 +709,9 @@ demo@demo:$ cd react_demo && tree
         <section>
           api.js
           <pre style="font-size: 16px"><code data-line-numbers="">
+    const express = require('express')        
+    const app = express()
+
     app.get('/', function (req, res) {
       res.send('Working !!!')
     })
@@ -812,6 +816,316 @@ services:
         </section>
 
         <section>Back to the ⚛️ Client</section>
+
+        <section>
+          <pre style="font-size:13px"><code data-line-numbers="19" ><script type="text/template">
+
+
+
+import React from 'react'
+import logo from './logo.svg'
+import './App.css';
+import List from '../src/list'
+
+function App() {
+  return (
+    <div className="App">
+      <h1 className="ttt">
+        <img src={logo} alt="react" width="80px" height="80px" className="App-logo"/>
+        React APP
+      </h1>
+      <header className="page">
+      <div className="desc">
+        <List />
+      </div>
+      </header>
+      
+    </div>
+  )
+}
+
+export default App
+
+
+
+</script></code></pre>
+
+        </section>
+
+
+        <section>
+          list.js
+          <pre style="font-size:14px"><code ><script type="text/template">
+
+
+
+import React, { useEffect, useState } from 'react'
+import Card from '../src/card'
+
+export default () => {
+  const [cards, setCards] = useState([])
+  useEffect(() => {
+    fetch(`some/url/for/api`)
+      .then((r) => r.json())
+      .then((d) =>  setCards(d.nmaprun.host))
+  }, [])
+
+  return (
+    <div>
+      {cards.map((item,index) => (
+        <Card key={index} data={item} />
+      ))}
+    </div>
+  )
+}
+
+
+
+
+</script></code></pre>
+
+        </section>
+
+
+        <section>
+          card.js
+          <pre style="font-size:14px"><code><script type="text/template">
+import React from 'react'
+
+export default (data) => {
+
+  const ip = data.data.address._attributes.addr
+  const name = Array.isArray(data.data.hostnames.hostname)
+    ? data.data.hostnames.hostname[0]._attributes.name
+    : data.data.hostnames.hostname._attributes.name
+  const ports = data.data.ports.port
+
+  return (
+      <ul className="card-data">
+        <li className="title">{name}</li>
+        <li className="inline">
+          <div className="line-title">IP</div>
+          <div>{ip}</div>
+        </li>
+
+        <li className="inline">
+          <div className="line-title">HOST</div>
+          <div>{name}</div>
+        </li>
+......
+
+</script></code></pre>
+
+        </section>
+
+
+        <section data-auto-animate>
+          list.js
+          <pre style="font-size:14px" class="react"><code data-line-numbers="10-13">
+
+
+
+import React, { useEffect, useState } from 'react'
+import Card from '../src/card'
+
+export default () => {
+  const [cards, setCards] = useState([])
+  useEffect(() => {
+    fetch(`some/url/for/api`)
+      .then((r) => r.json())
+      .then((d) =>  setCards(d.nmaprun.host))
+  }, [])
+
+  return (
+    <div>
+      {cards.map((item,index) => (
+        <Card key={index} data={item} />
+      ))}
+    </div>
+  )
+}
+
+
+
+
+</script></code></pre>
+
+        </section>
+
+
+        <section data-auto-animate>
+          list.js
+          <pre style="font-size:14px"><code data-line-numbers="">
+
+    fetch(`some/url/for/api`)
+      .then((r) => r.json())
+      .then((d) =>  setCards(d.nmaprun.host))
+
+</code></pre>
+
+        </section>
+
+        <section data-auto-animate>
+          <pre style="font-size:14px" class="bash-txt">
+
+  ➞ docker-compose up backend client mongo-server
+
+  Creating network "scanproject_default" with the default driver
+  Creating scanproject_backend_1      ... done
+  Creating scanproject_mongo-server_1 ... done
+  Creating scanproject_client_1       ... done
+
+</pre>
+
+        </section>
+
+        
+<section>
+  <pre style="font-size:14px" class="bash-txt">
+    ➞ d ps
+  CONTAINER ID        IMAGE                 PORTS                      NAMES
+  33d8f527948c        scanproject_client    0.0.0.0:3000->3000/tcp     scanproject_client_1
+  7372f0d9718e        mongo                 0.0.0.0:27017->27017/tcp   scanproject_mongo-server_1
+  02bcb6671f60        scanproject_backend   0.0.0.0:8080->8080/tcp     scanproject_backend_1
+  </pre>
+  </section>
+
+  <section data-auto-animate>
+    list.js
+    <pre style="font-size:14px" class="javascript"><code data-noescape data-line-numbers="" >
+const host =  global.process.env.api || 'localhost'
+
+fetch(`http:${host}:8080/api/get`)
+.then((r) => r.json())
+.then((d) =>  setCards(d.nmaprun.host))
+
+</code></pre>
+
+  </section>
+
+  <section>
+    <img src="./assets/img/react-final.gif" alt="" class="scr">
+  </section>
+
+  <section>
+    <pre style="font-size: 14px;">
+➞ d run -v sharedFolder:/usr/src/app/data nmap
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-08-04 20:41 UTC
+Nmap scan report for ksp.co.il (212.199.38.38)
+Host is up (0.0031s latency).
+rDNS record for 212.199.38.38: 212.199.38.38.hosting.spd.co.il
+Not shown: 998 filtered ports
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap scan report for ivory.co.il (80.178.161.201)
+Host is up (0.0027s latency).
+Other addresses for ivory.co.il (not scanned): 212.199.184.138
+rDNS record for 80.178.161.201: 80.178.161.201.static.hosting.spd.co.il
+Not shown: 998 filtered ports
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 2 IP addresses (2 hosts up) scanned in 11.16 seconds
+    </pre>
+  </section>
+
+
+<section data-auto-animate>
+    docker-compose.js
+    <pre style="font-size:12px" ><code data-line-numbers="" >
+  version: '3'
+  volumes:
+    mongoVolume:
+    sharedFolder:
+  
+  services:
+    mongo-server:
+      image: 'mongo'
+      restart: always
+      volumes:
+        - mongoVolume:/data/db
+      ports:
+        - 27017:27017
+    nmap:
+      build: nmap/.
+      restart: always
+      volumes:
+        - sharedFolder:/usr/src/app/data
+    parser:
+      build: parser/.
+      restart: always
+      volumes:
+        - sharedFolder:/usr/src/app/data
+      environment:
+        - MONGO_HOST=mongo-server
+    client:
+      stdin_open: true
+      build:
+        context: reactApp
+        dockerfile: dockerfile.dev
+      volumes:
+        - ./reactApp:/usr/src/app
+        - /usr/src/app/node_modules
+      ports:
+        - 3000:3000
+    backend:
+      build: backend/.
+      restart: always
+      ports:
+        - 8080:8080
+      environment:
+        - MONGO_HOST=mongo-server
+  
+
+</code></pre></section>
+
+<section>
+  Full Stack Docker Dev Env
+  <div class="">
+    <div class="row" style="border: 1px">
+      <div class="con">NMAP</div>
+      <div class="con">CLIENT</div>
+    </div>
+    <div class="row">
+      <div class="finger fragment fragment-fade-in" data-fragment-index="1" style="transform: rotate(90deg)">👉</div>
+      <div class="docker finger fragment fragment-fade-in" data-fragment-index="5"> <img width="200px" src="./assets/img/docker.png" style="border: 2px solid #73abff; border-radius: 50%;"> </div>
+      <div class="finger fragment fragment-fade-in" data-fragment-index="3" style="transform: rotate(90deg)">👉</div>
+    </div>
+    <div class="row">
+      <div class="con">PARSER</div>
+      <div class="finger fragment fragment-fade-in" data-fragment-index="2" >👉</div>
+      <div class="con">DB</div>
+      <div class="finger fragment fragment-fade-in" data-fragment-index="4" style="transform: rotate(180deg)">👉</div>
+      <div class="con">BACKEND</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div style="display: flex; justify-content: space-between">
+    <div style=" width: 60%; display: flex; justify-content: center;align-items: center; flex-direction: column;" >
+     <p>Why?</p>
+      <ul class="benefits" >
+        <li class="fragment fragment-fade-in" data-fragment-index="1"> <span class="sign">✅ </span> Runs on my machine = runs anywhere</li>
+        <li class="fragment fragment-fade-in" data-fragment-index="2"> <span class="sign">✅ </span> New team productive from day 1</li>
+        <li class="fragment fragment-fade-in" data-fragment-index="3"> <span class="sign">✅ </span> language free - database free</li>
+        <li class="fragment fragment-fade-in" data-fragment-index="4"> <span class="sign">✅ </span> Isolated env</li>
+        <li class="fragment fragment-fade-in" data-fragment-index="5"> <span class="sign">✅ </span> Clean env</li>
+        <li class="fragment fragment-fade-in" data-fragment-index="6"> <span class="sign">✅ </span> Sharable env </li>
+        <li class="fragment fragment-fade-in" data-fragment-index="7"> <span class="sign">✅ </span> Scalable env </li>
+        <li class="fragment fragment-fade-in" data-fragment-index="8"> <span class="sign">✅ </span> Maintainable env </li>
+      </ul>
+  </div>
+    <div style=" width: 40%; background-color: #2f3640;">
+      Docker for Development
+      <img src="./assets/img/dalton.gif"> 
+    </div>
+  </div>
+</section>
       </div>
     </div>
 

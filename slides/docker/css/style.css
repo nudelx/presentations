@@ -182,8 +182,8 @@ h4.blue {
 .con {
   background-position: center;
     background-image: url(../assets/img/container.png);
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     background-repeat: no-repeat;
     background-size: cover;
     font-size: 20px;
@@ -195,6 +195,16 @@ h4.blue {
   background-color: #353b48;
 }
 
+.benefits {
+  list-style: none;
+  font-size: 26px;
+}
 
-.finger {
+.benefits li {
+  margin: 10px;
+  list-style: none;
+}
+
+.sign {
+  margin-right: 10px;
 }
