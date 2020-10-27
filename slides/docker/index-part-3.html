@@ -1127,9 +1127,102 @@ Nmap done: 2 IP addresses (2 hosts up) scanned in 11.16 seconds
 </section>
 
 <section>
-  <div style="display: flex; justify-content: center">
-    <p style=" color: #0a9cec;"> to be continued ... </p>
-  </div>
+    <h1> 😎 </h1>
+    <h2 style=" color: #0a9cec;"> Production Containers <h2/>
+</section>
+
+
+<section>
+  <pre class="bash" style="font-size: 22px;"><code>
+  ➞ yarn build
+  yarn run v1.21.1
+  warning ../../../../../../../package.json: No license field
+  $ react-scripts build
+  Creating an optimized production build...
+
+  Compiled successfully.
+
+  File sizes after gzip:
+
+  39.77 KB  build/static/js/2.312ef41f.chunk.js
+  1.01 KB   build/static/js/main.8295d4ee.chunk.js
+  773 B     build/static/js/runtime-main.815af2bc.js
+  743 B     build/static/css/main.c57ac939.chunk.css
+
+ 
+</section>
+
+<section> 
+  <pre class="bash" style="font-size: 12px;">
+
+  ➞ tree build
+
+    build:
+    ├── asset-manifest.json
+    ├── favicon.ico
+    ├── index.html
+    ├── logo192.png
+    ├── logo512.png
+    ├── manifest.json
+    ├── precache-manifest.4334ca6cc0765e299ad636302f210bd4.js
+    ├── robots.txt
+    ├── service-worker.js
+    └── static
+        ├── css
+        │   ├── main.c57ac939.chunk.css
+        │   └── main.c57ac939.chunk.css.map
+        ├── js
+        │   ├── 2.312ef41f.chunk.js
+        │   ├── 2.312ef41f.chunk.js.LICENSE.txt
+        │   ├── 2.312ef41f.chunk.js.map
+        │   ├── main.8295d4ee.chunk.js
+        │   ├── main.8295d4ee.chunk.js.map
+        │   ├── runtime-main.815af2bc.js
+        │   └── runtime-main.815af2bc.js.map
+        └── media
+            └── logo.5d5d9eef.svg
+
+    4 directories, 19 files
+
+</code></pre>
+</section>
+
+<section> 
+  Multi-Step Build
+  <pre class="docker" > <code>
+
+  FROM node:latest as builder
+  RUN mkdir -p /usr/src/app
+  WORKDIR /usr/src/app
+  COPY package.json .
+  RUN yarn install
+  EXPOSE 3000
+  COPY . .
+  RUN yarn build
+  
+  FROM navikt/node-express
+  COPY --from=builder /app/build /to/the/folder/of/your/web-server
+
+</code></pre>
+</section>
+
+<section> 
+  Multi-Step Build AWS Ready
+  <pre class="docker" > <code>
+
+  FROM node:latest
+  RUN mkdir -p /usr/src/app
+  WORKDIR /usr/src/app
+  COPY package.json .
+  RUN yarn install
+  EXPOSE 3000
+  COPY . .
+  RUN yarn build
+  
+  FROM navikt/node-express
+  COPY --from=0 /app/build /to/the/folder/of/your/web-server
+
+</code></pre>
 </section>
       </div>
     </div>
