@@ -24,8 +24,10 @@
           <img src="https://img.icons8.com/office/180/000000/pull-request.png" />
           <h5 class="color-blue">Docker for Development</h5>
         </section>
+        
 
         <section data-auto-animate>
+          <div class="fragment fade-in-then-out"><img src="./assets/img/tenor.gif"></div>
           <div
             style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; height: 70vh"
           >
@@ -39,7 +41,8 @@
               <ul style="list-style: none">
                 <li><p class="color-blue fragment fragment-fade-in">✅ Setup the Dev env</p></li>
                 <li><p class="color-blue fragment fragment-fade-in">✅ Setup the Tests env</p></li>
-                <li><p class="color-blue fragment fragment-fade-in">✅ Setup the Prod env</p></li>
+                <li><p class="color-blue fragment fragment-fade-in">✅ Deploy to Prod env</p></li>
+                <li><p class="color-blue fragment fragment-fade-in">✅ Pray</p></li>
               </ul>
             </div>
           </div>
@@ -50,9 +53,9 @@
           <h1 class="blue">the Dev env</h1>
         </section>
 
-        <section>
+        <section data-auto-animate>
           <div style="display: flex; flex-direction: column; justify-content: space-around">
-            <div class="block dark-gray" style="margin-bottom: 60px">GITHUB</div>
+            <div class="block dark-gray" style="margin-bottom: 60px">GITHUB/ANYHUB</div>
             <div data-fragment-index="2" style="display: flex; justify-content: space-around">
               <div
                 data-fragment-index="3"
@@ -168,14 +171,20 @@
               </div>
             </div>
             <div style="display: flex; justify-content: space-around">
-              <h1 class="blue"><span> 👨🏻‍💻 </span></h1>
+              <h1 class="blue " ><span> 👨🏻‍💻 </span></h1>
             </div>
           </div>
         </section>
 
+        <section data-auto-animate>
+          <div class="fragment grow" data-fragment-index="1">
+            <h1 class="blue "><span> 👨🏻‍💻 </span></h1>
+          </div>
+        </section>
+
         <section>
-          <h3 class="blue">Example</h3>
-          <h4 class="blue">Let's create simple ⚛️ React App</h4>
+          <h3 class="blue fragment fade-in-then-out" data-fragment-index="1">Example</h3>
+          <h4 class="blue fragment fade-in" data-fragment-index="2">Let's create simple ⚛️ React App</h4>
         </section>
 
         <section>
@@ -319,7 +328,9 @@ demo@demo:$ cd react_demo && tree
             </code>
            </pre>
         </section>
-
+        <section>
+          <h1><span> 🤔 </span></h1>
+        </section>
         <section>
           <p class="fragment fragment-fade-in" data-fragment-index="1">
             <span class="fragment fragment-fade-in" data-fragment-index="2">❌</span>
@@ -388,32 +399,38 @@ demo@demo:$ cd react_demo && tree
               align-items: center;
             "
           >
-            <img src="./assets/img/video2.gif" />
+            <img class="zoom" src="./assets/img/video2.gif" />
           </div>
         </section>
 
         <section>
+          <h1><span>🧐</span></h1>
           <h2 class="blue">Full Stack</h2>
         </section>
 
         <section data-auto-animate>
-          <div data-auto-animate class="row fragment fragment-fade-in" data-fragment-index="1">
-            <div class="box">CLIENT</div>
-            <div class="box">BACKEND</div>
-            <div class="box">DB</div>
+          <div class="row">
+            <div class="box fragment fragment-fade-in" data-fragment-index="1">CLIENT</div>
+            <div class="box fragment fragment-fade-in" data-fragment-index="2">BACKEND</div>
+            <div class="box fragment fragment-fade-in" data-fragment-index="3">DB</div>
           </div>
 
           <div class="row">
-            <div class="box fragment fragment-fade-in" data-fragment-index="2">REST-API</div>
-            <div class="box fragment fragment-fade-in" data-fragment-index="3">GQL</div>
-            <div class="box fragment fragment-fade-in" data-fragment-index="4">LOG</div>
+            <div class="box fragment fragment-fade-in" data-fragment-index="4">REST-API</div>
+            <div class="box fragment fragment-fade-in" data-fragment-index="5">GQL</div>
+            <div class="box fragment fragment-fade-in" data-fragment-index="6">LOG</div>
           </div>
 
           <div class="row">
-            <div class="box fragment fragment-fade-in" data-fragment-index="5">BATCH</div>
-            <div class="box fragment fragment-fade-in" data-fragment-index="6">BACKUP</div>
-            <div class="box fragment fragment-fade-in" data-fragment-index="7">PROXY</div>
+            <div class="box fragment fragment-fade-in" data-fragment-index="7">BATCH</div>
+            <div class="box fragment fragment-fade-in" data-fragment-index="8">BACKUP</div>
+            <div class="box fragment fragment-fade-in" data-fragment-index="9">PROXY</div>
           </div>
+        </section>
+
+        <section>
+          <h1><span>🤓</span></h1>
+          <h2 class="blue">What If ?</h2>
         </section>
 
         <section data-auto-animate>
@@ -595,6 +612,7 @@ demo@demo:$ cd react_demo && tree
         </section>
 
         <section>
+          docker-compose.yml
           <pre class="bash-txt" style="font-size: 13px">
     <code  > 
       version: '3'
@@ -681,7 +699,7 @@ demo@demo:$ cd react_demo && tree
       mongo.db = await mongoConnect(url)
       mongo.dbo = mongo.db.db('mydb')
     })()
-  } catch (a) {
+  } catch (e) {
     console.log(e)
   }
             </code></pre>
@@ -767,30 +785,16 @@ services:
         </section>
 
         <section>
-          docker-compose
-          <pre style="font-size: 16px"><code data-line-numbers="12-19">
-version: '3'
-volumes:
-  mongoVolume:
-  sharedFolder:
-
-services:
-  mongo-server:
-  nmap:
-  parser:
-  client:
-  backend:
-    build: backend/.
-    restart: always
-    ports:
-      - 8080:8080
-    environment:
-      - MONGO_HOST=mongo-server
-    
-            </code></pre>
-        </section>
-        <section>
           <img src="./assets/img/backend.gif" />
+        </section>
+
+        <section>
+          <pre class="bash" style="font-size: 12px;"><code>
+  ➞ d ps
+  CONTAINER ID        IMAGE                 STATUS              PORTS                      NAMES
+  1d3c1e418da5        scanproject_backend   Up 10 seconds       0.0.0.0:8080->8080/tcp     scanproject_backend_1
+  8dd524031b31        mongo                 Up 10 seconds       0.0.0.0:27017->27017/tcp   scanproject_mongo-server_1
+          </code></pre>
         </section>
 
         <section>
@@ -1106,9 +1110,8 @@ Nmap done: 2 IP addresses (2 hosts up) scanned in 11.16 seconds
 </section>
 
 <section>
-  <div style="display: flex; justify-content: space-between">
-    <div style=" width: 60%; display: flex; justify-content: center;align-items: center; flex-direction: column;" >
-     <p>Why?</p>
+  <div style="">
+     <h2 class="blue"> Why?</h2>
       <ul class="benefits" >
         <li class="fragment fragment-fade-in" data-fragment-index="1"> <span class="sign">✅ </span> Runs on my machine = runs anywhere</li>
         <li class="fragment fragment-fade-in" data-fragment-index="2"> <span class="sign">✅ </span> New team productive from day 1</li>
@@ -1119,11 +1122,7 @@ Nmap done: 2 IP addresses (2 hosts up) scanned in 11.16 seconds
         <li class="fragment fragment-fade-in" data-fragment-index="7"> <span class="sign">✅ </span> Scalable env </li>
         <li class="fragment fragment-fade-in" data-fragment-index="8"> <span class="sign">✅ </span> Maintainable env </li>
       </ul>
-  </div>
-    <div style=" width: 40%; background-color: #2f3640; color: #0a9cec;">
-      Docker for Development
-      <img src="./assets/img/dalton.gif"> 
-    </div>
+      <img width="400px" src="./assets/img/dalton.gif">
   </div>
 </section>
 
