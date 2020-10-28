@@ -328,6 +328,7 @@ demo@demo:$ cd react_demo && tree
             </code>
            </pre>
         </section>
+
         <section>
           <h1><span> 🤔 </span></h1>
         </section>
@@ -356,6 +357,7 @@ demo@demo:$ cd react_demo && tree
           <pre class="bash-txt" style="font-size: calc(2+1vw)">
             
         ➞ d run -it  -p 3000:3000 -v $(pwd):/usr/src/app react_app
+
         yarn run v1.22.5
         $ react-scripts start
         /bin/sh: 1: react-scripts: not found
@@ -363,6 +365,30 @@ demo@demo:$ cd react_demo && tree
         
            </pre
           >
+        </section>
+
+
+
+        <section>
+          <pre class="bash-txt">
+            <code data-noescape data-line-numbers="6-9"> 
+      FROM node:latest
+      RUN mkdir -p /usr/src/app
+      WORKDIR /usr/src/app
+      COPY package.json .
+      RUN yarn install
+      COPY . .
+      CMD ["yarn" ,"start" ]
+            </code>
+           </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: calc(2+1vw)">
+            <code data-noescape>
+ d run -it  -p 3000:3000 -v $(pwd):/usr/src/app react_app
+            </code>
+           </pre>
         </section>
 
         <section>
@@ -374,6 +400,8 @@ demo@demo:$ cd react_demo && tree
 
         <section>
           <pre class="bash-txt" style="font-size: calc(2px+0.5vw)">
+            
+  ➞ d run -it  -p 3000:3000 -v $(pwd):/usr/src/app react_app
             
             Compiled successfully!
 
