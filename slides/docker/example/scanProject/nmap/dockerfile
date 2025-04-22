@@ -1,0 +1,8 @@
+FROM ubuntu:latest
+RUN apt-get update
+RUN echo |apt-get install nmap 
+RUN mkdir -p /usr/src/app  
+WORKDIR /usr/src/app  
+COPY list.txt /usr/src/app
+COPY run.sh /usr/src/app
+CMD ["/bin/sh" ,"run.sh" ]

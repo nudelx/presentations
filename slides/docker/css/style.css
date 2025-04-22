@@ -1,6 +1,8 @@
 h2.blue,
 h1.blue,
-h3.blue {
+h3.blue,
+h4.blue,
+h5.blue {
   color: #0a9cec;
 }
 
@@ -122,6 +124,10 @@ h3.blue {
   color: #369cec !important;
 }
 
+.color-orange {
+  color: #ff793f;
+}
+
 .bash-txt {
   background-color: #272822;
   width: 100% !important;
@@ -140,4 +146,77 @@ h3.blue {
   50% {
     opacity: 0;
   }
+}
+
+.block {
+  width: 100%;
+  background-color: #0a9cec;
+  padding: 20px 0;
+  margin: 2px;
+}
+
+.dark-gray {
+  background-color:#576574;
+  
+}
+
+.green {
+  background-color: #10ac84;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #40739e;
+  font-size: 20px;
+  color: #f5f6fa;
+  line-height: 100px;
+}
+
+.con {
+  background-position: center;
+    background-image: url(../assets/img/container.png);
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 20px;
+}
+
+
+.docker-box {
+  padding: 20px;
+  background-color: #353b48;
+}
+
+.benefits {
+  list-style: none;
+  font-size: 28px;
+  margin: 20px;
+}
+
+.benefits li {
+  margin: 10px;
+  list-style: none;
+}
+
+.sign {
+  margin-right: 10px;
+}
+
+.zoom:hover {
+  transform: scale(1.7);
+  transition: all 1s ease-in-out;
+}
+
+.zoom {
+  transform: scale(1);
+  transition: all 1s ease-in-out;
 }

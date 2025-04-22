@@ -1,0 +1,1 @@
+d run -it  -v sharedFolder:/usr/src/app/data --link mongo:mongoDB -e MONGO_HOST=mongoDB  parser

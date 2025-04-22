@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 BRANCH=${1:-master}
-echo "Wiil deploy $BRANCH to pages"
+echo "Will deploy $BRANCH to pages"
 git checkout $BRANCH
 git pull 
 git checkout gh-pages 

@@ -1,69 +1,70 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+<!doctype html>
+<html lang="en">
 
-    <title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="stylesheet" href="dist/reset.css" />
-    <link rel="stylesheet" href="dist/reveal.css" />
-    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+	<title>reveal.js</title>
 
-    <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme" />
-    <style>
-      ul.list {
-        margin: 0px;
-        padding: 0px;
-        list-style: none;
-      }
-      ul.list li {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-      }
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
 
-      ul.list li > * {
-        margin-right: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
-        <section>
-          <ul class="list">
-            <li>
-              <img src="https://img.icons8.com/color/48/000000/graphql.png" />
-              <a href="./slides/graphQl/"> GraphQL</a>
-            </li>
-            <li>
-              <img src="https://img.icons8.com/color/48/000000/docker.png" />
-              <a href="./slides/docker/index.html">Docker</a>
-            </li>
-          </ul>
-        </section>
-      </div>
-    </div>
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	<style>
+		ul.list {
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+		}
 
-    <script src="dist/reveal.js"></script>
-    <script src="plugin/notes/notes.js"></script>
-    <script src="plugin/markdown/markdown.js"></script>
-    <script src="plugin/highlight/highlight.js"></script>
-    <script>
-      // More info about initialization & config:
-      // - https://revealjs.com/initialization/
-      // - https://revealjs.com/config/
-      Reveal.initialize({
-        hash: true,
+		ul.list li {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+		}
 
-        // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-      })
-    </script>
-  </body>
+		ul.list li>* {
+			margin-right: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<ul class="list">
+					<li>
+						<img src="https://img.icons8.com/color/48/000000/graphql.png" />
+						<a href="./slides/graphQl/"> GraphQL</a>
+					</li>
+					<li>
+						<img src="https://img.icons8.com/color/48/000000/docker.png" />
+						<a href="./slides/docker/index.html">Docker</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
 </html>

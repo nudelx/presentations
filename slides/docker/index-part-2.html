@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>reveal.js</title>
+    <title>Docker by Alex</title>
 
     <link rel="stylesheet" href="../../dist/reset.css" />
     <link rel="stylesheet" href="../../dist/reveal.css" />
@@ -1146,13 +1146,13 @@ nudelx@ANUDELMAN-MB$ d volume ls
             ><code data-trim data-noescape data-line-numbers="">
               #!/usr/bin/env node
               
-              const dataPath = process.env.DATA_PATH || './data'
+              const dataPath  = process.env.DATA_PATH || './data'
               const mongoPort = process.env.MONGO_PORT || '27017'
               const mongoHost = process.env.MONGO_HOST || 'localhost'
-              const timer = process.env.TIMER || 5000
-              const FOLDER = path.resolve(__dirname, dataPath)
-              const url = `mongodb://${mongoHost}:${mongoPort}/`
-              const regex = /\.xml$/
+              const timer     = process.env.TIMER || 5000
+              const FOLDER    = path.resolve(__dirname, dataPath)
+              const url       = `mongodb://${mongoHost}:${mongoPort}/`
+              const regex     = /\.xml$/
               
               console.log('ENV', process.env)
               const mongoConnect = (url) => {...}
@@ -1172,6 +1172,36 @@ nudelx@ANUDELMAN-MB$ d volume ls
               }
               
               const run = () => {...}
+              run()
+              setInterval(() => run(), timer)
+ 
+              
+            </code></pre>
+          </section>
+
+          <section>
+            <h5>parser.js</h5>
+            <pre
+              class="bash-txt"
+              style="font-size: 16px;"
+            ><code data-trim data-noescape data-line-numbers="">
+             
+              const run = () => {
+                fs.readdirSync(FOLDER).forEach((file) => {
+                  file.match(regex) && fs.readFile(`${FOLDER}/${file}`, 'utf8', function(err, xml) {
+                    err && return console.log(err)
+                    try {
+                      const res = convert.xml2json(xml, { compact: true, spaces: 4 })
+                      console.log('Xml converted')
+                      mongoSet(JSON.parse(res))
+                      fs.unlinkSync(`${FOLDER}/${file}`)
+                    } catch (e) {}
+                  })
+                })
+                console.log('Done ')
+                console.log('Sleeping for  ' + timer)
+                console.log('=========================')
+              }
               run()
               setInterval(() => run(), timer)
  
@@ -1221,7 +1251,7 @@ d run -it  -v sharedFolder:/usr/src/app/data  parser
           </section>
           <section>
             <h5>folders structure</h5>
-            <pre class="bash-txt"><code>
+            <pre class="bash-txt"  style="font-size: 18px;"><code>
 #!/bin/sh
 docker run --name mongo -p 27017:27017 -v mongoVolume:/data/db -d mongo
             </code></pre>
@@ -1611,7 +1641,8 @@ ec66cd0d3eab    mongo     0.93%      60.92MiB / 1.944GiB  3.06%    1.5MB / 2.86M
 
         <section>
           <h1>🤯</h1>
-          <p>How to manage multiple containers in the project ?</p>
+          <h2 class="color-blue">SCALE</h2>
+          <p class="color-orange">How to manage multiple containers in the project ?</p>
         </section>
         <section>
           <section>
@@ -1648,6 +1679,7 @@ ec66cd0d3eab    mongo     0.93%      60.92MiB / 1.944GiB  3.06%    1.5MB / 2.86M
         <section>
           <p>Project Structure</p>
           <pre class="bash-txt" style="font-size: 20px; width:100%">
+            <code data-line-numbers="7">
   ➞ tree .
   .
   ├── mongo
@@ -1656,6 +1688,7 @@ ec66cd0d3eab    mongo     0.93%      60.92MiB / 1.944GiB  3.06%    1.5MB / 2.86M
   └── docker-compose.yml
 
   3 directory, 1 file
+  </code>
           </pre>
         </section>
 

@@ -1,0 +1,42 @@
+version: '3'
+volumes:
+  mongoVolume:
+  sharedFolder:
+
+services:
+  mongo-server:
+    image: 'mongo'
+    restart: always
+    volumes:
+      - mongoVolume:/data/db
+    ports:
+      - 27017:27017
+  nmap:
+    build: nmap/.
+    restart: always
+    volumes:
+      - sharedFolder:/usr/src/app/data
+  parser:
+    build: parser/.
+    restart: always
+    volumes:
+      - sharedFolder:/usr/src/app/data
+    environment:
+      - MONGO_HOST=mongo-server
+  client:
+    stdin_open: true
+    build:
+      context: reactApp
+      dockerfile: dockerfile.dev
+    volumes:
+      - ./reactApp:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 3000:3000
+  backend:
+    build: backend/.
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      - MONGO_HOST=mongo-server

@@ -19,7 +19,1243 @@
   </head>
   <body>
     <div class="reveal">
-      <div class="slides"></div>
+      <div class="slides">
+        <section data-auto-animate>
+          <img src="https://img.icons8.com/office/180/000000/pull-request.png" />
+          <h5 class="color-blue">Docker for Development</h5>
+        </section>
+        
+
+        <section data-auto-animate>
+          <div class="fragment fade-in-then-out"><img src="./assets/img/tenor.gif"></div>
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; height: 70vh"
+          >
+            <img
+              style="position: absolute; top: 0px; right: 0px"
+              width="60px"
+              src="https://img.icons8.com/office/180/000000/pull-request.png"
+            />
+            <h5 class="color-blue" style="opacity: 0">Docker for Development</h5>
+            <div style="padding-top: 150px">
+              <ul style="list-style: none">
+                <li><p class="color-blue fragment fragment-fade-in">✅ Setup the Dev env</p></li>
+                <li><p class="color-blue fragment fragment-fade-in">✅ Setup the Tests env</p></li>
+                <li><p class="color-blue fragment fragment-fade-in">✅ Deploy to Prod env</p></li>
+                <li><p class="color-blue fragment fragment-fade-in">✅ Pray</p></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h1 class="blue"><span> 👨🏻‍💻 </span></h1>
+          <h1 class="blue">the Dev env</h1>
+        </section>
+
+        <section data-auto-animate>
+          <div style="display: flex; flex-direction: column; justify-content: space-around">
+            <div class="block dark-gray" style="margin-bottom: 60px">GITHUB/ANYHUB</div>
+            <div data-fragment-index="2" style="display: flex; justify-content: space-around">
+              <div
+                data-fragment-index="3"
+                class="fragment fragment-fadein block green"
+                style="width: 300px"
+              >
+                Branch
+              </div>
+              <div
+                data-fragment-index="4"
+                class="fragment fragment-fadein block green"
+                style="width: 300px"
+              >
+                Master
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-around">
+              <div
+                data-fragment-index="5"
+                class="arrow fragment fragment-fadein"
+                style="
+                  position: relative;
+                  border: 0px solid yellow;
+                  height: 100px;
+                  width: 100px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  transform: rotate(-45deg);
+                "
+              >
+                <div
+                  style="
+                    width: 40px;
+                    height: 2px;
+                    border: 3px dotted rgb(64, 236, 64);
+                    position: relative;
+                    transform: rotate(90deg);
+                  "
+                >
+                  <div
+                    style="
+                      width: 20px;
+                      height: 2px;
+                      border: 3px dotted rgb(64, 236, 64);
+                      transform: rotate(50deg);
+                      position: absolute;
+                      right: -30px;
+                      top: -10px;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      width: 20px;
+                      height: 2px;
+                      border: 3px dotted rgb(64, 236, 64);
+                      transform: rotate(-50deg);
+                      position: absolute;
+                      right: -30px;
+                      bottom: -10px;
+                    "
+                  ></div>
+                </div>
+              </div>
+
+              <div
+                data-fragment-index="6"
+                class="arrow fragment fragment-fadein"
+                style="
+                  position: relative;
+                  border: 0px solid yellow;
+                  height: 100px;
+                  width: 100px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  transform: rotate(230deg);
+                "
+              >
+                <div
+                  style="
+                    width: 40px;
+                    height: 2px;
+                    border: 3px dotted rgb(64, 236, 64);
+                    position: relative;
+                    transform: rotate(90deg);
+                  "
+                >
+                  <div
+                    style="
+                      width: 20px;
+                      height: 2px;
+                      border: 3px dotted rgb(64, 236, 64);
+                      transform: rotate(50deg);
+                      position: absolute;
+                      right: -30px;
+                      top: -10px;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      width: 20px;
+                      height: 2px;
+                      border: 3px dotted rgb(64, 236, 64);
+                      transform: rotate(-50deg);
+                      position: absolute;
+                      right: -30px;
+                      bottom: -10px;
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-around">
+              <h1 class="blue " ><span> 👨🏻‍💻 </span></h1>
+            </div>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <div class="fragment grow" data-fragment-index="1">
+            <h1 class="blue "><span> 👨🏻‍💻 </span></h1>
+          </div>
+        </section>
+
+        <section>
+          <h3 class="blue fragment fade-in-then-out" data-fragment-index="1">Example</h3>
+          <h4 class="blue fragment fade-in" data-fragment-index="2">Let's create simple ⚛️ React App</h4>
+        </section>
+
+        <section>
+          <pre class="bash-txt">
+           <code> 
+demo@demo:$ npx create-react-app react_demo && yarn start
+           </code>
+            Compiled successfully!
+  You can now view react_demo in the browser.
+
+    Local:            http://localhost:3000
+    On Your Network:  http://192.168.0.88:3000
+
+  Note that the development build is not optimized.
+  To create a production build, use yarn build.
+          </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: 18px">
+           <code> 
+demo@demo:$ cd react_demo && tree
+           </code>
+           ➞ tree
+           .
+           ├── README.md
+           ├── package.json
+           ├── public
+           │   ├── favicon.ico
+           │   ├── index.html
+           │   ├── logo192.png
+           │   ├── logo512.png
+           │   ├── manifest.json
+           │   └── robots.txt
+           ├── src
+           │   ├── App.css
+           │   ├── App.js
+           │   ├── App.test.js
+           │   ├── index.css
+           │   ├── index.js
+           │   ├── logo.svg
+           │   ├── serviceWorker.js
+           │   └── setupTests.js
+           └── yarn.lock
+           
+           2 directories, 17 files
+          </pre>
+        </section>
+        <section>
+          <img src="assets/img/react_app.png" />
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: 16px">
+            <code data-trim data-noescape data-line-numbers="5"> 
+            ➞ tree
+            .
+            ├── README.md
+            ├── package.json
+            ├── Dockerfile.dev
+            ├── public
+            │   ├── favicon.ico
+            │   ├── index.html
+            │   ├── logo192.png
+            │   ├── logo512.png
+            │   ├── manifest.json
+            │   └── robots.txt
+            ├── src
+            │   ├── App.css
+            │   ├── App.js
+            │   ├── App.test.js
+            │   ├── index.css
+            │   ├── index.js
+            │   ├── logo.svg
+            │   ├── serviceWorker.js
+            │   └── setupTests.js
+            └── yarn.lock
+            
+            2 directories, 17 files
+            </code>
+           </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt">
+            <code data-noescape data-line-numbers> 
+                FROM node:latest
+                RUN mkdir -p /usr/src/app
+                WORKDIR /usr/src/app
+                COPY package.json .
+                RUN yarn install
+                COPY . .
+                CMD ["yarn" ,"start" ]
+            </code>
+           </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: calc(2+1vw)">
+            <code data-noescape>
+ d build -t react_app -f dockerfile.dev . && d run -it  -p 3000:3000 react_app
+            </code>
+           </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: calc(2+1vw)">
+
+      Compiled successfully!
+
+      You can now view react_demo in the browser.
+      
+        Local:            http://localhost:3000
+        On Your Network:  http://172.17.0.2:3000
+      
+      Note that the development build is not optimized.
+      To create a production build, use yarn build.
+
+           </pre
+          >
+        </section>
+
+        <section>
+          <img src="./assets/img/react_app.gif" width="80%" height="650px" />
+        </section>
+
+        <section>
+          <img src="./assets/img/react_app2.gif" height="400px" width="900px" />
+        </section>
+
+        <section>
+          <pre class="bash-txt">
+            <code data-noescape data-line-numbers="7"> 
+      FROM node:latest
+      RUN mkdir -p /usr/src/app
+      WORKDIR /usr/src/app
+      COPY package.json .
+      RUN yarn install
+      COPY . .
+      CMD ["yarn" ,"start" ]
+            </code>
+           </pre>
+        </section>
+
+        <section>
+          <h1><span> 🤔 </span></h1>
+        </section>
+
+        <section>
+          <p class="fragment fragment-fade-in" data-fragment-index="1">
+            <span class="fragment fragment-fade-in" data-fragment-index="2">❌</span>
+            rebuild
+          </p>
+          <p class="fragment fragment-fade-in" data-fragment-index="3">
+            <span class="fragment fragment-fade-in" data-fragment-index="4">❌</span> volumes
+          </p>
+          <p class="fragment fragment-fade-in" data-fragment-index="5">
+            <span class="fragment fragment-fade-in" data-fragment-index="6">✅</span> fs mapping
+          </p>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: calc(2+1vw)">
+            <code data-noescape>
+ d run -it  -p 3000:3000 -v $(pwd):/usr/src/app react_app
+            </code>
+           </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: calc(2+1vw)">
+            
+        ➞ d run -it  -p 3000:3000 -v $(pwd):/usr/src/app react_app
+
+        yarn run v1.22.5
+        $ react-scripts start
+        /bin/sh: 1: react-scripts: not found
+        error Command failed with exit code 127.
+        
+           </pre
+          >
+        </section>
+
+        <section>
+          <pre class="bash-txt">
+            <code data-noescape data-line-numbers="6-9"> 
+      FROM node:latest
+      RUN mkdir -p /usr/src/app
+      WORKDIR /usr/src/app
+      COPY package.json .
+      RUN yarn install
+      COPY . .
+      CMD ["yarn" ,"start" ]
+            </code>
+           </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: calc(2+1vw)">
+            <code data-noescape>
+ d run -it  -p 3000:3000 -v $(pwd):/usr/src/app react_app
+            </code>
+           </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: 16px">
+
+  ➞ d run -it  -p 3000:3000 -v $(pwd):/usr/src/app -v /usr/src/app/node_modules react_app
+          </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: calc(2px+0.5vw)">
+
+  ➞ d run -it  -p 3000:3000 -v $(pwd):/usr/src/app react_app
+            
+            Compiled successfully!
+
+            You can now view react_demo in the browser.
+            
+              Local:            http://localhost:3000
+              On Your Network:  http://172.17.0.2:3000
+            
+            Note that the development build is not optimized.
+            To create a production build, use yarn build.
+        
+           </pre
+          >
+        </section>
+
+        <section>
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <img class="zoom" src="./assets/img/video2.gif" />
+          </div>
+        </section>
+
+        <section>
+          <h1><span>🧐</span></h1>
+          <h2 class="blue">Full Stack</h2>
+        </section>
+
+        <section data-auto-animate>
+          <div class="row">
+            <div class="box fragment fragment-fade-in" data-fragment-index="1">CLIENT</div>
+            <div class="box fragment fragment-fade-in" data-fragment-index="2">BACKEND</div>
+            <div class="box fragment fragment-fade-in" data-fragment-index="3">DB</div>
+          </div>
+
+          <div class="row">
+            <div class="box fragment fragment-fade-in" data-fragment-index="4">REST-API</div>
+            <div class="box fragment fragment-fade-in" data-fragment-index="5">GQL</div>
+            <div class="box fragment fragment-fade-in" data-fragment-index="6">LOG</div>
+          </div>
+
+          <div class="row">
+            <div class="box fragment fragment-fade-in" data-fragment-index="7">BATCH</div>
+            <div class="box fragment fragment-fade-in" data-fragment-index="8">BACKUP</div>
+            <div class="box fragment fragment-fade-in" data-fragment-index="9">PROXY</div>
+          </div>
+        </section>
+
+        <section>
+          <h1><span>🤓</span></h1>
+          <h2 class="blue">What If ?</h2>
+        </section>
+
+        <section data-auto-animate>
+          <div class="docker-box">
+            <p>docker compose</p>
+            <div class="row" style="border: 1px">
+              <div class="con">CLIENT</div>
+              <div class="con">BACKEND</div>
+              <div class="con">DB</div>
+            </div>
+
+            <div class="row">
+              <div class="con">REST-API</div>
+              <div class="con">GQL</div>
+              <div class="con">LOG</div>
+            </div>
+
+            <div class="row">
+              <div class="con">BATCH</div>
+              <div class="con">BACKUP</div>
+              <div class="con">PROXY</div>
+            </div>
+          </div>
+          <!-- <div class=" dock"  style="position:absolute; top:30%">
+            <img width="200px" src="./assets/img/docker.png" />
+          </div> -->
+        </section>
+
+        <section data-auto-animate>
+          <img src="./assets/img/arch.png" />
+        </section>
+
+        <section data-auto-animate>
+          <div style="display: flex; justify-content: start">
+            <div style="transform: scale(0.6)"><img src="./assets/img/arch.png" /></div>
+            <div style="display: flex; flex-direction: column; justify-content: space-around">
+              <div class="con">CLIENT</div>
+              <div
+                data-fragment-index="2"
+                class="arrow fragment fragment-fadein"
+                style="
+                  position: relative;
+                  border: 0px solid yellow;
+                  height: 100px;
+                  width: 100px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                <div
+                  style="
+                    width: 40px;
+                    height: 2px;
+                    border: 3px dotted rgb(64, 236, 64);
+                    position: relative;
+                    transform: rotate(90deg);
+                  "
+                >
+                  <div
+                    style="
+                      width: 20px;
+                      height: 2px;
+                      border: 3px dotted rgb(64, 236, 64);
+                      transform: rotate(50deg);
+                      position: absolute;
+                      right: -30px;
+                      top: -10px;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      width: 20px;
+                      height: 2px;
+                      border: 3px dotted rgb(64, 236, 64);
+                      transform: rotate(-50deg);
+                      position: absolute;
+                      right: -30px;
+                      bottom: -10px;
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div class="con">
+                BACKEND
+
+                <div
+                  data-fragment-index="2"
+                  class="arrow fragment fragment-fadein"
+                  style="
+                    top: -100px;
+                    left: -100px;
+                    position: relative;
+                    border: 0px solid yellow;
+                    height: 100px;
+                    width: 100px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                >
+                  <div
+                    style="
+                      width: 40px;
+                      height: 2px;
+                      border: 3px dotted rgb(64, 236, 64);
+                      position: relative;
+                      transform: rotate(180deg);
+                    "
+                  >
+                    <div
+                      style="
+                        width: 20px;
+                        height: 2px;
+                        border: 3px dotted rgb(64, 236, 64);
+                        transform: rotate(50deg);
+                        position: absolute;
+                        right: -30px;
+                        top: -10px;
+                      "
+                    ></div>
+                    <div
+                      style="
+                        width: 20px;
+                        height: 2px;
+                        border: 3px dotted rgb(64, 236, 64);
+                        transform: rotate(-50deg);
+                        position: absolute;
+                        right: -30px;
+                        bottom: -10px;
+                      "
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Folder structure</h3>
+          <pre class="bash-txt">
+            <code data-trim data-noescape data-line-numbers="9-12">
+ ➞ tree -d .
+.
+├── mongo
+│   └── ...
+├── nmap
+│   └── ...
+├── praser
+│   └── ...
+├── reactApp (client)
+│   └── ...
+├── backend 
+    └── ...
+  </code>
+            </pre>
+        </section>
+
+        <section>
+          <h4 class="blue">⚛️ React App</h4>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: 16px">
+
+  ➞ d run -it  -p 3000:3000 -v $(pwd):/usr/src/app -v /usr/src/app/node_modules react_app
+
+    <code data-noescape > 
+    FROM node:latest
+    RUN mkdir -p /usr/src/app
+    WORKDIR /usr/src/app
+    COPY package.json .
+    RUN yarn install
+    COPY . .
+    CMD ["yarn" ,"start" ]
+    </code>
+          </pre>
+        </section>
+
+        <section>
+          docker-compose.yml
+          <pre class="bash-txt" style="font-size: 13px">
+    <code  > 
+      version: '3'
+      volumes:
+        mongoVolume:
+        sharedFolder:
+      
+      services:
+        mongo-server:
+          image: 'mongo'
+          restart: always
+          volumes:
+            - mongoVolume:/data/db
+          ports:
+            - 27017:27017
+        nmap:
+          build: nmap/.
+          restart: always
+          volumes:
+            - sharedFolder:/usr/src/app/data
+        parser:
+          build: parser/.
+          restart: always
+          volumes:
+            - sharedFolder:/usr/src/app/data
+          environment:
+            - MONGO_HOST=mongo-server
+    </code>
+          </pre>
+        </section>
+
+        <section>
+          <pre class="bash-txt" style="font-size: 16px">
+    <code data-trim data-noescape data-line-numbers="10-19"> 
+      version: '3'
+      volumes:
+        mongoVolume:
+        sharedFolder:
+      
+      services:
+        mongo-server:
+        nmap:
+        parser:
+        client:
+          stdin_open: true
+          build:
+            context: reactApp
+            dockerfile: dockerfile.dev
+          volumes:
+            - ./reactApp:/usr/src/app
+            - /usr/src/app/node_modules
+          ports:
+            - 3000:3000
+    </code>
+          </pre>
+        </section>
+
+        <section>
+          <img src="./assets/img/react-run.gif" />
+        </section>
+
+        <section>
+          <h4 class="blue">💢 Backend</h4>
+        </section>
+
+        <section>
+          <pre class="bash-txt">
+
+  ➞ tree -d
+  backend:
+  ├── api.js
+  ├── package.json
+  ├── yarn.lock
+    
+          </pre>
+        </section>
+
+        <section>
+          api.js
+          <pre style="font-size: 16px"><code data-line-numbers="">
+  try {
+    (async function () {
+      console.log(url)
+      mongo.db = await mongoConnect(url)
+      mongo.dbo = mongo.db.db('mydb')
+    })()
+  } catch (e) {
+    console.log(e)
+  }
+            </code></pre>
+        </section>
+
+        <section>
+          api.js
+          <pre style="font-size: 16px"><code data-line-numbers="">
+  const mongoGet = async () => {
+    return new Promise(function (yes, no) {
+      try {
+        mongo.dbo.collection('scans').findOne({}, function (err, res) {
+          if (err) throw err
+          yes(res)
+        })
+      } catch (err) {
+        console.log('ERROR mongo SET', err)
+        no(err)
+      }
+    })
+  }
+            </code></pre>
+        </section>
+
+        <section>
+          api.js
+          <pre style="font-size: 16px"><code data-line-numbers="">
+    const express = require('express')        
+    const app = express()
+
+    app.get('/', function (req, res) {
+      res.send('Working !!!')
+    })
+    
+    app.get('/api/get', async function (req, res) {
+      const data = await mongoGet()
+      res.json(data)
+    })
+    
+    app.listen(port, function () {
+      console.log('listening on port ' + port)
+    })
+
+            </code></pre>
+        </section>
+
+        <section>
+          dockerfile
+          <pre style="font-size: 16px"><code data-line-numbers="">
+            FROM node:latest
+            RUN mkdir -p /usr/src/app
+            WORKDIR /usr/src/app
+            COPY package.json .
+            RUN yarn install
+            COPY api.js .
+            CMD ["node" ,"api.js" ]
+    
+            </code></pre>
+        </section>
+
+        <section>
+          docker-compose
+          <pre style="font-size: 16px"><code data-line-numbers="12-19">
+version: '3'
+volumes:
+  mongoVolume:
+  sharedFolder:
+
+services:
+  mongo-server:
+  nmap:
+  parser:
+  client:
+  backend:
+    build: backend/.
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      - MONGO_HOST=mongo-server
+    
+            </code></pre>
+        </section>
+
+        <section>
+          <img src="./assets/img/backend.gif" />
+        </section>
+
+        <section>
+          <pre class="bash" style="font-size: 12px;"><code>
+  ➞ d ps
+  CONTAINER ID        IMAGE                 STATUS              PORTS                      NAMES
+  1d3c1e418da5        scanproject_backend   Up 10 seconds       0.0.0.0:8080->8080/tcp     scanproject_backend_1
+  8dd524031b31        mongo                 Up 10 seconds       0.0.0.0:27017->27017/tcp   scanproject_mongo-server_1
+          </code></pre>
+        </section>
+
+        <section>
+          <p>Full Stack Docker Dev Env</p>
+          <div class="">
+            <div class="row" style="border: 1px">
+              <div class="con">NMAP</div>
+              <div class="con">CLIENT</div>
+            </div>
+            <div class="row">
+              <div class="finger fragment fragment-fade-in" data-fragment-index="1" style="transform: rotate(90deg)">👉</div>
+              <div class="docker finger fragment fragment-fade-in" data-fragment-index="5"> <img width="150px"src="./assets/img/docker.png"> </div>
+              <div class="finger fragment fragment-fade-in" data-fragment-index="3" style="transform: rotate(90deg)">👉</div>
+            </div>
+            <div class="row">
+              <div class="con">PARSER</div>
+              <div class="finger fragment fragment-fade-in" data-fragment-index="2" >👉</div>
+              <div class="con">DB</div>
+              <div class="finger fragment fragment-fade-in" data-fragment-index="4" style="transform: rotate(180deg)">👉</div>
+              <div class="con">BACKEND</div>
+            </div>
+          </div>
+        </section>
+
+        <section>Back to the ⚛️ Client</section>
+
+        <section>
+          <pre style="font-size:13px"><code data-line-numbers="19" ><script type="text/template">
+
+
+
+import React from 'react'
+import logo from './logo.svg'
+import './App.css';
+import List from '../src/list'
+
+function App() {
+  return (
+    <div className="App">
+      <h1 className="ttt">
+        <img src={logo} alt="react" width="80px" height="80px" className="App-logo"/>
+        React APP
+      </h1>
+      <header className="page">
+      <div className="desc">
+        <List />
+      </div>
+      </header>
+      
+    </div>
+  )
+}
+
+export default App
+
+
+
+</script></code></pre>
+
+        </section>
+
+
+        <section>
+          list.js
+          <pre style="font-size:14px"><code ><script type="text/template">
+
+
+
+import React, { useEffect, useState } from 'react'
+import Card from '../src/card'
+
+export default () => {
+  const [cards, setCards] = useState([])
+  useEffect(() => {
+    fetch(`some/url/for/api`)
+      .then((r) => r.json())
+      .then((d) =>  setCards(d.nmaprun.host))
+  }, [])
+
+  return (
+    <div>
+      {cards.map((item,index) => (
+        <Card key={index} data={item} />
+      ))}
+    </div>
+  )
+}
+
+
+
+
+</script></code></pre>
+
+        </section>
+
+
+        <section>
+          card.js
+          <pre style="font-size:14px"><code><script type="text/template">
+import React from 'react'
+
+export default (data) => {
+
+  const ip = data.data.address._attributes.addr
+  const name = Array.isArray(data.data.hostnames.hostname)
+    ? data.data.hostnames.hostname[0]._attributes.name
+    : data.data.hostnames.hostname._attributes.name
+  const ports = data.data.ports.port
+
+  return (
+      <ul className="card-data">
+        <li className="title">{name}</li>
+        <li className="inline">
+          <div className="line-title">IP</div>
+          <div>{ip}</div>
+        </li>
+
+        <li className="inline">
+          <div className="line-title">HOST</div>
+          <div>{name}</div>
+        </li>
+......
+
+</script></code></pre>
+
+        </section>
+
+
+        <section data-auto-animate>
+          list.js
+          <pre style="font-size:14px" class="react"><code data-line-numbers="10-13">
+
+
+
+import React, { useEffect, useState } from 'react'
+import Card from '../src/card'
+
+export default () => {
+  const [cards, setCards] = useState([])
+  useEffect(() => {
+    fetch(`some/url/for/api`)
+      .then((r) => r.json())
+      .then((d) =>  setCards(d.nmaprun.host))
+  }, [])
+
+  return (
+    <div>
+      {cards.map((item,index) => (
+        <Card key={index} data={item} />
+      ))}
+    </div>
+  )
+}
+
+
+
+
+</script></code></pre>
+
+        </section>
+
+
+        <section data-auto-animate>
+          list.js
+          <pre style="font-size:14px"><code data-line-numbers="">
+
+    fetch(`some/url/for/api`)
+      .then((r) => r.json())
+      .then((d) =>  setCards(d.nmaprun.host))
+
+</code></pre>
+
+        </section>
+
+        <section data-auto-animate>
+          <pre style="font-size:14px" class="bash-txt">
+
+  ➞ docker-compose up backend client mongo-server
+
+  Creating network "scanproject_default" with the default driver
+  Creating scanproject_backend_1      ... done
+  Creating scanproject_mongo-server_1 ... done
+  Creating scanproject_client_1       ... done
+
+</pre>
+
+        </section>
+
+        
+<section>
+  <pre style="font-size:14px" class="bash-txt">
+    ➞ d ps
+  CONTAINER ID        IMAGE                 PORTS                      NAMES
+  33d8f527948c        scanproject_client    0.0.0.0:3000->3000/tcp     scanproject_client_1
+  7372f0d9718e        mongo                 0.0.0.0:27017->27017/tcp   scanproject_mongo-server_1
+  02bcb6671f60        scanproject_backend   0.0.0.0:8080->8080/tcp     scanproject_backend_1
+  </pre>
+  </section>
+
+  <section data-auto-animate>
+    list.js
+    <pre style="font-size:14px" class="javascript"><code data-noescape data-line-numbers="" >
+const host =  global.process.env.api || 'localhost'
+
+fetch(`http:${host}:8080/api/get`)
+.then((r) => r.json())
+.then((d) =>  setCards(d.nmaprun.host))
+
+</code></pre>
+
+  </section>
+
+  <section>
+    <img src="./assets/img/react-final.gif" alt="" class="scr">
+  </section>
+
+  <section>
+    <pre style="font-size: 14px;">
+➞ d run -v sharedFolder:/usr/src/app/data nmap
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-08-04 20:41 UTC
+Nmap scan report for ksp.co.il (212.199.38.38)
+Host is up (0.0031s latency).
+rDNS record for 212.199.38.38: 212.199.38.38.hosting.spd.co.il
+Not shown: 998 filtered ports
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap scan report for ivory.co.il (80.178.161.201)
+Host is up (0.0027s latency).
+Other addresses for ivory.co.il (not scanned): 212.199.184.138
+rDNS record for 80.178.161.201: 80.178.161.201.static.hosting.spd.co.il
+Not shown: 998 filtered ports
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 2 IP addresses (2 hosts up) scanned in 11.16 seconds
+    </pre>
+  </section>
+
+
+<section data-auto-animate>
+    docker-compose.js
+    <pre style="font-size:12px" ><code data-line-numbers="" >
+  version: '3'
+  volumes:
+    mongoVolume:
+    sharedFolder:
+  
+  services:
+    mongo-server:
+      image: 'mongo'
+      restart: always
+      volumes:
+        - mongoVolume:/data/db
+      ports:
+        - 27017:27017
+    nmap:
+      build: nmap/.
+      restart: always
+      volumes:
+        - sharedFolder:/usr/src/app/data
+    parser:
+      build: parser/.
+      restart: always
+      volumes:
+        - sharedFolder:/usr/src/app/data
+      environment:
+        - MONGO_HOST=mongo-server
+    client:
+      stdin_open: true
+      build:
+        context: reactApp
+        dockerfile: dockerfile.dev
+      volumes:
+        - ./reactApp:/usr/src/app
+        - /usr/src/app/node_modules
+      ports:
+        - 3000:3000
+    backend:
+      build: backend/.
+      restart: always
+      ports:
+        - 8080:8080
+      environment:
+        - MONGO_HOST=mongo-server
+  
+
+</code></pre></section>
+
+<section>
+  Full Stack Docker Dev Env
+  <div class="">
+    <div class="row" style="border: 1px">
+      <div class="con">NMAP</div>
+      <div class="con">CLIENT</div>
+    </div>
+    <div class="row">
+      <div class="finger fragment fragment-fade-in" data-fragment-index="1" style="transform: rotate(90deg)">👉</div>
+      <div class="docker finger fragment fragment-fade-in" data-fragment-index="5"> <img width="200px" src="./assets/img/docker.png" style="border: 2px solid #73abff; border-radius: 50%;"> </div>
+      <div class="finger fragment fragment-fade-in" data-fragment-index="3" style="transform: rotate(90deg)">👉</div>
+    </div>
+    <div class="row">
+      <div class="con">PARSER</div>
+      <div class="finger fragment fragment-fade-in" data-fragment-index="2" >👉</div>
+      <div class="con">DB</div>
+      <div class="finger fragment fragment-fade-in" data-fragment-index="4" style="transform: rotate(180deg)">👉</div>
+      <div class="con">BACKEND</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div style="">
+     <h2 class="blue"> Why?</h2>
+      <ul class="benefits" >
+        <li class="fragment fragment-fade-in" data-fragment-index="1"> <span class="sign">✅ </span> Runs on my machine = runs anywhere</li>
+        <li class="fragment fragment-fade-in" data-fragment-index="2"> <span class="sign">✅ </span> New team productive from day 1</li>
+        <li class="fragment fragment-fade-in" data-fragment-index="3"> <span class="sign">✅ </span> language free - database free</li>
+        <li class="fragment fragment-fade-in" data-fragment-index="4"> <span class="sign">✅ </span> Isolated env</li>
+        <li class="fragment fragment-fade-in" data-fragment-index="5"> <span class="sign">✅ </span> Clean env</li>
+        <li class="fragment fragment-fade-in" data-fragment-index="6"> <span class="sign">✅ </span> Sharable env </li>
+        <li class="fragment fragment-fade-in" data-fragment-index="7"> <span class="sign">✅ </span> Scalable env </li>
+        <li class="fragment fragment-fade-in" data-fragment-index="8"> <span class="sign">✅ </span> Maintainable env </li>
+      </ul>
+      <img width="400px" src="./assets/img/dalton.gif">
+  </div>
+</section>
+
+<section>
+    <h1> 😎 </h1>
+    <h2 style=" color: #0a9cec;"> Production Containers <h2/>
+</section>
+
+
+<section>
+  <pre class="bash" style="font-size: 22px;"><code>
+  ➞ yarn build
+  yarn run v1.21.1
+  warning ../../../../../../../package.json: No license field
+  $ react-scripts build
+  Creating an optimized production build...
+
+  Compiled successfully.
+
+  File sizes after gzip:
+
+  39.77 KB  build/static/js/2.312ef41f.chunk.js
+  1.01 KB   build/static/js/main.8295d4ee.chunk.js
+  773 B     build/static/js/runtime-main.815af2bc.js
+  743 B     build/static/css/main.c57ac939.chunk.css
+
+ 
+</section>
+
+<section> 
+  <pre class="bash" style="font-size: 12px;">
+
+  ➞ tree build
+
+    build:
+    ├── asset-manifest.json
+    ├── favicon.ico
+    ├── index.html
+    ├── logo192.png
+    ├── logo512.png
+    ├── manifest.json
+    ├── precache-manifest.4334ca6cc0765e299ad636302f210bd4.js
+    ├── robots.txt
+    ├── service-worker.js
+    └── static
+        ├── css
+        │   ├── main.c57ac939.chunk.css
+        │   └── main.c57ac939.chunk.css.map
+        ├── js
+        │   ├── 2.312ef41f.chunk.js
+        │   ├── 2.312ef41f.chunk.js.LICENSE.txt
+        │   ├── 2.312ef41f.chunk.js.map
+        │   ├── main.8295d4ee.chunk.js
+        │   ├── main.8295d4ee.chunk.js.map
+        │   ├── runtime-main.815af2bc.js
+        │   └── runtime-main.815af2bc.js.map
+        └── media
+            └── logo.5d5d9eef.svg
+
+    4 directories, 19 files
+
+</code></pre>
+</section>
+
+<section> 
+  Multi-Step Build
+  <pre class="docker" > <code>
+
+  FROM node:latest as builder
+  RUN mkdir -p /usr/src/app
+  WORKDIR /usr/src/app
+  COPY package.json .
+  RUN yarn install
+  EXPOSE 3000
+  COPY . .
+  RUN yarn build
+  
+  FROM navikt/node-express
+  COPY --from=builder /app/build /to/the/folder/of/your/web-server
+
+</code></pre>
+</section>
+
+<section> 
+  Multi-Step Build AWS Ready
+  <pre class="docker" > <code>
+
+  FROM node:latest
+  RUN mkdir -p /usr/src/app
+  WORKDIR /usr/src/app
+  COPY package.json .
+  RUN yarn install
+  EXPOSE 3000
+  COPY . .
+  RUN yarn build
+  
+  FROM navikt/node-express
+  COPY --from=0 /app/build /to/the/folder/of/your/web-server
+
+</code></pre>
+</section>
+<section>
+  <div >
+    <img width="300px" src="./assets/img/sphera.gif" style="border: 4px solid #0a9cec; border-radius: 50%; box-shadow: 2px 2px 24px 10px black;" alt="sphera">
+  </div>
+  <h5 class="blue" style=" text-shadow: 2px 2px 10px black;">to be continued</h5>
+</section>
+      </div>
     </div>
 
     <script src="../../dist/reveal.js"></script>
