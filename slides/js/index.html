@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>GraphQL by Alex</title>
+
+
+  <link rel="stylesheet" href="../../dist/reset.css" />
+  <link rel="stylesheet" href="../../dist/reveal.css" />
+  <link rel="stylesheet" href="../../dist/theme/black.css" id="theme" />
+
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="../../plugin/highlight/tokyo-night-dark.css" id="highlight-theme" />
+
+
+  <style>
+    .js-logo {
+      background-color: rgb(233, 211, 18);
+      display: inline-block;
+      padding: 10px;
+      color: #222 !important;
+    }
+
+    .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .center-width-75 {
+      width: 80%;
+      margin-left: 0 auto !important;
+      margin-right: 0 auto !important;
+    }
+
+    .right {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    .font-small {
+      font-size: 0.5em;
+    }
+
+    .small-p {
+      font-size: 0.4em;
+    }
+
+    .border {
+      border: 1px solid red;
+    }
+
+    .duo {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .gray {
+      color: #acacac;
+    }
+
+    .green {
+      color: #009900;
+    }
+
+    .blue {
+      color: #4484c4;
+    }
+
+    .orange {
+      color: #ff8c00;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1 class="js-logo">JS</h1>
+        <h5>The beginning </h5>
+      </section>
+      <section data-auto-animate>
+        <div class="center">
+          <h5 class="center-width-75">JavaScript is to programming what jazz is to music</h5>
+          <p class="right font-small"><em>~ Markus Persson</em></p>
+          <div class="fragment">
+            <img src="https://img.icons8.com/clouds/100/minecraft-grass-cube.png" />
+            <p class="small-p">Markus Alexej Persson, known by the pseudonym Notch, is a Swedish video game programmer
+              and
+              designer.
+              He is the creator of Minecraft, which is the best-selling video game in history. He founded the video
+              game
+              development company Mojang Studios in 2009. Persson began developing video games at an early
+              age.</p>
+          </div>
+        </div>
+
+      </section>
+      <section>
+        <div class="center">
+          <h5 class="center-width-75">The World's Most Misunderstood Programming Language Has Become the World's Most
+            Popular Programming Language.
+          </h5>
+          <p class="right font-small"><em>~ Douglas Crockford</em></p>
+          <div class="fragment">
+            <p class="small-p" style="padding: 0 20px">Douglas Crockford is an American computer programmer who is
+              involved in
+              the development
+              of the
+              JavaScript language. He specified the data format JSON, and has developed various JavaScript related
+              tools
+              such as the static code analyzer JSLint and minifier JSMin.</p>
+          </div>
+        </div>
+
+      </section>
+      <section>
+        <div class="duo ">
+          <div style=" display: flex; justify-content: center; align-items: center; flex:1; flex-direction: column;" c>
+            <img height="400px" src="./assets/img/eich.png" alt="Brendan Eich">
+            <p style="display: flex; align-items: center;"> <img src="https://img.icons8.com/color/48/netscape.png" />
+              Netscape</p>
+            </p>
+          </div>
+          <div
+            style="padding: 50px 0px; display: flex; justify-content: center; align-items: center; flex-direction: column; flex:1"
+            c>
+            <h5>Brendan Eich</h5>
+            <p class="font-small" style="margin: 0; padding: 0;">Founder of Brave, Mozilla</p>
+            <p class="font-small" style="margin: 0; padding: 0;">Creator of JavaScript (1995)</p>
+            <p> <img src="https://img.icons8.com/color/48/brave-web-browser.png" alt="brave"> <img height="48px"
+                src="https://static.dezeen.com/uploads/2017/01/mozilla-finalises-new-logo-design-graphics_dezeen_hero.jpg"
+                alt="brave"> <img src="https://img.icons8.com/color/48/javascript--v2.png" /></p>
+            </p>
+            <p>
+          </div>
+
+        </div>
+
+      </section>
+      <section>
+        <h2>JavaScript / ECMAScript</h2>
+        <div style="padding: 30px 0px;">
+          <p class="gray">JavaScript was invented by Brendan Eich in 1995. </p>
+          <p class="gray">It was developed for Netscape 2, and became the ECMA-262 standard in 1997.</p>
+        </div>
+
+      </section>
+      <section>
+        <h2>JavaScript / ECMAScript</h2>
+        <div style="padding: 30px 0px;">
+          <p class="gray">After Netscape handed JavaScript over to ECMA, the Mozilla foundation continued to develop
+            JavaScript for the Firefox browser. Mozilla's latest version was 1.8.5. (Identical to ES5)
+          </p>
+        </div>
+
+      </section>
+      <section>
+        <h2>MicroSoft 1996-1997</h2>
+        <div style="padding: 30px 0px;">
+          <p class="gray">Microsoft reverse-engineered JavaScript and called it JScript</p>
+          <p class="gray">Introduced it in Internet Explorer 3</p>
+          <p class="gray">And created two similar but not identical languages 🤯 browser chaos till June 15, 2022 when
+            IE died.</p>
+        </div>
+
+      </section>
+      <section>
+        <h2>1999–2008: The Dark Ages</h2>
+        <div style="padding: 30px 0px;">
+          <p class="gray">ES2 and ES3 … 😩</p>
+          <p class="gray">Browsers were inconsistent, devs relied on hacks and jQuery to deal with differences
+          </p>
+        </div>
+
+      </section>
+      <section>
+        <h2>September 2008
+        </h2>
+        <div style="padding: 30px 0px;">
+          <img
+            src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/96/external-v8-is-googles-open-source-high-performance-javascript-and-webassembly-engine-written-in-c-logo-shadow-tal-revivo.png"
+            alt="Chrome">
+          <p class="gray">Google created <span class="blue">V8</span> for its Chrome browser, and both were first
+            released in 2008. The lead
+            developer of V8 was <strong> 🥸 Lars Bak</strong>, and it was named after the powerful car engine. </p>
+        </div>
+
+      </section>
+      <section>
+        <h2>September 2008
+        </h2>
+        <div style="padding: 30px 0px;">
+          <img
+            src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/96/external-v8-is-googles-open-source-high-performance-javascript-and-webassembly-engine-written-in-c-logo-shadow-tal-revivo.png"
+            alt="Chrome">
+          <p class="gray">For several years, Chrome was 🚀 faster than other browsers at executing JavaScript.</p>
+          <p class="gray">It compiled JS to machine code using <span class="green"><strong>JIT</strong></span></p>
+        </div>
+
+      </section>
+      <section data-auto-animate>
+        <h2><img
+            src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/96/external-v8-is-googles-open-source-high-performance-javascript-and-webassembly-engine-written-in-c-logo-shadow-tal-revivo.png"
+            alt="Chrome"></h2>
+        <div style="padding: 30px 0px;">
+          <p class="gray fragment"><strong><span class="orange"> 🪄 Parses</span></strong> it (turns it into a structure
+            the
+            engine can
+            understand)</p>
+          <p class="gray fragment"><strong><span class="orange">🛠️ Compiles</span></strong> it to machine code (not
+            just
+            bytecode or interpreted—this is fast, native
+            code)</p>
+          <p class="gray fragment">🚀 <strong><span class="orange">Optimizes</span></strong> the code at runtime
+            (using techniques like inline caching and
+            just-in-time
+            compilation).</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>2009 ECMAScript 5 (ES5)</h2>
+        <div style="padding: 30px 0px;">
+          <p class="gray">Big update:</p>
+          <div class="fragment shrink">
+            <p class="gray fragment fade-in"> <code class="orange">strict</code> mode</p>
+            <p class="gray fragment fade-in"> <code class="orange">Object.defineProperty</code> </p>
+            <p class="gray fragment fade-in"> <code class="orange">JSON</code> support</p>
+          </div>
+          <p class="gray fragment fade-in">
+            Became widely
+            adopted and
+            laid the foundation
+            for modern JS</p>
+
+          </p>
+        </div>
+
+      </section>
+
+      <section data-transition="zoom shrink">
+        <p>Object.defineProperty(obj, prop, descriptor)</p>
+        <pre><code  data-noescape class="language-javascript">
+          
+          ----------------------------------------------
+          const object = {};
+
+          Object.defineProperty(object, "clarity", {
+            value: 42,
+            writable: false,
+          });
+          
+          object.clarity = 77;        //// Throws an error in strict mode 
+          console.log(object.clarity);// Expected output: 42
+          
+          </code></pre>
+      </section>
+
+      <section data-transition="shrink" class="shrink">
+        <div style="height: 55vh;">
+          <h2 style="position: relative;top:0px">🚀 ECMAScript 6 (ES6 / ES2015)</h2>
+          <div style="padding: 30px 0px;">
+            <p class="gray fragment fade-in-then-out">Another update</p>
+            <p class="gray fragment fade-in-then-semi-out">
+              <code class="orange">let</code> and <code class="orange">const</code>
+            </p>
+            <p class="gray fragment fade-in-then-semi-out">
+              Arrow functions <code class="orange"> () => {}</code>
+            </p>
+            <p class="gray fragment fade-in-then-semi-out">
+              <code class="orange"> (import/export)</code>
+            </p>
+            <p class="gray fragment fade-in-then-semi-out">
+              <code class="">Promises</code>
+            </p>
+
+          </div>
+        </div>
+
+      </section>
+
+      <section data-transition="shrink" class="shrink">
+        <div style="height: 55vh;">
+          <h2 style="position: relative;top:0px">🚀 ECMAScript 6 (ES6 / ES2015)</h2>
+          <div style="padding: 30px 0px;">
+            <p class="gray fragment fade-in-then-semi-out">
+              <code class="">Template literals</code>
+            </p>
+            <p class="gray fragment fade-in-then-semi-out">
+              <code class="">Destructuring</code>
+            </p>
+            <p class="gray fragment fade-in-then-semi-out">
+              <code class="">Default parameters</code>
+            </p>
+          </div>
+        </div>
+
+      </section>
+      <section data-transition="shrink" class="shrink">
+        <div>
+          <h2 style="position: relative;top:0px">⏳ Post-ES6 Era (2016–Today)</h2>
+          <div style="padding: 30px 0px;">
+            <p class="gray fragment fade-in-then-semi-out">
+              <code class="">yearly updates
+              </code>
+            </p>
+            <p class="gray fragment fade-in-then-semi-out">
+              <code class="orange">async/await
+              </code>
+            </p>
+            <p class="gray fragment fade-in-then-semi-out">
+              Optional chaining <code class="orange">(?.)</code>
+            </p>
+            <p class="gray fragment fade-in-then-semi-out">
+              Nullish coalescing<code class="orange"> (??) </code>
+            </p>
+            <p class="gray fragment fade-in-then-semi-out">
+              <code class="orange">BigInt, Array.flat(), Object.entries(), Object.groupBy()... etc </code>
+            </p>
+            <p class="gray fragment fade-in-then-semi-out">
+              Top-level<code class="orange"> await</code>
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+      <section>
+        <h2>JavaScript Today</h2>
+        <div style="padding: 30px 0px;">
+          <p class="gray fragment fade-in-then-semi-out">Runs everywhere: browsers, servers (Node.js), desktops
+            (Electron), mobile (React Native)</p>
+          <p class="gray fragment fade-in-then-semi-out">Powers most modern web apps (React, Angular, Vue)
+          </p>
+          <p class="gray fragment fade-in-then-semi-out">Competes with many languages but remains the king of the web
+
+          </p>
+        </div>
+
+      </section>
+      <section>
+        <h1>🏎️</h1>
+        <h3>The engine</h3>
+      </section>
+      <section>
+        <h2>🧵 Single-Threaded</h2>
+        <p class="gray fragment fade-in-then-out"> 😱 What Does That Mean?
+        </p>
+        <div class="fragment fade-in-then-semi-out ">
+          <p class="gray">🚩 One call stack</p>
+          <p class="gray">JS has one call stack, meaning it can do one thing at a time.</p>
+        </div>
+
+        <div class="gray fragment fade-in-then-semi-out">
+          <p class="gray">🚩 No multi-threading (like in C++ or Java)</p>
+          <p class="gray">so it executes code line-by-line, top to bottom.
+        </div>
+        </p>
+
+      </section>
+      <section>
+        <h2> 🤌 </h2>
+        <h2>But wait...</h2>
+      </section>
+      <section class="shrink">
+        <h2> 🧠 How does it do stuff like:</h2>
+
+        </br>
+        <p class="gray fragment fade-in-then-semi-out">🔥 Asynchronous code</p>
+        <p class="gray fragment fade-in-then-semi-out">🔗 Fetching data from an API?
+        </p>
+        <p class="gray fragment fade-in-then-semi-out">🕒 Waiting 5 seconds with setTimeout?
+        </p>
+        <p class="gray fragment fade-in-then-semi-out">🧑‍💻 Responding to user clicks?
+        </p>
+        <p class="gray fragment fade-in-then-semi-out">...etc
+        </p>
+      </section>
+
+      <section>
+        <h2>🔄 The Event Loop</h2>
+        <div style="padding: 30px 0px;">
+          <p class="gray fragment fade-in">JavaScript works with the help of its environment (like the
+            browser or Node.js), and the event loop manages how asynchronous operations are handled.
+          </p>
+        </div>
+      </section>
+      <section>
+        <img src="https://miro.medium.com/v2/resize:fit:1120/0*Gj8cI6AYNMxzoDnd.png" alt="event loop" />
+      </section>
+      <section
+        data-background-iframe="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D"
+        data-background-interactive data-transition="zoom">
+
+      </section>
+      <section data-background-iframe="https://www.jsv9000.app/" data-background-interactive data-transition="zoom">
+
+      </section>
+
+
+      <section>
+        <h2>🐢 </h2>
+        <h2>Microtasks vs Macrotasks</h2>
+        <div style="padding: 30px 0px;"></div>
+
+      </section>
+      <section>
+        <h2> 🧪 Microtasks</h2>
+        <h4> (higher priority) </h4>
+        <div style="padding: 30px 0px;">
+          <p class="gray fragment fade-in">
+            <code>Promise.then() </code>
+          </p>
+          <p class="gray fragment fade-in">
+            <code> catch</code>
+          </p>
+          <p class="gray fragment fade-in">
+            <code>finally</code>
+          </p>
+
+          <p class="gray fragment fade-in">
+
+            <code>queueMicrotask</code>
+          </p>
+
+
+        </div>
+
+      </section>
+      <section>
+        <div style="padding: 30px 0px;">
+          <h2> 🧠 What is queueMicrotask()?</h2>
+          <div style="padding: 30px 0px;">
+            <p class="gray">queueMicrotask(callback) schedules the callback to run at the end of the current JavaScript
+              execution context, but before the next event loop tick.
+
+            </p>
+          </div>
+
+        </div>
+      </section>
+      <section>
+        <div style="padding: 30px 0px;">
+
+          <p class="gray">In simpler terms, it puts the task in the microtask queue, which is processed immediately
+            after the current
+            function finishes and before any <code class="orange">setTimeout, setInterval</code>, or I/O events.</p>
+
+        </div>
+      </section>
+      <section>
+        <div style="padding: 30px 0px;">
+          <p class="gray">It's similar to <code class="orange">Promise.resolve().then(...)</code>, but more direct and
+            slightly faster..</p>
+        </div>
+      </section>
+
+      <section>
+        <pre><code class="line-numbers hljs language-javascript " data-noescape data-trim data-line-numbers >
+          customElement.prototype.getData = function (url) {
+            if (this.cache[url]) {
+              this.data = this.cache[url];
+              this.dispatchEvent(new Event("load"));
+            } else {
+              fetch(url)
+                .then((result) => result.arrayBuffer())
+                .then((data) => {
+                  this.cache[url] = data;
+                  this.data = data;
+                  this.dispatchEvent(new Event("load"));
+                });
+            }
+          };
+        </code>
+      </section>
+
+      <section>
+        <pre><code class="line-numbers hljs language-javascript" data-noescape data-trim data-line-numbers >
+          element.addEventListener("load", () => console.log("Loaded data"));
+
+          console.log("Fetching data…");
+
+          element.getData();
+
+          console.log("Data fetched");
+        </code></pre>
+      </section>
+
+      <section>
+
+        <pre><code class="line-numbers hljs language-javascript " data-noescape data-trim data-line-numbers="2-5" >
+          customElement.prototype.getData = function (url) {
+            if (this.cache[url]) {
+              this.data = this.cache[url];
+              this.dispatchEvent(new Event("load"));
+            } else {
+              fetch(url)
+                .then((result) => result.arrayBuffer())
+                .then((data) => {
+                  this.cache[url] = data;
+                  this.data = data;
+                  this.dispatchEvent(new Event("load"));
+                });
+            }
+          };
+        </code>
+        <p class="gray fragment fade-in">
+          Fetching data…
+        </p>
+        <p class="gray fragment fade-in">
+          Loaded data
+        </p>
+        <p class="gray fragment fade-in">
+          Data fetched
+        </p>
+      </pre>
+      </section>
+
+      <section>
+
+        <pre><code class="line-numbers hljs language-javascript " data-noescape data-trim data-line-numbers="5-12" >
+          customElement.prototype.getData = function (url) {
+            if (this.cache[url]) {
+              this.data = this.cache[url];
+              this.dispatchEvent(new Event("load"));
+            } else {
+              fetch(url)
+                .then((result) => result.arrayBuffer())
+                .then((data) => {
+                  this.cache[url] = data;
+                  this.data = data;
+                  this.dispatchEvent(new Event("load"));
+                });
+            }
+          };
+        </code>
+        
+        <p class="gray fragment fade-in">
+          Fetching data…
+        </p>
+        <p class="gray fragment fade-in">
+          Data fetched
+        </p>
+        <p class="gray fragment fade-in">
+          Loaded data
+        </p>
+      </pre>
+      </section>
+
+      <section>
+        <pre><code class="line-numbers hljs language-javascript " data-noescape data-trim data-line-numbers="3-6" >
+          customElement.prototype.getData = function (url) {
+            if (this.cache[url]) {
+              queueMicrotask(() => {
+                this.data = this.cache[url];
+                this.dispatchEvent(new Event("load"));
+              });
+            } else {
+              fetch(url)
+                .then((result) => result.arrayBuffer())
+                .then((data) => {
+                  this.cache[url] = data;
+                  this.data = data;
+                  this.dispatchEvent(new Event("load"));
+                });
+            }
+          };
+          
+        </code></pre>
+      </section>
+
+
+      <section>
+        <h2>🕐Macrotasks </h2>
+        <h5> (lower priority)</h5>
+        <div style="padding: 30px 0px;">
+          <p class="gray fragment fade-in"><code class="orange">setTimeout</code></p>
+          <p class="gray fragment fade-in"><code class="orange">setInterval</code></p>
+          <p class="gray fragment fade-in">DOM events/ custom events</p>
+        </div>
+
+      </section>
+
+      <section>
+        <div class="fragment fade-in-then-semi-out">
+          <h4>🧪 Microtasks (higher priority)</h4>
+          <ul>
+            <li>Promise.then(), catch, finally</li>
+            <li>queueMicrotask</li>
+          </ul>
+        </div>
+
+        <div class="fragment fade-in-then-semi-out">
+          <h4 style="padding-top:20px;">🕐 Macrotasks (lower priority)</h4>
+          <ul width="200px">
+            <li>setTimeout, setInterval</li>
+            <li>DOM events</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>JS vs Node.js</h2>
+        <div style="padding: 30px 0px;">
+          <p class="gray fragment fade-in">JS runs in browser with V8 + Web APIs</p>
+          <p class="gray fragment fade-in">Node.js runs in server with V8 + libuv for async ops</p>
+        </div>
+      </section>
+
+
+      <section>
+        <table style="font-size: 0.8em;">
+          <tr>
+            <th>Feature</th>
+            <th>JS</th>
+            <th>Node</th>
+          </tr>
+
+          <tr class="fragment fade-in-then-semi-out">
+            <td>Environment</td>
+            <td>Runs in the browser</td>
+            <td>Runs on the server
+            </td>
+          </tr>
+
+          <tr class="fragment fade-in-then-semi-out">
+            <td>Engine</td>
+            <td>V8 ( libuv like WebAPI)</td>
+            <td>V8 + libuv (for I/O) </td>
+          </tr>
+
+          <tr class="fragment fade-in-then-semi-out">
+            <td>Macro tasks
+            </td>
+            <td>setTimeout, setInterval, setImmediate*
+            </td>
+            <td>Same, plus setImmediate </td>
+          </tr>
+
+          <tr class="fragment fade-in-then-semi-out">
+            <td>Micro tasks</td>
+            <td>Promise.then, MutationObserver</td>
+            <td>Promise.then, process.nextTick </td>
+          </tr>
+
+          <tr class="fragment fade-in-then-semi-out">
+            <td>APIs</td>
+            <td>DOM, Web APIs (fetch, event handlers)</td>
+            <td>fs, http, etc. (via libuv) </td>
+          </tr>
+          <tr class="fragment fade-in-then-semi-out">
+            <td>Queue</td>
+            <td>Managed by the browser</td>
+            <td>Managed by libuv + internal Node scheduler</td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <table style="font-size: 0.8em;">
+          <tr>
+            <th>Layer</th>
+            <th>Component</th>
+            <th>Description</th>
+          </tr>
+
+          <tr class="fragment fade-in-then-semi-out">
+            <td>JS Engine</td>
+            <td>V8 (Chrome), SpiderMonkey (Firefox), JavaScriptCore (Safari)</td>
+            <td>Executes your JavaScript code</td>
+          </tr>
+
+          <tr class="fragment fade-in-then-semi-out">
+            <td>Browser Engine
+            </td>
+            <td>Blink (Chrome), Gecko (Firefox), WebKit (Safari)
+            </td>
+            <td>Handles DOM, rendering, layout, and event loop
+            </td>
+          </tr>
+
+          <tr class="fragment fade-in-then-semi-out">
+            <td>Event Loop
+            </td>
+            <td>Built into the browser engine
+
+            </td>
+            <td>Orchestrates tasks, callbacks, and events
+            </td>
+          </tr>
+
+          <tr class="fragment fade-in-then-semi-out">
+            <td>Async APIs
+            </td>
+            <td>Web APIs (DOM timers, Fetch, etc.)
+            </td>
+            <td>Expose async behavior to JS — implemented in C++ or Rust (libuv like)
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <img src="assets/img/flow.png" />
+      </section>
+
+      <section>
+        <h2>🧱 JS Types</h2>
+
+      </section>
+
+      <section>
+        <div style="padding: 30px 0px;">
+          <p class="gray">JavaScript Types (as of ECMAScript 2023)</p>
+          <p class="gray"> JS has two main categories of types</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>🧱 JS Types</h2>
+        <div style="padding: 30px 0px;">
+          <p>Primitive: string, number, boolean, null, undefined, bigint, symbol</p>
+          <p>Reference: object, array, function, date, map, set</p>
+        </div>
+      </section>
+      <section>
+        <h2>Type Coercion</h2>
+        <p>" 5" + 1="51" </p>
+        <p>"5" - 1 = 4</p>
+      </section>
+    </div>
+  </div>
+
+  <script src="../../dist/reveal.js"></script>
+  <script src="../../plugin/notes/notes.js"></script>
+  <script src="../../plugin/markdown/markdown.js"></script>
+  <script src="../../plugin/highlight/highlight.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      // center: false,
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+    })
+  </script>
+</body>
+
+</html>
