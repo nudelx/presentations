@@ -18,16 +18,33 @@
 			margin: 0px;
 			padding: 0px;
 			list-style: none;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			column-gap: 10px;
 		}
 
 		ul.list li {
 			display: flex;
 			justify-content: flex-start;
 			align-items: center;
+			width: 200px;
+			height: 200px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid #2a2a2a;
 		}
 
-		ul.list li>* {
-			margin-right: 10px;
+		ul.list li:hover {
+			background-color: #222;
+			cursor: pointer;
+		}
+
+		ul.list li a {
+			color: #fff;
+			text-decoration: none;
 		}
 	</style>
 </head>
@@ -37,13 +54,17 @@
 		<div class="slides">
 			<section>
 				<ul class="list">
-					<li>
+					<li onclick="location.href='slides/graphQl/'">
 						<img src="https://img.icons8.com/color/48/000000/graphql.png" />
 						<a href="./slides/graphQl/"> GraphQL</a>
 					</li>
-					<li>
+					<li onclick="location.href='slides/docker/index.html'">
 						<img src="https://img.icons8.com/color/48/000000/docker.png" />
 						<a href="./slides/docker/index.html">Docker</a>
+					</li>
+					<li onclick="location.href='slides/js/index.html'">
+						<img src="https://img.icons8.com/color/48/javascript--v2.png" />
+						<a href="./slides/js/index.html">JS</a>
 					</li>
 				</ul>
 			</section>
