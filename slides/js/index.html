@@ -621,7 +621,72 @@ var myObject = {
       </section>
 
       <section>
+        <h4>Pure Functions</h4>
+        <div style="padding: 30px 0px;">
+          <p class="gray">A Pure Function is a function (a block of code) that always returns the same result if the
+            same arguments are passed.</p>
+        </div>
+        <pre><code class="line-numbers hljs language-javascript " data-noescape data-trim data-line-numbers>
+        function add(a, b) {
+            return a + b;
+        }
+        console.log(add(2, 3)); 
+        console.log(add(2, 3));
+        </code></pre>
+      </section>
+
+
+      <section>
+        <h4>Memoization</h4>
+        <div style="padding: 30px 0px;">
+          <p class="gray">In computing, memoization or memoisation is an optimization technique used primarily to speed
+            up computer programs by storing the results of expensive function calls to pure functions and returning the
+            cached result when the same inputs occur again.</p>
+        </div>
+      </section>
+
+      <section>
+        <h4>Memoization</h4>
+
+        <pre><code class="line-numbers hljs language-javascript " data-noescape data-trim data-line-numbers="1-4|6-11">
+          const foo = (x) => {
+            console.log("very long calculation of x") 
+            return x * 2;
+          }
+
+          const memoize = function (f) {
+            const cache = {};
+            return function (x) {
+              return cache[x] ? cache[x] : cache[x] = f(x)
+            }
+          } 
+     
+
+        </code></pre>
+      </section>
+
+
+
+      <section>
+        <h4>Memoization</h4>
+
+        <pre><code class="line-numbers hljs language-javascript " data-noescape data-trim data-line-numbers="1|3-5|7-8 ">
+        const memoizedFoo = memoize(foo);
+
+        const res1 = memoizedFoo(42) // 84
+         // very long calculation of x
+        // cache = {}
+
+        const res2 = memoizedFoo(42) // 84
+        // cache = { 42: 84 }
+
+        </code></pre>
+      </section>
+
+      <section>
         <pre><code class="line-numbers hljs language-javascript " data-noescape data-trim data-line-numbers >
+           &lt;CustomElement onData={...}/&gt;
+
           customElement.prototype.getData = function (url) {
             if (this.cache[url]) {
               this.data = this.cache[url];
@@ -637,6 +702,77 @@ var myObject = {
             }
           };
         </code>
+      </section>
+
+      <section>
+        <pre><code class="line-numbers hljs language-javascript" data-noescape data-trim data-line-numbers="1|3|4|5" >
+          element.addEventListener("load", () => console.log("Loaded data"));
+
+          console.log("Fetching data…");
+          element.getData("ht  tp://example.com/data.bin");
+          console.log("Data fetched");
+        </code></pre>
+      </section>
+
+      <section>
+        <h5>First run</h5>
+        <pre><code class="line-numbers hljs language-javascript " data-noescape data-trim data-line-numbers="5-12" >
+          
+
+          customElement.prototype.getData = function (url) {
+            if (this.cache[url]) {
+              this.data = this.cache[url];
+              this.dispatchEvent(new Event("load"));
+            } else {
+              fetch(url)
+                .then((result) => result.arrayBuffer())
+                .then((data) => {
+                  this.cache[url] = data;
+                  this.data = data;
+                  this.dispatchEvent(new Event("load"));
+                });
+            }
+          };
+        </code>
+        
+        <p class="gray fragment fade-in">
+          Fetching data…
+        </p>
+        <p class="gray fragment fade-in">
+          Data fetched
+        </p>
+        <p class="gray fragment fade-in">
+          Loaded data
+        </p>
+      </pre>
+      </section>
+      <section>
+        <pre><code class="line-numbers hljs language-javascript " data-noescape data-trim data-line-numbers="2-5" >
+          customElement.prototype.getData = function (url) {
+            if (this.cache[url]) {
+              this.data = this.cache[url];
+              this.dispatchEvent(new Event("load"));
+            } else {
+              fetch(url)
+                .then((result) => result.arrayBuffer())
+                .then((data) => {
+                  this.cache[url] = data;
+                  this.data = data;
+                  this.dispatchEvent(new Event("load"));
+                });
+            }
+          };
+        </code>
+        <p class="gray fragment fade-in">
+          Fetching data…
+        </p>
+        <p class="gray fragment fade-in">
+          Loaded data
+        </p>
+        <p class="gray fragment fade-in">
+          Data fetched
+        </p>
+      </pre>
       </section>
 
       <section>
@@ -835,6 +971,10 @@ var myObject = {
       </section>
 
       <section>
+        <img src="./assets/img/que.gif" alt="event loop" />
+      </section>
+
+      <section>
         <div class="fragment fade-in-then-semi-out">
           <h4>🧪 Microtasks (higher priority)</h4>
           <ul>
@@ -887,7 +1027,7 @@ var myObject = {
         <h2>JS vs Node.js</h2>
         <div style="padding: 30px 0px;">
           <p class="gray fragment fade-in">JS runs in browser with V8 + Web APIs</p>
-          <p class="gray fragment fade-in">Node.js runs in server with V8 + libuv for async ops</p>
+          <p class="gray fragment fade-in">Node.js runs JS in server with V8 + libuv for async ops</p>
         </div>
       </section>
 
