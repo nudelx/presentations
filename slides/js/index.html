@@ -853,6 +853,37 @@ var myObject = {
       </section>
 
       <section>
+        <section>
+          <pre><code class="line-numbers hljs language-javascript " data-noescape data-trim data-line-numbers >
+          console.log(" 👷🏻 console ")
+
+          setTimeout(() => console.log(" 🕐 setTimeout "), 0)
+
+          Promise.resolve().then(() => console.log(" 🧵 Promise "))
+
+          console.log(" 👷🏻 console2 ")
+
+        </code></pre>
+
+        </section>
+
+        <section class="fragment shrink">
+          <pre><code class="line-numbers hljs language-javascript " data-noescape data-trim data-line-numbers="6-9" >
+          console.log(" 👷🏻 console ")
+          setTimeout(() => console.log(" 🕐 setTimeout "), 0)
+          Promise.resolve().then(() => console.log(" 🧵 Promise "))
+          console.log(" 👷🏻 console2 ")
+          
+          /// 👷🏻 console
+          /// 👷🏻 console2
+          /// 🧵 Promise
+          /// 🕐 setTimeout
+          </code></pre>
+        </section>
+      </section>
+
+
+      <section>
         <h2>JS vs Node.js</h2>
         <div style="padding: 30px 0px;">
           <p class="gray fragment fade-in">JS runs in browser with V8 + Web APIs</p>
@@ -955,6 +986,11 @@ var myObject = {
 
       <section>
         <img src="assets/img/flow.png" />
+      </section>
+
+      <section>
+        <img width="500px" src="./assets/img/yoda.png" alt="yoda">
+        <p class="fragment fade-in"> May the <em style="color:#d8d063">&lt;F=ma&gt;</em> be with You</p>
       </section>
 
       <section>
